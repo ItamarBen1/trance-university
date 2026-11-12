@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>בית ספר לטראנס</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/s2.css">
+<script src="../assets/s2-palette.js"></script>
+<script src="../assets/videos.js"></script>
+<script src="../assets/s2-video.js"></script>
+<style>
+/* Trance School on the S2 skin. Tokens and shared components: assets/s2.css.
+   Layout: one reading column. Level strip on top; below it one level at a time:
+   lesson, the sound "machine", real tracks, then the challenge that unlocks the next level. */
+.wrap{max-width:860px;margin:0 auto;padding-block:24px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+
+.mast{gap:12px}
+.mast-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.mast h1{font-size:clamp(40px,8vw,72px);line-height:1.05;text-wrap:balance}
+.lede{max-width:60ch;font-size:17px}
+
+/* level strip */
+.strip{display:grid;gap:12px}
+.levels{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.levels li{display:flex}
+.lv{width:100%;display:grid;gap:4px;justify-items:start;align-content:start;text-align:start;padding:10px 10px 12px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-sm);box-shadow:var(--shadow);margin-bottom:var(--lift);cursor:pointer;min-width:0;transition:transform .08s ease,box-shadow .08s ease}
+.lv:hover:not(:disabled){background:var(--white)}
+.lv:active:not(:disabled){transform:translateY(var(--lift));box-shadow:none}
+.lv .nm{font-weight:700;font-size:15px;line-height:1.2;overflow-wrap:anywhere}
+.lv .st{font-size:12.5px;color:var(--muted);min-height:22px;display:flex;align-items:center;gap:4px}
+.lv .st .star{width:18px;height:18px}
+.lv .st .lock{width:18px;height:18px}
+.lv.done{background:var(--good-t)}
+.lv.cur{border-width:4px;padding:8px 8px 10px;background:var(--white)}
+.lv:disabled{background:var(--surface-2);color:var(--muted);border-style:dashed;box-shadow:none;transform:translateY(var(--lift));cursor:not-allowed}
+.lv:disabled .pill{background:var(--white)}
+.strip-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 16px;font-size:14px;color:var(--muted)}
+.strip-foot .bar{grid-column:1/-1}
+.text-btn{font-size:14px}
+@media (max-width:719px){.levels{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:419px){.levels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* level */
+.level{display:grid;gap:26px}
+.lvl-head{gap:10px}
+.lvl-head h2{font-size:clamp(36px,7vw,56px)}
+.lvl-tag{font-size:17px;color:var(--muted)}
+.lesson{display:grid;gap:12px;max-width:66ch;font-size:16.5px}
+.terms{display:grid;gap:10px;padding:16px 18px;background:var(--white);border:var(--line) solid var(--ink);border-radius:var(--r-sm)}
+.terms div{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:4px 14px}
+.terms dt{font-weight:700}
+.terms dd{color:var(--muted);font-size:15px}
+@media (max-width:559px){.terms div{grid-template-columns:minmax(0,1fr)}}
+
+/* the machine */
+.toy{background:var(--white);border:var(--line-card) solid var(--ink);border-radius:var(--r-card);box-shadow:var(--shadow-card);margin-bottom:var(--lift-card);padding:20px;display:grid;gap:16px;accent-color:var(--primary)}
+.toy-title{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 12px;font-size:14px;color:var(--muted)}
+.toy-title strong{font-size:18px;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mbtn{padding:8px 16px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-pill);box-shadow:var(--shadow);margin-bottom:var(--lift);font-size:15px;font-weight:700;cursor:pointer;line-height:1.3;transition:transform .08s ease,box-shadow .08s ease}
+.mbtn:hover{background:var(--white)}
+.mbtn:active,.mbtn.is-on,.mbtn[aria-pressed="true"]{transform:translateY(var(--lift));box-shadow:none}
+.mbtn.play{background:var(--primary);min-width:96px}
+.mbtn.play:hover{filter:brightness(1.06)}
+.mbtn.is-on{background:var(--star)}
+.mbtn[aria-pressed="true"]{background:var(--accent)}
+.mbtn small{display:block;font-size:12.5px;font-weight:500;color:var(--ink)}
+.readout{display:flex;align-items:baseline;gap:10px}
+.bpm{font-size:56px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums;min-width:3ch;direction:ltr}
+.bpm-unit{font-size:14px;font-weight:700;color:var(--muted)}
+.pulse{width:26px;height:26px;border-radius:50%;background:var(--surface-2);border:var(--line) solid var(--ink);margin-inline-start:auto}
+.pulse.hit{background:var(--primary)}
+.slider{width:100%} /* RTL like the page: 100 BPM on the right, matching .scale */
+.scale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.says{font-size:16px;min-height:1.6em}
+.hint{font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:48px repeat(16,minmax(0,1fr));gap:5px 3px;align-items:center}
+.g-label{font-size:13px;font-weight:700}
+.cell{display:block;height:30px;min-width:0;padding:0;border:var(--line) solid var(--ink);border-radius:6px;background:var(--white)}
+button.cell{cursor:pointer}
+button.cell:hover{background:var(--surface)}
+.cell.beat{background:var(--surface-2)}
+.cell.on{background:var(--good)}
+.cell.on.b{background:var(--accent)}
+.cell.now{box-shadow:0 0 0 2px var(--white),0 0 0 5px var(--ink)}
+.count{display:grid;grid-template-columns:48px repeat(4,minmax(0,1fr));gap:3px;font-size:12.5px;font-weight:700;color:var(--muted)}
+@media (max-width:559px){
+  .grid{grid-template-columns:34px repeat(16,minmax(0,1fr));gap:4px 2px}
+  .count{grid-template-columns:34px repeat(4,minmax(0,1fr))}
+  .cell{height:26px;border-width:1.5px;border-radius:4px}
+  .cell.now{box-shadow:0 0 0 1px var(--white),0 0 0 3px var(--ink)}
+}
+.timeline{display:flex;gap:5px} /* time runs right to left, like the text */
+.blk{flex:var(--w) 1 0;min-width:0;padding:10px 4px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;overflow-wrap:anywhere;line-height:1.25}
+.blk:hover{background:var(--white)}
+.blk.now{background:var(--good)}
+@media (max-width:559px){.timeline{flex-wrap:wrap}.blk{flex:1 1 30%}}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:559px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cards .mbtn{text-align:start;border-radius:var(--r-sm)}
+
+/* real tracks */
+.real{display:grid;gap:14px}
+.real h3,.challenge h3{font-size:22px}
+
+/* challenge */
+.challenge{background:var(--white)}
+.ch-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 12px;font-size:14px;color:var(--muted)}
+.ch-prompt{font-size:20px;font-weight:700;line-height:1.4;text-wrap:balance}
+.clips{display:flex;flex-wrap:wrap;gap:10px}
+.clip{padding:8px 18px;background:var(--accent);border:var(--line) solid var(--ink);border-radius:var(--r-pill);box-shadow:var(--shadow);margin-bottom:var(--lift);font-size:15px;font-weight:700;cursor:pointer;transition:transform .08s ease,box-shadow .08s ease}
+.clip.is-on{background:var(--star);transform:translateY(var(--lift));box-shadow:none}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:559px){.opts{grid-template-columns:minmax(0,1fr)}}
+.fb{display:grid;gap:12px;font-size:16px}
+.score{font-size:64px;line-height:1;font-weight:700}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.foot{font-size:14px;color:var(--muted);max-width:70ch}
+@media (prefers-reduced-motion:reduce){.lv,.mbtn,.clip{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap" dir="rtl" lang="he">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-star" viewBox="0 0 64 64"><path d="M32 5l8.2 17.6 19.3 2.3-14.2 13.2 3.8 19.1L32 47.6 14.9 57.2l3.8-19.1L4.5 24.9l19.3-2.3z"/></symbol>
+  </svg>
+  <header class="mast card">
+    <div class="mast-top"><span class="pill">7 שלבים · מאפס</span><div data-palette-picker></div></div>
+    <h1><span class="marker">בית ספר לטראנס</span></h1>
+    <p class="lede">שבעה שלבים שמלמדים טראנס מאפס: מה זה BPM, איך בנוי הקצב, מה עושה הבס, ואיך מזהים סגנון לפי אוזן. בכל שלב יש מכונה קטנה שמנגנת, ואתגר שפותח את השלב הבא.</p>
+  </header>
+
+  <nav class="strip" aria-label="שלבים">
+    <ol class="levels" id="levels"></ol>
+    <div class="strip-foot">
+      <span id="progress-line"></span>
+      <button class="text-btn" type="button" id="open-all">פתח את כל השלבים</button>
+      <div class="bar" aria-hidden="true"><i id="progress-fill" style="width:0"></i></div>
+    </div>
+  </nav>
+
+  <main class="level" id="stage"></main>
+
+  <p class="foot">הסאונד כאן נוצר בדפדפן ומדגים עיקרון, לא הפקה אמיתית. בשביל הדבר האמיתי יש בכל שלב קטעים אמיתיים מ-YouTube, שנטענים רק כשלוחצים עליהם, ולידם קישור לחיפוש למקרה שסרטון ירד. ההתקדמות נשמרת רק בדפדפן הזה. לא שומעים? בדוק שהמכשיר לא במצב שקט.</p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ================= helpers =================
+  // In RTL text "125–135" displays as "135–125". Wrap number ranges in an LTR isolate (LRI…PDI).
+  const isoRanges = t => String(t).replace(/\d+\s?[–-]\s?\d+/g, m => '\u2066' + m + '\u2069');
+  function h(tag, attrs, children) {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k === 'text') n.textContent = isoRanges(attrs[k]);
+      else if (k.slice(0, 2) === 'on') n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(c => { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(isoRanges(c)) : c); });
+    return n;
+  }
+  const rnd = n => Math.floor(Math.random() * n);
+  function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = rnd(i + 1); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  const steps = list => { const a = new Array(16).fill(0); list.forEach(i => { a[i] = 1; }); return a; };
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  function starIcon(on) {
+    const svg = document.createElementNS(SVGNS, 'svg'), use = document.createElementNS(SVGNS, 'use');
+    svg.setAttribute('class', 'star' + (on ? ' on' : ''));
+    svg.setAttribute('aria-hidden', 'true');
+    use.setAttribute('href', '#i-star');
+    svg.appendChild(use);
+    return svg;
+  }
+  // k of 3 stars as icons; the label carries the meaning for screen readers.
+  const starsEl = (k, big) => h('span', { class: 'stars' + (big ? ' big' : ''), role: 'img', 'aria-label': k + ' כוכבים מתוך 3' }, [0, 1, 2].map(i => starIcon(i < k)));
+  function lockIcon() {
+    const svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('class', 'icon lock'); svg.setAttribute('viewBox', '0 0 64 64'); svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = '<rect x="14" y="28" width="36" height="28" rx="6" style="fill:var(--star)"/><path d="M22 28v-8a10 10 0 0 1 20 0v8" fill="none"/>';
+    return svg;
+  }
+
+  // ================= sound engine =================
+  const FOUR = steps([0, 4, 8, 12]), OFF = steps([2, 6, 10, 14]), CLAP = steps([4, 12]), HALF = steps([0, 8]);
+  // Am - F - C - G, one chord per bar
+  const PROG = [
+    { root: 33, pad: [57, 60, 64], arp: [69, 72, 76, 81] },
+    { root: 29, pad: [53, 57, 60], arp: [65, 69, 72, 77] },
+    { root: 36, pad: [55, 60, 64], arp: [67, 72, 76, 79] },
+    { root: 31, pad: [55, 59, 62], arp: [67, 71, 74, 79] }
+  ];
+  const ARP_SHAPE = [0, 1, 2, 3, 2, 1, 0, 1, 2, 3, 2, 1, 0, 1, 2, 1];
+  const EAST = [69, 70, 73, 70, 74, 73, 70, 69, 76, 74, 73, 70, 73, 74, 77, 76];
+  const FULL = [[69, 72, 76, 72, 81, 76, 72, 76, 69, 72, 76, 72, 84, 81, 76, 72], [69, 72, 77, 72, 81, 77, 72, 77, 69, 72, 77, 72, 84, 81, 77, 72]];
+  const MELODY = [
+    [[0, 76, 6], [8, 72, 4], [12, 74, 4]],
+    [[0, 72, 6], [8, 69, 4], [12, 72, 4]],
+    [[0, 76, 6], [8, 79, 4], [12, 76, 4]],
+    [[0, 74, 10], [12, 71, 4]]
+  ];
+  const ACID = [45, null, 45, 57, 45, null, 48, 45, 57, null, 45, 52, 45, 45, 60, null];
+  const ACID_ACC = { 3: 1, 8: 1, 14: 1 };
+
+  const A = { ctx: null, out: null, noise: null, bus: null, cur: null, token: 0 };
+
+  // iOS: let Web Audio play even when the ring/silent switch is on (Safari 17+; ignored elsewhere).
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* unsupported */ }
+
+  function ensureCtx() {
+    // iOS Safari parks the context in 'interrupted' after switching apps or locking the screen,
+    // and resume() doesn't always wake it. A closed or interrupted context is replaced with a
+    // fresh one, built here inside the user's tap, which iOS requires for audio to start.
+    if (A.ctx && (A.ctx.state === 'closed' || A.ctx.state === 'interrupted')) {
+      try { A.ctx.close(); } catch (e) { /* already closed */ }
+      A.ctx = null;
+    }
+    if (!A.ctx) {
+      const C = window.AudioContext || window.webkitAudioContext;
+      if (!C) return false;
+      A.ctx = new C();
+      const comp = A.ctx.createDynamicsCompressor();
+      comp.threshold.value = -16; comp.ratio.value = 6; comp.attack.value = 0.003; comp.release.value = 0.15;
+      A.out = A.ctx.createGain(); A.out.gain.value = 0.85;
+      A.out.connect(comp); comp.connect(A.ctx.destination);
+      const len = A.ctx.sampleRate, buf = A.ctx.createBuffer(1, len, A.ctx.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      A.noise = buf;
+    }
+    // Any other non-running state ('suspended' by autoplay rules or by the OS): resume.
+    if (A.ctx.state !== 'running') A.ctx.resume().catch(() => {});
+    return true;
+  }
+  function env(g, t, peak, attack, dur) {
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(peak, t + attack);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + Math.max(dur, attack + 0.02));
+  }
+  function osc(type, freq, t, dur, detune) {
+    const o = A.ctx.createOscillator();
+    o.type = type; o.frequency.setValueAtTime(freq, t);
+    if (detune) o.detune.value = detune;
+    o.start(t); o.stop(t + dur + 0.05);
+    return o;
+  }
+  function noiseSrc(t, dur) {
+    const s = A.ctx.createBufferSource();
+    s.buffer = A.noise; s.loop = true; s.start(t, Math.random() * 0.5); s.stop(t + dur + 0.05);
+    return s;
+  }
+  function filt(type, freq, q) {
+    const f = A.ctx.createBiquadFilter();
+    f.type = type; f.frequency.value = freq; if (q) f.Q.value = q;
+    return f;
+  }
+  const I = {
+    kick(t, hard) {
+      const o = osc('sine', hard ? 230 : 180, t, 0.3), g = A.ctx.createGain();
+      o.frequency.exponentialRampToValueAtTime(48, t + (hard ? 0.07 : 0.1));
+      env(g, t, hard ? 1 : 0.9, 0.002, hard ? 0.2 : 0.26);
+      o.connect(g); g.connect(A.bus);
+    },
+    hat(t, open, vel) {
+      const s = noiseSrc(t, 0.15), f = filt('highpass', 8000), g = A.ctx.createGain();
+      env(g, t, vel || 0.2, 0.001, open ? 0.11 : 0.04);
+      s.connect(f); f.connect(g); g.connect(A.bus);
+    },
+    clap(t, vel) {
+      const s = noiseSrc(t, 0.2), f = filt('bandpass', 1600, 1.2), g = A.ctx.createGain();
+      env(g, t, vel || 0.32, 0.001, 0.13);
+      s.connect(f); f.connect(g); g.connect(A.bus);
+    },
+    bass(t, freq, dur, cutoff, vel) {
+      const o = osc('sawtooth', freq, t, dur), f = filt('lowpass', cutoff || 520, 3), g = A.ctx.createGain();
+      f.frequency.setValueAtTime((cutoff || 520) * 1.8, t);
+      f.frequency.exponentialRampToValueAtTime(cutoff || 520, t + dur * 0.6);
+      env(g, t, vel || 0.42, 0.004, dur);
+      o.connect(f); f.connect(g); g.connect(A.bus);
+    },
+    pad(t, notes, dur, vel) {
+      const f = filt('lowpass', 1300), g = A.ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(vel || 0.05, t + Math.min(0.35, dur * 0.3));
+      g.gain.setValueAtTime(vel || 0.05, t + dur * 0.8);
+      g.gain.linearRampToValueAtTime(0.0001, t + dur + 0.08);
+      notes.forEach(m => { [-7, 7].forEach(d => osc('sawtooth', mtof(m), t, dur + 0.1, d).connect(f)); });
+      f.connect(g); g.connect(A.bus);
+    },
+    pluck(t, freq, dur, bright, vel) {
+      const o = osc('sawtooth', freq, t, dur), f = filt('lowpass', bright || 2400, 1), g = A.ctx.createGain();
+      env(g, t, vel || 0.11, 0.003, dur);
+      o.connect(f); f.connect(g); g.connect(A.bus);
+    },
+    lead(t, freq, dur) {
+      const f = filt('lowpass', 3600), g = A.ctx.createGain();
+      env(g, t, 0.075, 0.015, dur);
+      [-12, 0, 12].forEach(d => osc('sawtooth', freq, t, dur, d).connect(f));
+      f.connect(g); g.connect(A.bus);
+    },
+    acid(t, freq, dur, accent) {
+      const o = osc('sawtooth', freq, t, dur), f = filt('lowpass', 300, 16), g = A.ctx.createGain();
+      f.frequency.setValueAtTime(accent ? 3400 : 1500, t);
+      f.frequency.exponentialRampToValueAtTime(280, t + dur * 0.9);
+      env(g, t, accent ? 0.2 : 0.14, 0.003, dur);
+      o.connect(f); f.connect(g); g.connect(A.bus);
+    },
+    stab(t, notes, dur) {
+      const f = filt('lowpass', 2200), g = A.ctx.createGain();
+      env(g, t, 0.06, 0.003, dur);
+      notes.forEach(m => osc('sawtooth', mtof(m), t, dur).connect(f));
+      f.connect(g); g.connect(A.bus);
+    },
+    blip(t, freq, to, dur, type, vel) {
+      const o = osc(type || 'sine', freq, t, dur), g = A.ctx.createGain();
+      o.frequency.exponentialRampToValueAtTime(to, t + dur);
+      env(g, t, vel || 0.09, 0.002, dur);
+      o.connect(g); g.connect(A.bus);
+    },
+    riser(t, dur) {
+      const s = noiseSrc(t, dur), f = filt('bandpass', 400, 2), g = A.ctx.createGain();
+      f.frequency.setValueAtTime(400, t); f.frequency.exponentialRampToValueAtTime(7000, t + dur);
+      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.22, t + dur); g.gain.linearRampToValueAtTime(0.0001, t + dur + 0.04);
+      s.connect(f); f.connect(g); g.connect(A.bus);
+    }
+  };
+
+  function playStep(cfg, info, t, dur) {
+    const s = info.local % 16, bar = Math.floor(info.local / 16);
+    const ch = cfg.fixed ? PROG[0] : PROG[bar % 4];
+    if (cfg.kick && cfg.kick[s]) I.kick(t, cfg.hard);
+    if (cfg.hat && cfg.hat[s]) I.hat(t, s % 4 === 2, 0.2);
+    if (cfg.hat16) I.hat(t, false, s % 4 === 2 ? 0.16 : 0.07);
+    if (cfg.clap && cfg.clap[s]) I.clap(t);
+    if (cfg.bass === 'offbeat' && s % 4 === 2) I.bass(t, mtof(ch.root), dur * 1.7);
+    if (cfg.bass === 'rolling' && s % 4 !== 0) I.bass(t, mtof(33), dur * 0.82, 600, 0.4);
+    if (cfg.rumble && s % 4 !== 0) I.bass(t, mtof(33), dur * 0.9, 170, 0.5);
+    if (cfg.perc && (s === 3 || s === 11)) I.blip(t, 900, 500, 0.05, 'sine', 0.12);
+    if (cfg.pad && s === 0) I.pad(t, ch.pad, dur * 16);
+    if (cfg.drone && s === 0) I.pad(t, [45, 51], dur * 16, 0.035);
+    if (cfg.arp === 'minor') I.pluck(t, mtof(ch.arp[ARP_SHAPE[s]]), dur * 0.9);
+    if (cfg.arp === 'soft' && s % 2 === 0) I.pluck(t, mtof(ch.arp[ARP_SHAPE[s]]), dur * 1.6, 1500, 0.08);
+    if (cfg.arp === 'east') I.pluck(t, mtof(EAST[s]), dur * 0.9, 2800, 0.12);
+    if (cfg.arp === 'full') I.pluck(t, mtof(FULL[bar % 2][s]), dur * 0.9, 3400, 0.12);
+    if (cfg.lead) MELODY[bar % 4].forEach(n => { if (n[0] === s) I.lead(t, mtof(n[1]), dur * n[2] * 0.95); });
+    if (cfg.acid && ACID[s] != null) I.acid(t, mtof(ACID[s]), dur * 0.95, ACID_ACC[s]);
+    if (cfg.stab && s % 4 === 2) I.stab(t, ch.pad.concat([ch.pad[0] + 10]), dur * 1.1);
+    if (cfg.fx === 'dark' && ((info.local * 7 + bar * 3) % 11) < 2) { const f = 300 + ((info.local * 37) % 13) * 140; I.blip(t, f, f * (info.local % 2 ? 0.3 : 2.4), dur * 1.6, 'sine', 0.1); }
+    if (cfg.fx === 'glitch' && ((info.local * 5) % 7) < 3) { const f = 800 + ((info.local * 53) % 17) * 220; I.blip(t, f, f * 0.6, 0.035, 'square', 0.06); }
+    if (cfg.roll) {
+      const total = info.secBars * 16, lastBar = bar === info.secBars - 1;
+      if (lastBar || s % 2 === 0) I.clap(t, 0.12 + 0.3 * (info.local / total));
+    }
+    if (cfg.riser && info.local === 0) I.riser(t, dur * info.secBars * 16);
+  }
+
+  function resolve(r) {
+    const run = r.run;
+    if (run.song) {
+      let st = r.step + (run.from || 0);
+      for (let i = 0; i < run.song.length; i++) {
+        const sec = run.song[i], n = sec.bars * 16;
+        if (st < n) return { cfg: sec.cfg, sec: i, block: sec.block, local: st, secBars: sec.bars };
+        st -= n;
+      }
+      return null;
+    }
+    if (run.bars && r.step >= run.bars * 16) return null;
+    return { cfg: typeof run.cfg === 'function' ? run.cfg() : run.cfg, local: r.step, secBars: run.bars || 4 };
+  }
+  function tick(r) {
+    while (r.endAt == null && r.next < A.ctx.currentTime + 0.14) {
+      const info = resolve(r);
+      if (!info) { r.endAt = r.next; clearInterval(r.timer); break; }
+      const dur = 60 / info.cfg.bpm / 4;
+      playStep(info.cfg, info, r.next, dur);
+      r.queue.push({ t: r.next, info: info });
+      r.next += dur; r.step++;
+    }
+  }
+  function frame() {
+    const r = A.cur;
+    if (!r) return;
+    const now = A.ctx.currentTime;
+    while (r.queue.length && r.queue[0].t <= now) { const q = r.queue.shift(); if (r.run.onStep) r.run.onStep(q.info); }
+    if (r.endAt != null && now >= r.endAt) { stop(); return; }
+    requestAnimationFrame(frame);
+  }
+  function stop() {
+    const r = A.cur;
+    if (!r) return;
+    A.cur = null;
+    clearInterval(r.timer);
+    const bus = A.bus, now = A.ctx.currentTime;
+    try { bus.gain.cancelScheduledValues(now); bus.gain.setValueAtTime(bus.gain.value, now); bus.gain.linearRampToValueAtTime(0, now + 0.04); } catch (e) { /* ignore */ }
+    setTimeout(() => { try { bus.disconnect(); } catch (e) { /* ignore */ } }, 400);
+    if (r.run.onStop) r.run.onStop();
+  }
+  function start(run) {
+    stop();
+    if (!ensureCtx()) return false;
+    A.bus = A.ctx.createGain(); A.bus.connect(A.out);
+    const r = { run: run, step: 0, next: A.ctx.currentTime + 0.09, queue: [], endAt: null };
+    A.cur = r;
+    r.timer = setInterval(() => tick(r), 25);
+    tick(r);
+    requestAnimationFrame(frame);
+    return true;
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+  document.addEventListener('s2video:play', () => stop()); // one sound at a time: a real track silences the synth
+
+  // A play / stop button bound to one run.
+  function transport(cls, label, makeRun) {
+    const b = h('button', { class: cls, type: 'button' });
+    const idle = () => { b.classList.remove('is-on'); b.textContent = ''; if (typeof label === 'string') b.textContent = label; else b.appendChild(label()); };
+    idle();
+    b.addEventListener('click', () => {
+      if (b.classList.contains('is-on')) { stop(); return; }
+      const run = makeRun();
+      const userStop = run.onStop;
+      run.onStop = () => { idle(); if (userStop) userStop(); };
+      if (start(run)) { b.classList.add('is-on'); b.textContent = 'עצור'; }
+      else b.textContent = 'הדפדפן לא תומך בסאונד';
+    });
+    return b;
+  }
+  function grid(rows, edit) {
+    const el = h('div', { class: 'grid' }), cells = []; // RTL: step 1 sits next to the labels, on the right
+    rows.forEach(r => {
+      el.appendChild(h('span', { class: 'g-label', text: r.label }));
+      for (let s = 0; s < 16; s++) {
+        const c = h(edit ? 'button' : 'span', { class: 'cell' + (s % 4 === 0 ? ' beat' : '') + (r.cls ? ' ' + r.cls : '') });
+        if (edit) {
+          c.type = 'button';
+          c.setAttribute('aria-label', r.label + ', צעד ' + (s + 1));
+          c.addEventListener('click', () => { r.arr[s] = r.arr[s] ? 0 : 1; paint(); });
+        }
+        cells.push(c); el.appendChild(c);
+      }
+    });
+    function paint() {
+      rows.forEach((r, ri) => { for (let s = 0; s < 16; s++) { const c = cells[ri * 16 + s]; c.classList.toggle('on', !!r.arr[s]); if (edit) c.setAttribute('aria-pressed', r.arr[s] ? 'true' : 'false'); } });
+    }
+    function setStep(s) { cells.forEach((c, i) => c.classList.toggle('now', i % 16 === s)); }
+    paint();
+    return { el: el, paint: paint, setStep: setStep };
+  }
+  const countRow = () => h('div', { class: 'count', 'aria-hidden': 'true' }, [h('span'), h('span', { text: '1' }), h('span', { text: '2' }), h('span', { text: '3' }), h('span', { text: '4' })]);
+  const toyTitle = (name, note) => h('div', { class: 'toy-title' }, [h('strong', { text: name }), h('span', { text: note || '' })]);
+
+  // ================= sound sketches =================
+  const SK = {
+    house: { bpm: 124, kick: FOUR, hat: OFF, clap: CLAP, bass: 'offbeat', stab: true },
+    techno: { bpm: 132, kick: FOUR, hard: true, hat16: true, rumble: true, perc: true },
+    trance: { bpm: 138, kick: FOUR, hat: OFF, bass: 'offbeat', arp: 'minor', pad: true },
+    prog: { bpm: 130, kick: FOUR, hat: OFF, bass: 'offbeat', pad: true, arp: 'soft' },
+    upl: { bpm: 138, kick: FOUR, hat: OFF, clap: CLAP, bass: 'offbeat', pad: true, lead: true },
+    goa: { bpm: 145, kick: FOUR, hat: OFF, bass: 'rolling', arp: 'east', fixed: true },
+    fullon: { bpm: 145, kick: FOUR, hat: OFF, bass: 'rolling', arp: 'full', fixed: true },
+    dark: { bpm: 154, kick: FOUR, hat16: true, bass: 'rolling', fx: 'dark', drone: true, fixed: true },
+    hitech: { bpm: 180, kick: FOUR, bass: 'rolling', fx: 'glitch', fixed: true }
+  };
+  const STYLES = [
+    { id: 'prog', group: 0, name: 'פרוגרסיב טראנס', bpm: '125–135', line: 'בס אוף-ביט. זורם ומתפתח לאט, בלי המנון גדול.' },
+    { id: 'upl', group: 0, name: 'אפליפטינג', bpm: '136–142', line: 'בס אוף-ביט. ליד רגשי ורחב, שבירה ארוכה ושיא אופורי.' },
+    { id: 'goa', group: 1, name: 'גואה טראנס', bpm: '135–150', line: 'בס רץ. מלודיות מזרחיות מתפתלות וקווי אסיד.' },
+    { id: 'fullon', group: 1, name: 'פול-און', bpm: '142–148', line: 'בס מתגלגל עם מלודיות גדולות. צליל של בוקר.' },
+    { id: 'dark', group: 2, name: 'דארק', bpm: '148 ומעלה', line: 'בס מתגלגל. מהיר וצפוף, בלי מלודיה, עם רעשים ואפקטים.' },
+    { id: 'hitech', group: 2, name: 'הייטק', bpm: '170 ומעלה', line: 'בס מתגלגל. מהיר מאוד, קופצני ומלא גליצ\'ים.' }
+  ];
+  const SONG = [
+    { block: 0, bars: 2, cfg: { bpm: 138, kick: FOUR, hat: OFF } },
+    { block: 1, bars: 2, cfg: { bpm: 138, kick: FOUR, hat: OFF, bass: 'offbeat' } },
+    { block: 1, bars: 2, cfg: { bpm: 138, kick: FOUR, hat: OFF, bass: 'offbeat', arp: 'minor' } },
+    { block: 2, bars: 4, cfg: { bpm: 138, pad: true, lead: true } },
+    { block: 3, bars: 2, cfg: { bpm: 138, pad: true, lead: true, roll: true, riser: true } },
+    { block: 4, bars: 4, cfg: { bpm: 138, kick: FOUR, hat: OFF, clap: CLAP, bass: 'offbeat', arp: 'minor', pad: true, lead: true } },
+    { block: 5, bars: 2, cfg: { bpm: 138, kick: FOUR, hat: OFF } }
+  ];
+  const BLOCKS = [
+    { name: 'פתיחה', bars: 2, says: 'פתיחה: רק קיק והיי-האט. דלילה בכוונה, כדי שדי-ג\'יי יוכל לחבר אותה לקטע הקודם.' },
+    { name: 'בנייה', bars: 4, says: 'בנייה: הבס נכנס, ואחריו הארפג\'. כל כמה תיבות מתווספת שכבה.' },
+    { name: 'שבירה', bars: 4, says: 'שבירה: הקיק והבס נעלמו. נשארו רק הפאד והמלודיה.' },
+    { name: 'בילד-אפ', bars: 2, says: 'בילד-אפ: תופי סנר מצטופפים ורעש עולה. משהו עומד לקרות.' },
+    { name: 'שיא', bars: 4, says: 'שיא: הכול חוזר יחד. קיק, בס, ארפג\' והמלודיה המלאה.' },
+    { name: 'יציאה', bars: 2, says: 'יציאה: השכבות יורדות, ונשאר קצב לדי-ג\'יי הבא.' }
+  ];
+
+  // ================= toys =================
+  function zone(b) {
+    if (b < 120) return 'איטי מדי לרוב הטראנס. כאן חיים הצ\'יל-אאוט והפסיביינט.';
+    if (b < 130) return 'האזור של ההאוס, והקצה האיטי של הפרוגרסיב טראנס.';
+    if (b < 140) return 'טראנס מועדוני: פרוגרסיב ואפליפטינג.';
+    if (b < 150) return 'פסייטראנס, פול-און והארד טראנס.';
+    if (b < 170) return 'דארק ופורסט. הצד הלילי של הפסיי.';
+    return 'הייטק. הקצה המהיר של הפסיי.';
+  }
+  const TOYS = {
+    1(box) {
+      let bpm = 138;
+      const num = h('span', { class: 'bpm', text: String(bpm) }), pulse = h('span', { class: 'pulse', 'aria-hidden': 'true' });
+      const says = h('p', { class: 'says', text: zone(bpm), 'aria-live': 'polite' });
+      const slider = h('input', { class: 'slider s2', type: 'range', id: 'toy-bpm', min: '100', max: '190', step: '1', value: String(bpm), 'aria-label': 'טמפו ב-BPM' });
+      slider.addEventListener('input', () => { bpm = +slider.value; num.textContent = String(bpm); says.textContent = zone(bpm); });
+      box.appendChild(toyTitle('מד הדופק', 'קיק על כל פעימה'));
+      box.appendChild(h('div', { class: 'readout' }, [num, h('span', { class: 'bpm-unit', text: 'BPM' }), pulse]));
+      box.appendChild(slider);
+      box.appendChild(h('div', { class: 'scale', 'aria-hidden': 'true' }, ['100', '120', '140', '160', '180'].map(t => h('span', { text: t }))));
+      box.appendChild(says);
+      box.appendChild(h('div', { class: 'row' }, [transport('mbtn play', 'נגן', () => ({
+        cfg: () => ({ bpm: bpm, kick: FOUR }),
+        onStep: info => { if (info.local % 4 === 0) { pulse.classList.add('hit'); setTimeout(() => pulse.classList.remove('hit'), 90); } },
+        onStop: () => pulse.classList.remove('hit')
+      }))]));
+    },
+    2(box) {
+      const seq = { kick: FOUR.slice(), hat: OFF.slice(), clap: CLAP.slice() };
+      const g = grid([{ label: 'קיק', arr: seq.kick }, { label: 'היי-האט', arr: seq.hat, cls: 'b' }, { label: 'קלאפ', arr: seq.clap }], true);
+      const set = (k, h2, c) => { [[seq.kick, k], [seq.hat, h2], [seq.clap, c]].forEach(p => { for (let i = 0; i < 16; i++) p[0][i] = p[1][i]; }); g.paint(); };
+      box.appendChild(toyTitle('לוח הקצב', 'תיבה אחת, 16 צעדים, 138 BPM'));
+      box.appendChild(countRow());
+      box.appendChild(g.el);
+      box.appendChild(h('div', { class: 'row' }, [
+        transport('mbtn play', 'נגן', () => ({ cfg: () => ({ bpm: 138, kick: seq.kick, hat: seq.hat, clap: seq.clap }), onStep: info => g.setStep(info.local % 16), onStop: () => g.setStep(-1) })),
+        h('button', { class: 'mbtn', type: 'button', text: 'תבנית טראנס', onclick: () => set(FOUR, OFF, CLAP) }),
+        h('button', { class: 'mbtn', type: 'button', text: 'נקה הכול', onclick: () => set(steps([]), steps([]), steps([])) })
+      ]));
+      box.appendChild(h('p', { class: 'hint', text: 'לחץ על משבצת כדי להדליק או לכבות מכה. המשבצות הבהירות הן ארבע הפעימות.' }));
+    },
+    3(box) {
+      let mode = 'offbeat';
+      const kick = FOUR.slice(), bass = OFF.slice();
+      const g = grid([{ label: 'קיק', arr: kick }, { label: 'בס', arr: bass, cls: 'b' }], false);
+      const says = h('p', { class: 'says', 'aria-live': 'polite' });
+      const modes = [['off', 'בלי בס', 138], ['offbeat', 'אוף-ביט', 138], ['rolling', 'מתגלגל', 145]];
+      const text = { off: 'רק קיק. שים לב כמה ריק זה נשמע בלי בס.', offbeat: 'קיק, בס, קיק, בס. זה הבס של הטראנס המועדוני, ב-138 BPM.', rolling: 'קיק, בס-בס-בס. זה הבס המתגלגל של הפסיי, ב-145 BPM.' };
+      const btns = modes.map(m => h('button', { class: 'mbtn', type: 'button', 'aria-pressed': 'false', text: m[1], onclick: () => pick(m[0]) }));
+      function pick(m) {
+        mode = m;
+        for (let i = 0; i < 16; i++) bass[i] = m === 'offbeat' ? OFF[i] : m === 'rolling' ? (i % 4 !== 0 ? 1 : 0) : 0;
+        g.paint();
+        btns.forEach((b, i) => b.setAttribute('aria-pressed', modes[i][0] === m ? 'true' : 'false'));
+        says.textContent = text[m];
+      }
+      pick('offbeat');
+      box.appendChild(toyTitle('מכונת הבס', 'אותו קיק, שלושה מצבים'));
+      box.appendChild(h('div', { class: 'row' }, btns));
+      box.appendChild(countRow());
+      box.appendChild(g.el);
+      box.appendChild(says);
+      box.appendChild(h('div', { class: 'row' }, [transport('mbtn play', 'נגן', () => ({
+        cfg: () => ({ bpm: mode === 'rolling' ? 145 : 138, kick: FOUR, bass: mode, fixed: true }),
+        onStep: info => g.setStep(info.local % 16), onStop: () => g.setStep(-1)
+      }))]));
+    },
+    4(box) {
+      const on = { beat: true, pad: false, arp: true, lead: false, acid: false };
+      const layers = [['beat', 'קצב ובס'], ['pad', 'פאד'], ['arp', 'ארפג\''], ['lead', 'ליד'], ['acid', 'אסיד']];
+      const btns = layers.map(l => {
+        const b = h('button', { class: 'mbtn', type: 'button', 'aria-pressed': String(on[l[0]]), text: l[1] });
+        b.addEventListener('click', () => { on[l[0]] = !on[l[0]]; b.setAttribute('aria-pressed', String(on[l[0]])); });
+        return b;
+      });
+      box.appendChild(toyTitle('מיקסר השכבות', '138 BPM, סולם לה מינור'));
+      box.appendChild(h('div', { class: 'row' }, btns));
+      box.appendChild(h('div', { class: 'row' }, [transport('mbtn play', 'נגן', () => ({
+        cfg: () => ({ bpm: 138, kick: on.beat ? FOUR : null, hat: on.beat ? OFF : null, bass: on.beat ? 'offbeat' : 'off', pad: on.pad, arp: on.arp ? 'minor' : null, lead: on.lead, acid: on.acid })
+      }))]));
+      box.appendChild(h('p', { class: 'hint', text: 'אפשר להדליק ולכבות שכבות תוך כדי נגינה. נסה לכבות את הקצב ולהשאיר רק פאד וליד: זו בדיוק שבירה.' }));
+    },
+    5(box) {
+      const says = h('p', { class: 'says', text: 'לחץ על נגן כדי לשמוע קטע שלם בחצי דקה, או על חלק כדי לקפוץ אליו.', 'aria-live': 'polite' });
+      const blks = [];
+      let playBtn;
+      function runFrom(block) {
+        let from = 0;
+        for (let i = 0; i < SONG.length && SONG[i].block < block; i++) from += SONG[i].bars * 16;
+        return {
+          song: SONG, from: from,
+          onStep: info => { blks.forEach((b, i) => b.classList.toggle('now', i === info.block)); says.textContent = BLOCKS[info.block].says; },
+          onStop: () => blks.forEach(b => b.classList.remove('now'))
+        };
+      }
+      BLOCKS.forEach((b, i) => {
+        const el = h('button', { class: 'blk', type: 'button', style: '--w:' + b.bars, text: b.name });
+        el.addEventListener('click', () => {
+          const run = runFrom(i), userStop = run.onStop;
+          run.onStop = () => { userStop(); playBtn.classList.remove('is-on'); playBtn.textContent = 'נגן מההתחלה'; };
+          if (start(run)) { playBtn.classList.add('is-on'); playBtn.textContent = 'עצור'; }
+        });
+        blks.push(el);
+      });
+      playBtn = transport('mbtn play', 'נגן מההתחלה', () => runFrom(0));
+      box.appendChild(toyTitle('קטע בחצי דקה', '18 תיבות, 138 BPM'));
+      box.appendChild(h('div', { class: 'timeline' }, blks));
+      box.appendChild(says);
+      box.appendChild(h('div', { class: 'row' }, [playBtn]));
+    },
+    6(box) {
+      const says = h('p', { class: 'says', text: 'שלושה ז\'אנרים, אותו קיק על כל פעימה. מה משתנה?', 'aria-live': 'polite' });
+      const items = [
+        ['house', 'האוס', '124 BPM', 'האוס: אקורדים קופצניים באוף-ביט, קלאפ, תחושה קלילה.'],
+        ['techno', 'טכנו', '132 BPM', 'טכנו: קיק קשה, היי-האטים צפופים, כמעט בלי מלודיה.'],
+        ['trance', 'טראנס', '138 BPM', 'טראנס: ארפג\' מנצנץ ופאד מתחתיו. המלודיה במרכז.']
+      ];
+      box.appendChild(toyTitle('שלושה שכנים', 'האזן אחד אחרי השני'));
+      box.appendChild(h('div', { class: 'cards' }, items.map(it => transport('mbtn', () => h('span', null, [it[1], h('small', { text: it[2] })]),
+        () => ({ cfg: SK[it[0]], onStep: () => { says.textContent = it[3]; } })))));
+      box.appendChild(says);
+    },
+    7(box) {
+      const says = h('p', { class: 'says', text: 'בחר סגנון. הקשב לשלושה דברים: כמה מהר, איזה בס, וכמה מלודיה.', 'aria-live': 'polite' });
+      box.appendChild(toyTitle('שישה סגנונות', 'סקיצות מסונתזות'));
+      box.appendChild(h('div', { class: 'cards' }, STYLES.map(st => transport('mbtn', () => h('span', null, [st.name, h('small', { text: st.bpm + ' BPM' })]),
+        () => ({ cfg: SK[st.id], onStep: () => { says.textContent = st.name + ': ' + st.line; } })))));
+      box.appendChild(says);
+    }
+  };
+
+  // ================= challenges =================
+  const AB = ['קליפ א\'', 'קליפ ב\'', 'קליפ ג\''];
+  // Builds a listening question: clips are shuffled, the answer is the clip whose key matches.
+  function listen(prompt, clips, key, explain) {
+    const order = shuffle(clips);
+    return { prompt: prompt, clips: order.map((c, i) => ({ label: AB[i], cfg: c.cfg, bars: c.bars || 2 })),
+      options: order.map((c, i) => ({ label: AB[i], correct: c.key === key })), explain: explain, keep: true };
+  }
+  const mcq = (prompt, right, wrong, explain) => ({ prompt: prompt, options: [{ label: right, correct: true }].concat(wrong.map(w => ({ label: w }))), explain: explain });
+
+  const CHALLENGES = {
+    1() {
+      const pair = shuffle([[122, 146], [128, 150], [132, 172]])[0];
+      return [
+        listen('איזה קליפ מהיר יותר?', [{ key: 'slow', cfg: { bpm: pair[0], kick: FOUR } }, { key: 'fast', cfg: { bpm: pair[1], kick: FOUR } }], 'fast',
+          'הקליפ המהיר מנגן ב-' + pair[1] + ' BPM, והאיטי ב-' + pair[0] + '. ככל שה-BPM גבוה יותר, יש יותר פעימות בכל דקה.'),
+        mcq('מה מודד BPM?', 'כמה פעימות יש בדקה', ['כמה חזק הבס', 'כמה תיבות יש בקטע', 'כמה זמן נמשך הקטע'], 'BPM הוא קיצור של Beats Per Minute, פעימות בדקה. זה המדד של הטמפו.'),
+        mcq('באיזה טווח נמצא רוב הטראנס?', '125 עד 150 BPM', ['60 עד 90 BPM', '90 עד 110 BPM', '180 עד 220 BPM'], 'רוב הטראנס חי בין 125 ל-150. מתחת לזה נמצא ההאוס, ומעל זה הדארק וההייטק.')
+      ];
+    },
+    2() {
+      return [
+        mcq('כמה פעימות יש בתיבה אחת?', 'ארבע', ['שתיים', 'שמונה', 'שש-עשרה'], 'תיבה היא ארבע פעימות. בלוח הקצב כל פעימה מחולקת לארבעה צעדים, ולכן יש 16 צעדים בתיבה.'),
+        listen('באיזה קליפ הקיק נופל על כל פעימה?', [{ key: 'four', cfg: { bpm: 138, kick: FOUR, hat: OFF } }, { key: 'half', cfg: { bpm: 138, kick: HALF, hat: OFF } }], 'four',
+          'בקליפ הנכון יש קיק על כל אחת מארבע הפעימות, ארבע על הרצפה. בקליפ השני הקיק מנגן רק בפעימה הראשונה והשלישית, ולכן הוא מרגיש חצי מהיר.'),
+        mcq('איפה יושב ההיי-האט בתבנית הקלאסית?', 'בדיוק בין קיק לקיק', ['יחד עם כל קיק', 'רק בסוף התיבה', 'רק בפעימה הראשונה'], 'ההיי-האט יושב באוף-ביט, באמצע הדרך בין שתי פעימות. זה מה שיוצר את התחושה של בום-צ-בום-צ.')
+      ];
+    },
+    3() {
+      return [
+        listen('באיזה קליפ שומעים בס מתגלגל?', [{ key: 'off', cfg: { bpm: 142, kick: FOUR, bass: 'offbeat', fixed: true } }, { key: 'roll', cfg: { bpm: 142, kick: FOUR, bass: 'rolling', fixed: true } }], 'roll',
+          'שני הקליפים באותו טמפו. בבס המתגלגל שומעים שלושה תווים אחרי כל קיק, ובאוף-ביט רק אחד.'),
+        mcq('כמה תווי בס מנגנים אחרי כל קיק בבס מתגלגל?', 'שלושה', ['אחד', 'שניים', 'שמונה'], 'קיק, בס-בס-בס. כל פעימה מחולקת לארבעה: הקיק לוקח את הראשון, והבס את שלושת האחרים.'),
+        mcq('למה הבס לא מנגן באותו רגע עם הקיק?', 'כדי ששני הצלילים הנמוכים לא יתנגשו', ['כי זה היה מאט את הקטע', 'כי אין מספיק מקום בתיבה', 'כדי שההיי-האט יישמע חזק יותר'], 'קיק ובס הם שניהם צלילים נמוכים. כשהם מנגנים יחד הם מטשטשים זה את זה, ולכן כל אחד מקבל רגע משלו.')
+      ];
+    },
+    4() {
+      return [
+        listen('איזה קליפ הוא ארפג\'?', [{ key: 'pad', cfg: { bpm: 138, pad: true } }, { key: 'arp', cfg: { bpm: 138, arp: 'minor' } }, { key: 'acid', cfg: { bpm: 138, acid: true } }], 'arp',
+          'ארפג\' הוא רצף מהיר של תווים שעולים ויורדים. הפאד הוא האקורד הארוך, והאסיד הוא הקו הנמוך והמתפתל.'),
+        mcq('מה זה פאד?', 'אקורד ארוך ורך שממלא את הרקע', ['תוף הבס', 'המלודיה הראשית', 'מצילה קצרה בין הקיקים'], 'הפאד הוא השטיח של הקטע: אקורד שנמשך תיבה שלמה ונותן לכל השאר על מה לשבת.'),
+        listen('באיזה קליפ יש קו אסיד?', [{ key: 'arp', cfg: { bpm: 138, kick: FOUR, bass: 'offbeat', arp: 'minor' } }, { key: 'acid', cfg: { bpm: 138, kick: FOUR, hat: OFF, acid: true } }], 'acid',
+          'האסיד הוא הצליל החומצי והמתפתל של ה-303. בקליפ השני שמעת ארפג\' מעל בס אוף-ביט.')
+      ];
+    },
+    5() {
+      return [
+        listen('איזה קליפ הוא שבירה?', [{ key: 'break', cfg: SONG[3].cfg }, { key: 'peak', cfg: SONG[5].cfg }], 'break',
+          'בשבירה אין קיק ואין בס, רק פאד ומלודיה. בקליפ השני שמעת את השיא, שבו הכול מנגן יחד.'),
+        mcq('מה מודיע שהשיא עומד להגיע?', 'תופי סנר שהולכים ומצטופפים', ['הבס נעשה שקט יותר', 'הטמפו יורד', 'המלודיה נעלמת'], 'זה הבילד-אפ. הסנר מתחיל לאט, מצטופף, ויחד עם רעש עולה הוא בונה ציפייה עד שהקיק חוזר.'),
+        mcq('למה הפתיחה של קטע דלילה?', 'כדי שדי-ג\'יי יוכל לחבר אותה לקטע הקודם', ['כי בתחילת קטע עדיין אין אקורדים', 'כדי שהקטע יהיה קצר יותר', 'כדי שהקיק יישמע חלש יותר'], 'פתיחה שיש בה רק קצב קל למקסס מעל הסוף של הקטע הקודם. מאותה סיבה גם היציאה דלילה.')
+      ];
+    },
+    6() {
+      return [
+        mcq('מאיפה בא השם טראנס?', 'מהמצב ההיפנוטי שהמוזיקה מנסה ליצור', ['מהמילה Transport', 'משם של מועדון בפרנקפורט', 'מקיצור של Transistor'], 'טראנס הוא מצב היפנוטי. המוזיקה מנסה ליצור אותו בעזרת חזרה ארוכה שמשתנה רק מעט בכל פעם.'),
+        listen('איזה קליפ הוא טראנס?', [{ key: 'house', cfg: SK.house }, { key: 'techno', cfg: SK.techno }, { key: 'trance', cfg: SK.trance }], 'trance',
+          'בטראנס שמעת ארפג\' ופאד מעל בס אוף-ביט. בהאוס היו אקורדים קופצניים וקלאפ, ובטכנו קיק קשה בלי מלודיה.'),
+        mcq('מה מבדיל טראנס מטכנו?', 'מלודיה ובנייה ארוכה של מתח ושחרור', ['קיק על כל פעימה', 'שימוש בסינתיסייזרים', 'טמפו מעל 100 BPM'], 'קיק על כל פעימה וסינתיסייזרים יש לשניהם. הטראנס שם במרכז את המלודיה ואת המסע: בנייה, שבירה ושיא.')
+      ];
+    },
+    7() {
+      return shuffle(STYLES).slice(0, 3).map(st => {
+        const others = [0, 1, 2].filter(g => g !== st.group).map(g => shuffle(STYLES.filter(x => x.group === g))[0]);
+        return { prompt: 'איזה סגנון שומעים בקליפ?', clips: [{ label: 'נגן את הקליפ', cfg: SK[st.id], bars: 4 }],
+          options: [{ label: st.name, correct: true }].concat(others.map(o => ({ label: o.name }))),
+          explain: st.name + ', ' + st.bpm + ' BPM. ' + st.line };
+      });
+    }
+  };
+
+  // ================= lessons =================
+  const TREE_URL = 'trance-family-tree.html';
+  const LEVELS = [
+    { name: 'הדופק', tag: 'מה זה BPM, ולמה הוא הדבר הראשון שצריך לדעת.',
+      text: [
+        'כל מוזיקת ריקודים בנויה על דופק קבוע. את המהירות שלו מודדים ב-BPM, כלומר כמה פעימות יש בדקה אחת. ב-60 BPM יש פעימה בכל שנייה, וב-120 BPM יש שתיים.',
+        'הטמפו הוא הדבר הראשון שמבדיל בין סגנונות. רוב הטראנס חי בין 125 ל-150 BPM. מתחת לזה נמצא ההאוס, ומעל זה הצד המהיר והלילי של הפסיי.',
+        'הזז את הסליידר והקשב איך אותו קיק בדיוק מרגיש אחרת בכל מהירות.'
+      ],
+      terms: [['BPM', 'Beats Per Minute, פעימות בדקה.'], ['טמפו (Tempo)', 'המהירות של הקטע.'], ['קיק (Kick)', 'תוף הבס. המכה הנמוכה שמרגישים בחזה.']],
+      real: [['Paul van Dyk', 'For an Angel', 'טראנס מועדוני קלאסי'], ['Infected Mushroom', 'Bust a Move', 'פסיי מהיר יותר. נסה להרגיש את ההבדל בטמפו']] },
+    { name: 'ארבע על הרצפה', tag: 'פעימה, תיבה, ומה מנגן איפה.',
+      text: [
+        'פעימה היא מכה אחת של הדופק. ארבע פעימות יוצרות תיבה, וכמעט כל מוזיקת הריקודים נספרת כך: אחת, שתיים, שלוש, ארבע.',
+        'בטראנס הקיק נופל על כל אחת מארבע הפעימות. לזה קוראים ארבע על הרצפה. בין קיק לקיק נכנס ההיי-האט, שיושב בדיוק באמצע, במקום שנקרא אוף-ביט. הקלאפ מדגיש את הפעימה השנייה והרביעית.',
+        'הלוח למטה הוא תיבה אחת שמחולקת ל-16 צעדים. הזז את הקיק מהמקום ושמע איך הכול מתפרק.',
+        'שינויים בקטע כמעט תמיד קורים כל 4, 8, 16 או 32 תיבות. בגלל זה הגוף יודע מתי משהו עומד לקרות, גם בלי לספור.'
+      ],
+      terms: [['פעימה (Beat)', 'מכה אחת של הדופק.'], ['תיבה (Bar)', 'ארבע פעימות ברצף.'], ['ארבע על הרצפה (Four-on-the-floor)', 'קיק על כל פעימה.'], ['אוף-ביט (Offbeat)', 'הנקודה שבאמצע, בין פעימה לפעימה.'], ['היי-האט (Hi-hat)', 'מצילה קצרה וגבוהה.'], ['קלאפ (Clap)', 'מחיאת כף על הפעימה השנייה והרביעית.']],
+      real: [['Age of Love', 'The Age of Love', 'נסה לספור תיבות ולשים לב מתי נכנסת שכבה חדשה']] },
+    { name: 'הבס', tag: 'ההבדל בין מסיבת מועדון למסיבת טבע.',
+      text: [
+        'הקיק נותן את המכה, והבס ממלא את הרווח שאחריה. הם אף פעם לא מנגנים באותו רגע, כי שני צלילים נמוכים יחד מטשטשים זה את זה.',
+        'יש שתי דרכים עיקריות למלא את הרווח, והן מפרידות בין שני הענפים של הטראנס. בטראנס המועדוני הבס מנגן פעם אחת בין קיק לקיק: קיק, בס, קיק, בס. בפסייטראנס הבס מנגן שלוש פעמים אחרי כל קיק: קיק, בס-בס-בס. זה הבס המתגלגל, והוא מה שיוצר את תחושת הדהירה.',
+        'החלף בין המצבים והקשב. זה כנראה ההבדל הכי קל לזיהוי בין שני העולמות.'
+      ],
+      terms: [['בס (Bassline)', 'הקו הנמוך שמנגן בין הקיקים.'], ['בס אוף-ביט', 'תו אחד בין קיק לקיק. הצליל של הטראנס המועדוני.'], ['בס מתגלגל (Rolling bass)', 'שלושה תווים אחרי כל קיק. הצליל של הפסיי.'], ['שש-עשריות (16th notes)', 'חלוקה של כל פעימה לארבעה חלקים שווים.']],
+      real: [['System F', 'Out of the Blue', 'בס אוף-ביט'], ['Infected Mushroom', 'Bust a Move', 'בס מתגלגל']] },
+    { name: 'המלודיה', tag: 'השכבות שנותנות לקטע את האופי שלו.',
+      text: [
+        'מעל הקצב והבס יושבות ארבע שכבות שתפגוש כמעט בכל קטע.',
+        'רוב הטראנס כתוב בסולם מינורי, ולכן הוא נשמע רגשי ומעט מלנכולי גם כשהוא מהיר. בגואה טראנס משתמשים הרבה בסולמות מזרחיים.',
+        'הדלק כל שכבה לבד, ואז צרף אותן אחת לאחת.'
+      ],
+      terms: [['פאד (Pad)', 'אקורד ארוך ורך שממלא את הרקע, כמו שטיח.'], ['ארפג\' (Arpeggio)', 'תווים של אקורד שמנוגנים אחד אחרי השני במהירות, במקום יחד. הצליל המנצנץ שמזוהה עם טראנס.'], ['ליד (Lead)', 'המלודיה הראשית, זו שנשארת בראש אחרי המסיבה.'], ['אסיד (Acid)', 'קו מתפתל וחומצי, שמקורו במכונת הבס Roland TB-303.'], ['סולם מינורי (Minor)', 'סולם שנשמע עצוב או רגשי, לעומת מז\'ורי שנשמע שמח.']],
+      real: [['Robert Miles', 'Children', 'ליד של פסנתר מעל פאד'], ['Hardfloor', 'Acperience 1', 'קווי אסיד של 303']] },
+    { name: 'מבנה של קטע', tag: 'סיפור של מתח ושחרור.',
+      text: [
+        'קטע טראנס בנוי מחלקים קבועים, וכל אחד מהם עושה משהו אחר לרחבה.',
+        'בקטע אמיתי המבנה הזה נמשך כמה דקות. כאן הוא דחוס לחצי דקה. לחץ על חלק כדי לקפוץ אליו.'
+      ],
+      terms: [['פתיחה (Intro)', 'רק קצב. דלילה בכוונה, כדי שדי-ג\'יי יוכל לחבר אותה לקטע הקודם.'], ['בנייה', 'הבס נכנס, ואחריו שכבה אחרי שכבה.'], ['שבירה (Breakdown)', 'הקיק והבס נעלמים, והמלודיה נשארת לבד. הרגע שבו הרחבה מרימה ידיים.'], ['בילד-אפ (Build-up)', 'תופי סנר שמצטופפים (Snare roll) ורעש עולה מודיעים שמשהו מגיע.'], ['שיא (Drop / Climax)', 'הקיק והבס חוזרים יחד עם המלודיה המלאה.'], ['יציאה (Outro)', 'השכבות יורדות, ונשאר קצב לדי-ג\'יי הבא.']],
+      real: [['System F', 'Out of the Blue', 'חכה לשבירה ולשיא שאחריה']] },
+    { name: 'למה זה טראנס', tag: 'מה מבדיל אותו מהאוס ומטכנו.',
+      text: [
+        'השם בא ממצב הטראנס: מצב היפנוטי שנוצר כשמשהו חוזר על עצמו שוב ושוב ומשתנה רק מעט בכל פעם. זה לב הז\'אנר. מוטיב קצר חוזר לאורך כל הקטע, ושכבות נכנסות ויוצאות סביבו.',
+        'שלושת השכנים הקרובים חולקים את אותו קיק על כל פעימה, אבל כל אחד שם את הדגש במקום אחר.'
+      ],
+      terms: [['האוס (House)', 'איטי יותר, בדרך כלל סביב 120 עד 130 BPM. גרוב, אקורדים קופצניים ושירה.'], ['טכנו (Techno)', 'קצב וטקסטורה. קיק קשה, מעט מאוד מלודיה, תחושה של מכונה.'], ['טראנס (Trance)', 'מלודיה ורגש. בנייה ארוכה של מתח, שבירה ושיא.']],
+      real: [['Marshall Jefferson', 'Move Your Body', 'האוס'], ['3 Phase feat. Dr. Motte', 'Der Klang der Familie', 'טכנו'], ['Age of Love', 'The Age of Love', 'טראנס']] },
+    { name: 'סגנונות לפי אוזן', tag: 'כמה מהר, איזה בס, וכמה מלודיה.',
+      text: [
+        'עכשיו יש לך את כל החלקים. כדי לזהות סגנון מספיק לשאול שלוש שאלות: כמה מהר זה, איזה בס מנגן, וכמה מלודיה יש.',
+        'האזן לכל סגנון, ואז גש לאתגר האחרון: לזהות סגנון משמיעה בלבד.'
+      ],
+      terms: STYLES.map(s => [s.name + ' · ' + s.bpm, s.line]),
+      real: [['BT', 'Flaming June', 'פרוגרסיב טראנס'], ['System F', 'Out of the Blue', 'אפליפטינג'], ['Hallucinogen', 'LSD', 'גואה טראנס'], ['Infected Mushroom', 'Bust a Move', 'פול-און'], ['Xenomorph', 'Cassandra\'s Nightmare', 'דארק'], ['Kindzadza', '', 'הייטק']] }
+  ];
+
+  // ================= state =================
+  const KEY = 'trance-school-v1';
+  let state = { unlocked: 1, stars: {}, openAll: false, current: 1 };
+  function load() { try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && typeof s === 'object') state = Object.assign(state, s); } catch (e) { /* storage unavailable */ } }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage unavailable */ } }
+  const isOpen = n => state.openAll || n <= state.unlocked;
+
+  const levelsEl = document.getElementById('levels');
+  const stage = document.getElementById('stage');
+  const openAllBtn = document.getElementById('open-all');
+
+  function paintStrip() {
+    levelsEl.textContent = '';
+    LEVELS.forEach((lv, i) => {
+      const n = i + 1, got = state.stars[n];
+      const b = h('button', { 'aria-label': 'שלב ' + n + ': ' + lv.name + (got != null ? ', ' + got + ' כוכבים מתוך 3' : (isOpen(n) ? '' : ', נעול')), class: 'lv' + (n === state.current ? ' cur' : '') + (got >= 2 ? ' done' : ''), type: 'button', id: 'lv-' + n, onclick: () => go(n, true) }, [
+        h('span', { class: 'pill', text: String(n) }),
+        h('span', { class: 'nm', text: lv.name }),
+        h('span', { class: 'st' }, [got != null ? starsEl(got) : (isOpen(n) ? 'פתוח' : lockIcon()), (got == null && !isOpen(n)) ? 'נעול' : null])
+      ]);
+      if (!isOpen(n)) b.disabled = true;
+      if (n === state.current) b.setAttribute('aria-current', 'step');
+      levelsEl.appendChild(h('li', null, [b]));
+    });
+    const done = LEVELS.filter((_, i) => state.stars[i + 1] >= 2).length;
+    document.getElementById('progress-line').textContent = 'עברת ' + done + ' מתוך ' + LEVELS.length + ' שלבים';
+    document.getElementById('progress-fill').style.width = (done / LEVELS.length * 100) + '%';
+    openAllBtn.hidden = state.openAll || state.unlocked >= LEVELS.length;
+  }
+  openAllBtn.addEventListener('click', () => { state.openAll = true; save(); paintStrip(); });
+
+  function go(n, byUser) {
+    if (!isOpen(n)) return;
+    stop();
+    state.current = n; save();
+    paintStrip();
+    renderLevel(n);
+    if (byUser) stage.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
+  function renderLevel(n) {
+    const lv = LEVELS[n - 1];
+    stage.textContent = '';
+    stage.appendChild(h('section', { class: 'lvl-head card' }, [
+      h('p', { class: 'pill', text: 'שלב ' + n + ' מתוך ' + LEVELS.length }),
+      h('h2', null, [h('span', { class: 'marker', text: lv.name })]),
+      h('p', { class: 'lvl-tag', text: lv.tag })
+    ]));
+    const lesson = h('div', { class: 'lesson' });
+    lv.text.slice(0, 1).forEach(t => lesson.appendChild(h('p', { text: t })));
+    lesson.appendChild(h('dl', { class: 'terms' }, lv.terms.map(t => h('div', null, [h('dt', { text: t[0] }), h('dd', { text: t[1] })]))));
+    lv.text.slice(1).forEach(t => lesson.appendChild(h('p', { text: t })));
+    stage.lastChild.appendChild(lesson);
+
+    const toy = h('section', { class: 'toy', 'aria-label': 'מכונת הסאונד של השלב' });
+    TOYS[n](toy);
+    stage.appendChild(toy);
+
+    stage.appendChild(h('section', { class: 'real card' }, [
+      h('h3', { text: 'הדבר האמיתי' }),
+      h('div', { class: 'videos' }, lv.real.map(r => window.S2Video.player({ artist: r[0], title: r[1], note: r[2] })))
+    ]));
+
+    const ch = h('section', { class: 'challenge card', id: 'challenge', 'aria-live': 'polite' });
+    stage.appendChild(ch);
+    challengeIntro(n, ch);
+  }
+
+  function challengeIntro(n, box) {
+    const got = state.stars[n];
+    box.textContent = '';
+    box.appendChild(h('h3', { text: 'אתגר השלב' }));
+    box.appendChild(h('p', { text: got != null
+      ? 'התוצאה הכי טובה שלך כאן: ' + got + ' מתוך 3. אפשר לנסות שוב בכל רגע.'
+      : (n < LEVELS.length ? 'שלוש שאלות. שתי תשובות נכונות פותחות את השלב הבא.' : 'שלוש שאלות האזנה. שתי תשובות נכונות ואתה בוגר.') }));
+    const acts = h('div', { class: 'acts' }, [h('button', { class: 'btn', type: 'button', id: 'ch-start', text: got != null ? 'נסה שוב' : 'התחל אתגר', onclick: () => runChallenge(n, box) })]);
+    if (got >= 2 && n < LEVELS.length) acts.appendChild(h('button', { class: 'btn ghost', type: 'button', text: 'לשלב הבא', onclick: () => go(n + 1, true) }));
+    box.appendChild(acts);
+  }
+
+  function runChallenge(n, box) {
+    stop();
+    const qs = CHALLENGES[n]();
+    let i = 0, score = 0;
+    function ask() {
+      stop();
+      const q = qs[i];
+      const options = q.keep ? q.options : shuffle(q.options);
+      box.textContent = '';
+      box.appendChild(h('div', { class: 'ch-top' }, [h('span', { class: 'pill', text: 'שאלה ' + (i + 1) + ' מתוך ' + qs.length }), h('span', { text: 'נכונות עד עכשיו: ' + score })]));
+      box.appendChild(h('p', { class: 'ch-prompt', text: q.prompt }));
+      if (q.clips) box.appendChild(h('div', { class: 'clips' }, q.clips.map(c => transport('clip', c.label, () => ({ cfg: c.cfg, bars: c.bars })))));
+      const opts = h('div', { class: 'opts' }), fb = h('div', { class: 'fb' });
+      fb.hidden = true;
+      options.forEach(o => {
+        const b = h('button', { class: 'opt answer', type: 'button', text: o.label });
+        b.addEventListener('click', () => {
+          stop();
+          Array.prototype.forEach.call(opts.children, (x, k) => {
+            x.disabled = true;
+            if (options[k].correct) { x.classList.add('right'); x.insertBefore(h('span', { class: 'v', text: '✓' }), x.firstChild); }
+          });
+          if (o.correct) score++;
+          else { b.classList.add('wrong'); b.insertBefore(h('span', { class: 'v', text: '✗' }), b.firstChild); }
+          fb.appendChild(h('p', null, [h('strong', { class: o.correct ? 'ok' : 'no', text: o.correct ? 'נכון. ' : 'לא הפעם. ' }), q.explain]));
+          const last = i === qs.length - 1;
+          const next = h('button', { class: 'btn', type: 'button', text: last ? 'לתוצאה' : 'לשאלה הבאה', onclick: () => { i++; if (last) finish(); else ask(); } });
+          fb.appendChild(next);
+          fb.hidden = false;
+          next.focus();
+        });
+        opts.appendChild(b);
+      });
+      box.appendChild(opts);
+      box.appendChild(fb);
+    }
+    function finish() {
+      stop();
+      const passed = score >= 2, lastLevel = n === LEVELS.length;
+      if (state.stars[n] == null || score > state.stars[n]) state.stars[n] = score;
+      if (passed && !lastLevel) state.unlocked = Math.max(state.unlocked, n + 1);
+      save(); paintStrip();
+      box.textContent = '';
+      box.appendChild(h('h3', { text: 'אתגר השלב' }));
+      box.appendChild(h('p', { class: 'score', text: score + ' / ' + qs.length }));
+      box.appendChild(starsEl(score, true));
+      const acts = h('div', { class: 'acts' });
+      if (passed && lastLevel) {
+        box.appendChild(h('p', { text: 'סיימת את כל שבעת השלבים. עכשיו יש לך את המילים לתאר את מה שאתה שומע, ואפשר לעבור למפה המלאה: 38 ז\'אנרים ומי הגיע ממי.' }));
+        acts.appendChild(h('a', { class: 'btn', href: TREE_URL, text: 'לאילן היוחסין של הטראנס' }));
+        acts.appendChild(h('button', { class: 'btn ghost', type: 'button', text: 'עוד סיבוב', onclick: () => runChallenge(n, box) }));
+      } else if (passed) {
+        box.appendChild(h('p', { text: 'עברת. שלב ' + (n + 1) + ', ' + LEVELS[n].name + ', נפתח.' }));
+        acts.appendChild(h('button', { class: 'btn go', type: 'button', text: 'לשלב הבא', onclick: () => go(n + 1, true) }));
+        acts.appendChild(h('button', { class: 'btn ghost', type: 'button', text: 'עוד סיבוב', onclick: () => runChallenge(n, box) }));
+      } else {
+        box.appendChild(h('p', { text: 'צריך שתי תשובות נכונות כדי לעבור. שחק עוד קצת עם המכונה למעלה ונסה שוב.' }));
+        acts.appendChild(h('button', { class: 'btn', type: 'button', text: 'נסה שוב', onclick: () => runChallenge(n, box) }));
+      }
+      box.appendChild(acts);
+    }
+    ask();
+    box.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
+  // ================= boot =================
+  function boot(saved) {
+    load();
+    if (saved && saved.state) state = Object.assign(state, saved.state);
+    if (!isOpen(state.current)) state.current = 1;
+    paintStrip();
+    renderLevel(state.current);
+  }
+  const hot = window.claude && window.claude.hot;
+  try { if (hot && hot.snapshot) hot.snapshot(() => ({ state: state })); } catch (e) { /* not in a viewer */ }
+  if (hot && hot.ready) hot.ready(boot); else boot((hot && hot.data) || {});
+})();
+</script>
+
+</body>
+</html>

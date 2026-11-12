@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "title_he": "אילן היוחסין של הטראנס",
+    "title_en": "Trance family tree",
+    "language": "he",
+    "updated": "2026-11-12",
+    "schema": "Each genre: id, name_he, name_en, era (1-5), year (approximate year the style took shape), family (roots | club | psy | out), origin_he, parents (ids of direct sources), story_he, sound_he, bpm (string or null), artists, track ({artist, title, year} or null), disputed_he (string or null).",
+    "note_he": "השנים מקורבות. מקורות של ז'אנרים הם לעיתים קרובות עניין של ויכוח, ומה שמסומן כשנוי במחלוקת מוצג כך בכוונה."
+  },
+  "families": [
+    { "id": "roots", "name_he": "שורשים ושכנים", "name_en": "Roots and neighbours" },
+    { "id": "club", "name_he": "הקו המועדוני", "name_en": "Club line" },
+    { "id": "psy", "name_he": "הקו הפסיכדלי", "name_en": "Psychedelic line" },
+    { "id": "out", "name_he": "יצא מהמשפחה", "name_en": "Left the family" }
+  ],
+  "eras": [
+    {
+      "id": 1, "name_he": "השורשים", "name_en": "Roots", "from": 1970, "to": 1987, "years_he": "1970 עד 1987",
+      "intro_he": "לפני שהיה טראנס היו סינתיסייזרים, דיסקו וחוף אחד בהודו. בגרמניה גילו שרצף צלילים שחוזר על עצמו יכול להפנט, בשיקגו ובדטרויט נולדו ההאוס והטכנו, ובגואה היפים רקדו כל הלילה מתחת לירח מלא. כל מה שיבוא אחר כך נבנה מהחלקים האלה."
+    },
+    {
+      "id": 2, "name_he": "הלידה", "name_en": "Birth of trance", "from": 1988, "to": 1993, "years_he": "1988 עד 1993",
+      "intro_he": "האסיד האוס חוצה את האוקיינוס והופך את אירופה לרחבת ריקודים אחת. בפרנקפורט מוסיפים לטכנו מלודיה היפנוטית ונותנים לזה שם: טראנס. באותן שנים, בגואה, הקסטות של הדי-ג'ייז מתגבשות לצליל משלהן."
+    },
+    {
+      "id": 3, "name_he": "הפיצול הגדול", "name_en": "The big split", "from": 1994, "to": 1999, "years_he": "1994 עד 1999",
+      "intro_he": "הטראנס מתפצל לשני עולמות. במועדונים של אירופה הוא נהיה מלודי, רגשי וגדול, עד שהוא כובש את המצעדים. במסיבות הטבע הגואה טראנס מתקשח והופך לפסייטראנס, וישראל נעשית אחת הבירות שלו."
+    },
+    {
+      "id": 4, "name_he": "שנות האלפיים", "name_en": "The 2000s", "from": 2000, "to": 2009, "years_he": "2000 עד 2009",
+      "intro_he": "הענף המועדוני בשיא המסחרי שלו, עם זמרות, אצטדיונים ודי-ג'ייז כוכבים. הענף הפסיכדלי מתפצל לפי שעות היממה: פול-און מלודי לאור יום, דארק ופורסט ללילה, ופרוגרסיב איטי ועמוק ביניהם."
+    },
+    {
+      "id": 5, "name_he": "העידן המודרני", "name_en": "Modern era", "from": 2010, "to": null, "years_he": "מ-2010 ועד היום",
+      "intro_he": "עידן ה-EDM שואב את הטראנס לבמות הענק, והפסיי מגיע לשם בעקבותיו. בקצה השני הטמפו ממשיך לטפס עם ההייטק. ובשנות ה-2020 דור חדש של די-ג'ייז טכנו מחזיר את המלודיות של הניינטיז."
+    }
+  ],
+  "genres": [
+    {
+      "id": "kosmische", "name_he": "קוסמישה מוזיק", "name_en": "Kosmische Musik / Krautrock",
+      "era": 1, "year": 1970, "family": "roots", "origin_he": "מערב גרמניה", "parents": [],
+      "story_he": "מוזיקאים גרמנים צעירים רצו ליצור משהו שאינו רוק אמריקאי, ופנו לסינתיסייזרים ולסיקוונסרים (Sequencers). מהם הטראנס ירש את הארפג'ים החוזרים ואת הרעיון שקטע הוא מסע ארוך.",
+      "sound_he": "רצפי סינתיסייזר ארוכים והיפנוטיים שמתפתחים לאט, כמעט בלי תופים.",
+      "bpm": null, "artists": ["Tangerine Dream", "Klaus Schulze", "Manuel Göttsching"],
+      "track": { "artist": "Tangerine Dream", "title": "Phaedra", "year": 1974 }, "disputed_he": null
+    },
+    {
+      "id": "synthpop", "name_he": "סינת'-פופ ואלקטרו", "name_en": "Synth-pop / Electro",
+      "era": 1, "year": 1974, "family": "roots", "origin_he": "דיסלדורף, גרמניה", "parents": ["kosmische"],
+      "story_he": "Kraftwerk לקחו את הניסויים של הקוסמישה והפכו אותם לשירים קצרים עם קצב מכונה מדויק. הצליל שלהם הגיע לדטרויט, לבלגיה ואפילו לקסטות הראשונות שנוגנו בגואה.",
+      "sound_he": "מקצבים מכניים, מלודיות סינתיסייזר פשוטות וקליטות, קולות רובוטיים.",
+      "bpm": null, "artists": ["Kraftwerk", "Jean-Michel Jarre", "Yellow Magic Orchestra"],
+      "track": { "artist": "Kraftwerk", "title": "Trans-Europe Express", "year": 1977 }, "disputed_he": null
+    },
+    {
+      "id": "eurodisco", "name_he": "יורו-דיסקו", "name_en": "Euro disco",
+      "era": 1, "year": 1975, "family": "roots", "origin_he": "מינכן, גרמניה", "parents": [],
+      "story_he": "במינכן המפיק Giorgio Moroder החליף את תזמורת הדיסקו בסינתיסייזר. I Feel Love מ-1977 היה להיט שנבנה כולו ממכונות, וממנו נמשך קו ישר להאוס ולכל מוזיקת המועדונים.",
+      "sound_he": "בעיטת בס על כל רבע (Four-on-the-floor), קו בס סינתטי רץ, שירה מרחפת.",
+      "bpm": "120–130", "artists": ["Giorgio Moroder", "Donna Summer", "Cerrone"],
+      "track": { "artist": "Donna Summer", "title": "I Feel Love", "year": 1977 }, "disputed_he": null
+    },
+    {
+      "id": "ambient", "name_he": "אמביינט", "name_en": "Ambient",
+      "era": 1, "year": 1978, "family": "roots", "origin_he": "אנגליה", "parents": ["kosmische"],
+      "story_he": "Brian Eno נתן שם למוזיקה שאפשר להקשיב לה וגם להתעלם ממנה. בלי האמביינט לא היו חדרי הצ'יל-אאוט (Chill-out) של הרייבים, וגם לא הפסיביינט שיגיע אחר כך.",
+      "sound_he": "משטחי צליל איטיים בלי קצב, אווירה במקום מלודיה.",
+      "bpm": null, "artists": ["Brian Eno", "Harold Budd"],
+      "track": { "artist": "Brian Eno", "title": "Music for Airports 1/1", "year": 1978 }, "disputed_he": null
+    },
+    {
+      "id": "goa-parties", "name_he": "מסיבות החוף של גואה", "name_en": "Goa party scene",
+      "era": 1, "year": 1970, "family": "roots", "origin_he": "גואה, הודו", "parents": [],
+      "story_he": "היפים שהגיעו לגואה בסוף שנות ה-60 התחילו לחגוג על החוף בלילות ירח מלא, בהתחלה עם רוק פסיכדלי. ב-1983 הדי-ג'ייז Laurent ו-Fred Disko, ואחריהם Goa Gil, עברו למוזיקה אלקטרונית שניגנו מקסטות, כי תקליטים לא שרדו את החום והאבק.",
+      "sound_he": "סטים של לילה שלם בטבע: רוק פסיכדלי בשנות ה-70, ואחר כך EBM, ניו ביט ואסיד האוס בעריכות מיוחדות.",
+      "bpm": null, "artists": ["Goa Gil", "Laurent", "Fred Disko"],
+      "track": null,
+      "disputed_he": "התיעוד מהשנים הראשונות דל, והסיפור נשען בעיקר על עדויות של מי שהיו שם."
+    },
+    {
+      "id": "ebm", "name_he": "EBM ואינדסטריאל", "name_en": "Electronic Body Music",
+      "era": 1, "year": 1981, "family": "roots", "origin_he": "בלגיה ומערב גרמניה", "parents": ["synthpop"],
+      "story_he": "להקות כמו DAF ו-Front 242 חיברו את האגרסיביות של הפאנק לסיקוונסרים. התקליטים שלהן נוגנו גם במועדוני פרנקפורט וגם על החוף בגואה, ולכן ה-EBM הוא אב משותף לשני ענפי הטראנס.",
+      "sound_he": "קו בס סינתטי קשוח וחוזר, תופים צבאיים, צעקות במקום שירה.",
+      "bpm": null, "artists": ["Front 242", "DAF", "Nitzer Ebb"],
+      "track": { "artist": "Front 242", "title": "Headhunter", "year": 1988 }, "disputed_he": null
+    },
+    {
+      "id": "chicago-house", "name_he": "האוס שיקגו", "name_en": "Chicago house",
+      "era": 1, "year": 1984, "family": "roots", "origin_he": "שיקגו, ארה״ב", "parents": ["eurodisco"],
+      "story_he": "כשהדיסקו ירד מהרדיו, די-ג'ייז בשיקגו המשיכו לנגן אותו במועדונים והוסיפו מעליו מכונות תופים. כך נולד ההאוס, התבנית של כל מוזיקת הריקודים האלקטרונית.",
+      "sound_he": "בעיטה על כל רבע, היי-האט באוף-ביט, פסנתר וקולות סול.",
+      "bpm": "118–125", "artists": ["Frankie Knuckles", "Marshall Jefferson", "Larry Heard"],
+      "track": { "artist": "Marshall Jefferson", "title": "Move Your Body", "year": 1986 }, "disputed_he": null
+    },
+    {
+      "id": "detroit-techno", "name_he": "טכנו דטרויט", "name_en": "Detroit techno",
+      "era": 1, "year": 1985, "family": "roots", "origin_he": "דטרויט, ארה״ב", "parents": ["synthpop", "chicago-house"],
+      "story_he": "שלושה חברים מפרבר של דטרויט, Juan Atkins, Derrick May ו-Kevin Saunderson, שילבו את Kraftwerk עם פאנק (Funk) והאוס ויצרו מוזיקה שנשמעת כמו העתיד. כשהיא הגיעה לגרמניה היא הפכה לבסיס שעליו נבנה הטראנס.",
+      "sound_he": "מכני, קר ועתידני, עם מיתרים סינתטיים ומעט מאוד שירה.",
+      "bpm": "120–135", "artists": ["Juan Atkins", "Derrick May", "Kevin Saunderson"],
+      "track": { "artist": "Rhythim Is Rhythim", "title": "Strings of Life", "year": 1987 }, "disputed_he": null
+    },
+    {
+      "id": "acid-house", "name_he": "אסיד האוס", "name_en": "Acid house",
+      "era": 1, "year": 1987, "family": "roots", "origin_he": "שיקגו, ארה״ב", "parents": ["chicago-house"],
+      "story_he": "חברי Phuture שיחקו עם הכפתורים של Roland TB-303, מכונת בס שנכשלה מסחרית, וגילו צליל מתפתל וחומצי. הצליל הזה עובר דרך כמעט כל ענף בעץ, מפרנקפורט ועד גואה.",
+      "sound_he": "קו בס של 303, מייבב ומתפתל, מעל קצב האוס פשוט.",
+      "bpm": "120–130", "artists": ["Phuture", "DJ Pierre"],
+      "track": { "artist": "Phuture", "title": "Acid Tracks", "year": 1987 }, "disputed_he": null
+    },
+    {
+      "id": "new-beat", "name_he": "ניו ביט", "name_en": "New beat",
+      "era": 1, "year": 1987, "family": "roots", "origin_he": "בלגיה", "parents": ["ebm", "eurodisco", "acid-house"],
+      "story_he": "די-ג'יי בלגי ניגן את התקליט Flesh של A Split-Second במהירות 33 במקום 45, והרחבה השתגעה. מהטעות הזאת צמח ז'אנר שלם, איטי וכבד, שהשפיע על הטכנו האירופי ועל הטראנס הראשון.",
+      "sound_he": "EBM מואט: קצב זוחל וכבד, בסים עמוקים, אווירה אפלה.",
+      "bpm": "90–115", "artists": ["A Split-Second", "Confetti's", "Lords of Acid"],
+      "track": { "artist": "A Split-Second", "title": "Flesh", "year": 1986 },
+      "disputed_he": "יש כמה גרסאות לשאלה מי האט ראשון את התקליט. השם שחוזר הכי הרבה הוא Dikke Ronny, ואחרים מזכירים את Marc Grouls."
+    },
+
+    {
+      "id": "uk-rave", "name_he": "רייב בריטי ובלארי", "name_en": "UK acid house / Balearic",
+      "era": 2, "year": 1988, "family": "roots", "origin_he": "איביזה ובריטניה", "parents": ["acid-house", "chicago-house"],
+      "story_he": "די-ג'ייז בריטים חזרו מחופשה באיביזה עם רעיון למסיבה אחרת, והביאו את האסיד האוס ללונדון ולמנצ'סטר. קיץ 1988 נקרא קיץ האהבה השני, וממנו נולדה תרבות הרייב. באותה שנה The KLF הוציאו קטע עם הכיתוב Pure Trance.",
+      "sound_he": "אסיד האוס מעורבב בכל מה שעובד על רחבה, במסיבות מחסנים ובשדות פתוחים.",
+      "bpm": "120–130", "artists": ["Paul Oakenfold", "Danny Rampling", "The KLF"],
+      "track": { "artist": "The KLF", "title": "What Time Is Love? (Pure Trance)", "year": 1988 }, "disputed_he": null
+    },
+    {
+      "id": "ambient-house", "name_he": "אמביינט האוס", "name_en": "Ambient house / Chill-out",
+      "era": 2, "year": 1989, "family": "roots", "origin_he": "לונדון, אנגליה", "parents": ["ambient", "acid-house"],
+      "story_he": "ברייבים נפתחו חדרי מנוחה, והדי-ג'ייז שם חיברו אמביינט עם קצב האוס רך וסמפלים. מכאן הגיע הרעיון שלכל מסיבה יש גם צד שקט, מה שיהפוך אחר כך לרחבת הצ'יל במסיבות הטבע.",
+      "sound_he": "משטחי אמביינט, סמפלים של קולות וטבע, לפעמים קצב עדין.",
+      "bpm": null, "artists": ["The Orb", "The KLF", "Mixmaster Morris"],
+      "track": { "artist": "The Orb", "title": "Little Fluffy Clouds", "year": 1990 }, "disputed_he": null
+    },
+    {
+      "id": "german-techno", "name_he": "טכנו גרמני", "name_en": "German techno",
+      "era": 2, "year": 1989, "family": "roots", "origin_he": "ברלין ופרנקפורט, גרמניה", "parents": ["detroit-techno", "ebm", "new-beat"],
+      "story_he": "הטכנו מדטרויט פגש בגרמניה את ה-EBM ואת הניו ביט, ואחרי נפילת חומת ברלין קיבל מבנים ריקים לחגוג בהם. מהסצנה הזאת, ובעיקר מפרנקפורט, יצא הטראנס.",
+      "sound_he": "קשה ומהיר יותר מהמקור האמריקאי, רפטטיבי ותעשייתי.",
+      "bpm": "130–145", "artists": ["Westbam", "Talla 2XLC", "Dr. Motte"],
+      "track": { "artist": "3 Phase feat. Dr. Motte", "title": "Der Klang der Familie", "year": 1992 }, "disputed_he": null
+    },
+    {
+      "id": "early-trance", "name_he": "טראנס מוקדם", "name_en": "Early trance / Frankfurt trance",
+      "era": 2, "year": 1990, "family": "club", "origin_he": "פרנקפורט, גרמניה",
+      "parents": ["german-techno", "ebm", "new-beat", "acid-house", "kosmische", "goa-parties"],
+      "story_he": "במועדונים Dorian Gray ו-Omen בפרנקפורט, Sven Väth וחבריו חיפשו צליל היפנוטי יותר מטכנו. Väth, שהושפע מהמסיבות בגואה, הקים את הלייבלים Eye Q ב-1991 ו-Harthouse ב-1992. DJ Dag מהצמד Dance 2 Trance טוען שהוא הראשון שקרא למוזיקה הזאת טראנס.",
+      "sound_he": "מלודיה קצרה שחוזרת שוב ושוב מעל קצב טכנו, עם בנייה איטית של מתח.",
+      "bpm": "125–140", "artists": ["Sven Väth", "Dance 2 Trance", "Jam & Spoon", "Cosmic Baby"],
+      "track": { "artist": "Age of Love", "title": "The Age of Love", "year": 1990 },
+      "disputed_he": "אין הסכמה מהו תקליט הטראנס הראשון. המועמדים: What Time Is Love? (Pure Trance) של The KLF מ-1988, The Age of Love מ-1990 ו-We Came in Peace של Dance 2 Trance מ-1990."
+    },
+    {
+      "id": "acid-trance", "name_he": "אסיד טראנס", "name_en": "Acid trance",
+      "era": 2, "year": 1992, "family": "club", "origin_he": "גרמניה ובריטניה", "parents": ["early-trance", "acid-house"],
+      "story_he": "הצליל של ה-303 חזר, הפעם בתוך המבנה הארוך וההיפנוטי של הטראנס. Acperience של Hardfloor יצא ב-Harthouse והפך להמנון, ובאנגליה הלייבל Platipus המשיך את הקו.",
+      "sound_he": "כמה קווי 303 שמתפתלים זה סביב זה ונבנים לאט לשיא.",
+      "bpm": "130–145", "artists": ["Hardfloor", "Union Jack", "Art of Trance"],
+      "track": { "artist": "Hardfloor", "title": "Acperience 1", "year": 1992 }, "disputed_he": null
+    },
+    {
+      "id": "hard-trance", "name_he": "הארד טראנס", "name_en": "Hard trance",
+      "era": 2, "year": 1993, "family": "club", "origin_he": "גרמניה ובלגיה", "parents": ["early-trance", "german-techno"],
+      "story_he": "גרסה מהירה וקשוחה של הטראנס, שהלייבל הבלגי Bonzai הפך לסמל שלה. כאן נקבעה התבנית של שבירה (Breakdown), בנייה (Build-up) והמנון, שכמעט כל טראנס מועדוני ישתמש בה אחר כך.",
+      "sound_he": "בעיטה חזקה, טמפו גבוה, פאדים קצוצים ומלודיות המנוניות.",
+      "bpm": "140–155", "artists": ["Jones & Stephenson", "Cherry Moon Trax", "Scot Project"],
+      "track": { "artist": "Jones & Stephenson", "title": "The First Rebirth", "year": 1993 }, "disputed_he": null
+    },
+    {
+      "id": "goa-trance", "name_he": "גואה טראנס", "name_en": "Goa trance",
+      "era": 2, "year": 1992, "family": "psy", "origin_he": "גואה, הודו",
+      "parents": ["goa-parties", "acid-house", "ebm", "new-beat", "early-trance"],
+      "story_he": "מפיקים שחזרו מגואה התחילו ליצור מוזיקה במיוחד בשביל המסיבות שם. סביב 1992 כבר היה לסצנה דופק משלה, והשם גואה טראנס התקבע ב-1994. הלייבל הלונדוני Dragonfly נחשב לראשון שהוקדש לצליל הזה, ותרמילאים אירופים וישראלים הפיצו אותו בעולם.",
+      "sound_he": "שכבות של מלודיות מתפתלות בסולמות מזרחיים, קווי אסיד, קטעים ארוכים של שמונה דקות ויותר.",
+      "bpm": "135–150", "artists": ["Hallucinogen", "Juno Reactor", "Astral Projection", "Man With No Name"],
+      "track": { "artist": "Hallucinogen", "title": "LSD", "year": 1994 }, "disputed_he": null
+    },
+
+    {
+      "id": "progressive-trance", "name_he": "פרוגרסיב טראנס", "name_en": "Progressive trance",
+      "era": 3, "year": 1994, "family": "club", "origin_he": "בריטניה", "parents": ["early-trance", "uk-rave"],
+      "story_he": "הבריטים לקחו את הטראנס הגרמני וקירבו אותו להאוס: איטי יותר, עם התפתחות הדרגתית ושבירות ארוכות. לייבלים כמו Platipus ו-Hooj Choons הובילו, ועד סוף העשור זה היה הצליל של הרחבות הגדולות.",
+      "sound_he": "שכבות שנכנסות ויוצאות לאט, אקורדים רחבים, פחות המנון ויותר זרימה.",
+      "bpm": "125–135", "artists": ["Sasha", "John Digweed", "BT"],
+      "track": { "artist": "BT", "title": "Flaming June", "year": 1997 }, "disputed_he": null
+    },
+    {
+      "id": "dream-trance", "name_he": "דרים טראנס", "name_en": "Dream trance",
+      "era": 3, "year": 1995, "family": "club", "origin_he": "איטליה", "parents": ["progressive-trance", "early-trance"],
+      "story_he": "באיטליה של תחילת שנות ה-90 צעירים נהרגו בתאונות דרכים בדרך חזרה ממועדונים. Robert Miles כתב את Children כקטע רגוע לסוף הלילה, והפסנתר שלו הפך ללהיט עולמי שהכניס את הטראנס למצעדים.",
+      "sound_he": "מלודיית פסנתר חולמנית מעל קצב יציב ורך.",
+      "bpm": "130–138", "artists": ["Robert Miles", "DJ Dado", "Zhi-Vago"],
+      "track": { "artist": "Robert Miles", "title": "Children", "year": 1995 }, "disputed_he": null
+    },
+    {
+      "id": "balearic-trance", "name_he": "בלארי טראנס", "name_en": "Balearic / Ibiza trance",
+      "era": 3, "year": 1996, "family": "club", "origin_he": "איביזה, ספרד", "parents": ["uk-rave", "progressive-trance", "ambient-house"],
+      "story_he": "הטראנס פוגש את השקיעה של איביזה. הקטע Café del Mar של Energy 52 נקרא על שם הבר המפורסם באי, ו-Chicane הפך את הצליל הזה לסימן ההיכר שלו.",
+      "sound_he": "גיטרות ומיתרים חמים, מלודיות רכות, תחושה של קיץ וים.",
+      "bpm": "125–135", "artists": ["Chicane", "Energy 52", "Solarstone"],
+      "track": { "artist": "Chicane", "title": "Offshore", "year": 1996 }, "disputed_he": null
+    },
+    {
+      "id": "uplifting", "name_he": "אפליפטינג טראנס", "name_en": "Uplifting / Epic trance",
+      "era": 3, "year": 1997, "family": "club", "origin_he": "הולנד וגרמניה", "parents": ["hard-trance", "progressive-trance", "dream-trance"],
+      "story_he": "בסוף שנות ה-90 הטראנס המועדוני מצא את הנוסחה שלו: שבירה ארוכה, בנייה עם תופי סנר ושיא אופורי. דור של די-ג'ייז הולנדים, עם Ferry Corsten, Tiësto ו-Armin van Buuren, הפך אותו למוזיקה של אצטדיונים.",
+      "sound_he": "לידים רחבים ורגשיים (Supersaw), שבירות ארוכות, שיא שמרים את הידיים.",
+      "bpm": "136–142", "artists": ["Ferry Corsten", "Paul van Dyk", "Tiësto", "Armin van Buuren"],
+      "track": { "artist": "System F", "title": "Out of the Blue", "year": 1999 }, "disputed_he": null
+    },
+    {
+      "id": "eurotrance", "name_he": "יורוטראנס", "name_en": "Eurotrance",
+      "era": 3, "year": 1998, "family": "club", "origin_he": "גרמניה", "parents": ["uplifting", "dream-trance"],
+      "story_he": "הגרסה הרדיופונית: מלודיה אחת קליטה, קטע של שלוש דקות, לפעמים זמרת. 9 PM (Till I Come) של ATB פתח את הדלת ללהיטים כמו Better Off Alone ו-Sandstorm.",
+      "sound_he": "הוקים פשוטים וקליטים, מבנה של שיר פופ, הפקה מבריקה.",
+      "bpm": "130–142", "artists": ["ATB", "Alice Deejay", "Darude"],
+      "track": { "artist": "ATB", "title": "9 PM (Till I Come)", "year": 1998 }, "disputed_he": null
+    },
+    {
+      "id": "psytrance", "name_he": "פסייטראנס", "name_en": "Psychedelic trance",
+      "era": 3, "year": 1997, "family": "psy", "origin_he": "אירופה וישראל", "parents": ["goa-trance", "german-techno"],
+      "story_he": "בסוף שנות ה-90 הגואה טראנס הגיע לרוויה. מפיקים עברו לעבוד במחשב, הורידו מלודיות והתמקדו בגרוב, בבס ובעיצוב סאונד. האלבום Radio של X-Dream מ-1998 נחשב לאחד מסימני הדרך של המעבר.",
+      "sound_he": "קו בס מתגלגל בשש-עשריות, בעיטה הדוקה, אפקטים וצלילים מעוותים במקום מלודיות ארוכות.",
+      "bpm": "140–150", "artists": ["X-Dream", "Hallucinogen", "GMS", "Infected Mushroom"],
+      "track": { "artist": "X-Dream", "title": "Radio", "year": 1998 },
+      "disputed_he": "הגבול בין גואה טראנס לפסייטראנס לא חד. יש מי שמשתמשים בשני השמות לאותו דבר, ויש מי שמתארכים את הפסייטראנס כבר לתחילת שנות ה-90."
+    },
+    {
+      "id": "nitzhonot", "name_he": "ניצחונות", "name_en": "Nitzhonot",
+      "era": 3, "year": 1997, "family": "psy", "origin_he": "ישראל", "parents": ["goa-trance", "uplifting"],
+      "story_he": "גרסה ישראלית, מהירה ומלודית של גואה טראנס, שפרצה מהמסיבות אל המיינסטרים. האלבום Good Morning Israel של אייל ברקן מ-1998 היה אלבום הטראנס הראשון שהגיע בארץ למעמד זהב. אחרי שרוב האמנים בישראל עברו לפול-און, הסגנון המשיך ביוון.",
+      "sound_he": "בעיטות חדות שמכונות לייזר-קיקס (Laserkicks), מלודיות מזרחיות המנוניות.",
+      "bpm": "145–155", "artists": ["Eyal Barkan", "Cyan", "Cherouvim"],
+      "track": { "artist": "Eyal Barkan", "title": "Good Morning Israel", "year": 1998 }, "disputed_he": null
+    },
+    {
+      "id": "psybient", "name_he": "פסיביינט", "name_en": "Psybient / Psychill",
+      "era": 3, "year": 1998, "family": "psy", "origin_he": "אנגליה", "parents": ["goa-trance", "ambient-house"],
+      "story_he": "באלבומי גואה היה נהוג לסיים בקטע איטי לצ'יל-אאוט. Simon Posford (Hallucinogen) ו-Raja Ram הפכו את הקטע הזה לעולם שלם עם Shpongle, והאלבום Are You Shpongled? מ-1998 נחשב לזה שהגדיר את הז'אנר.",
+      "sound_he": "קצב איטי, צלילים פסיכדליים, כלים וקולות מכל העולם, השפעות דאב.",
+      "bpm": "מתחת ל-120", "artists": ["Shpongle", "The Infinity Project", "Ott"],
+      "track": { "artist": "Shpongle", "title": "Divine Moments of Truth", "year": 1998 }, "disputed_he": null
+    },
+    {
+      "id": "suomisaundi", "name_he": "סואומיסאונדי", "name_en": "Suomisaundi",
+      "era": 3, "year": 1996, "family": "psy", "origin_he": "פינלנד", "parents": ["goa-trance"],
+      "story_he": "השם פירושו פשוט הסאונד הפיני. מפיקים בהלסינקי לקחו את הגואה טראנס ושברו את כל החוקים שלו, עם הומור, שינויי קצב פתאומיים ומבנים לא צפויים. האלבום הראשון של Texas Faggott מ-1999 היה ההצלחה המסחרית הראשונה של הסגנון.",
+      "sound_he": "פסיי חופשי ומשוגע: גרובים עקומים, סמפלים מצחיקים, בלי שום נוסחה.",
+      "bpm": null, "artists": ["Texas Faggott", "Squaremeat", "Haltya"],
+      "track": null, "disputed_he": null
+    },
+
+    {
+      "id": "vocal-trance", "name_he": "ווקאל טראנס", "name_en": "Vocal trance",
+      "era": 4, "year": 2000, "family": "club", "origin_he": "אירופה", "parents": ["uplifting", "eurotrance"],
+      "story_he": "בתחילת שנות ה-2000 נכנסה לאפליפטינג שירה בסגנון פופ, בדרך כלל קול נשי גבוה ומרחף. הרמיקס של Tiësto ל-Silence הפך להמנון, והסגנון החזיק את הטראנס ברדיו לאורך כל העשור.",
+      "sound_he": "מבנה של בית ופזמון בתוך קטע טראנס, קול נשי אוורירי מעל לידים רחבים.",
+      "bpm": "130–140", "artists": ["Above & Beyond", "Armin van Buuren", "Dash Berlin"],
+      "track": { "artist": "Delerium feat. Sarah McLachlan", "title": "Silence (DJ Tiësto Remix)", "year": 2000 }, "disputed_he": null
+    },
+    {
+      "id": "tech-trance", "name_he": "טק טראנס", "name_en": "Tech trance",
+      "era": 4, "year": 2000, "family": "club", "origin_he": "גרמניה והולנד", "parents": ["hard-trance", "german-techno", "uplifting"],
+      "story_he": "חיבור בין הכוח של הטכנו למבנה של הטראנס. השורשים באמצע שנות ה-90 בגרמניה, אצל מפיקים כמו Oliver Lieb, אבל הסגנון התגבש בשנות ה-2000 עם די-ג'ייז הולנדים כמו Marco V.",
+      "sound_he": "תופים ופרקשן חזקים, קו בס קבוע, פחות מלודיה ויותר דחיפה.",
+      "bpm": "132–140", "artists": ["Oliver Lieb", "Marco V", "Sander van Doorn"],
+      "track": { "artist": "Marco V", "title": "Simulated", "year": 2001 },
+      "disputed_he": "קשה לתארך: יש מקורות שממקמים את ההתחלה כבר באמצע שנות ה-90."
+    },
+    {
+      "id": "hardstyle", "name_he": "הארדסטייל", "name_en": "Hardstyle",
+      "era": 4, "year": 2000, "family": "out", "origin_he": "הולנד, איטליה ובלגיה", "parents": ["hard-trance"],
+      "story_he": "ענף שיצא מהמשפחה. די-ג'ייז הולנדים חיברו את הבס ההפוך (Reverse bass) של ההארד טראנס עם הקשיחות של הגאבר (Gabber). האירוע הראשון שנחשב להארדסטייל, Qlubtempo, נערך בשנת 2000, ומשם הז'אנר הלך בדרך משלו.",
+      "sound_he": "בעיטה מעוותת וכבדה, בס הפוך באוף-ביט, מלודיות שנשארו מהטראנס.",
+      "bpm": "140–150", "artists": ["The Prophet", "Lady Dana", "Showtek", "Headhunterz"],
+      "track": null,
+      "disputed_he": "אין נקודת התחלה מוסכמת. יש מי שמצביעים על תקליטים מ-1997, והשנים 2000 ו-2001 מופיעות שתיהן כשנת הלידה."
+    },
+    {
+      "id": "full-on", "name_he": "פול-און", "name_en": "Full-on",
+      "era": 4, "year": 2000, "family": "psy", "origin_he": "ישראל", "parents": ["psytrance", "nitzhonot"],
+      "story_he": "הצליל הישראלי שכבש את העולם. מפיקים כמו Infected Mushroom ו-Astrix לקחו את הפסייטראנס והחזירו לו מלודיות גדולות, שבירות דרמטיות והפקה מלוטשת. השנים 2004 עד 2009 נחשבות לתור הזהב של הסגנון.",
+      "sound_he": "בס מתגלגל ואנרגטי, לידים מלודיים, שיאים גדולים. מוזיקה של בוקר ואור.",
+      "bpm": "142–148", "artists": ["Infected Mushroom", "Astrix", "GMS", "Skazi"],
+      "track": { "artist": "Infected Mushroom", "title": "Bust a Move", "year": 2000 }, "disputed_he": null
+    },
+    {
+      "id": "progressive-psy", "name_he": "פרוגרסיב פסיי", "name_en": "Progressive psytrance",
+      "era": 4, "year": 2000, "family": "psy", "origin_he": "שוודיה, דנמרק וגרמניה", "parents": ["psytrance", "progressive-trance"],
+      "story_he": "בסקנדינביה האטו את הפסייטראנס והשאירו בו רק את מה שחייב להיות שם. אמנים שוודים כמו Atmos ו-Son Kite והלייבל הדני Iboga הגדירו את הצליל, ולקראת סוף העשור גל חדש בהובלת Neelix קירב אותו לקהל רחב.",
+      "sound_he": "איטי ועמוק יותר, גרוב היפנוטי, מעט אלמנטים שמתפתחים בסבלנות.",
+      "bpm": "130–140", "artists": ["Atmos", "Son Kite", "Neelix"],
+      "track": { "artist": "Son Kite", "title": "On Air", "year": 2004 }, "disputed_he": null
+    },
+    {
+      "id": "dark-psy", "name_he": "דארק פסיי", "name_en": "Dark psytrance",
+      "era": 4, "year": 2003, "family": "psy", "origin_he": "גרמניה ורוסיה", "parents": ["psytrance"],
+      "story_he": "הצד הלילי של הפסייטראנס. הגרמני Xenomorph הכניס לז'אנר אסתטיקה אפלה כבר באלבום Cassandra's Nightmare מ-1998, ואחרי 2003 הדארק התגבש כסגנון נפרד, עם סצנה חזקה ברוסיה. הוא התפתח כתגובה למלודיות של הפול-און.",
+      "sound_he": "מהיר, צפוף ומאיים: בלי מלודיות, עם שכבות של רעשים, סמפלים מסרטי אימה ואווירה של לילה.",
+      "bpm": "148 ומעלה", "artists": ["Xenomorph", "Parasense", "Kindzadza", "Psykovsky"],
+      "track": { "artist": "Xenomorph", "title": "Cassandra's Nightmare", "year": 1998 }, "disputed_he": null
+    },
+    {
+      "id": "forest", "name_he": "פורסט", "name_en": "Forest psytrance",
+      "era": 4, "year": 2004, "family": "psy", "origin_he": "סקנדינביה", "parents": ["dark-psy"],
+      "story_he": "גרסה אורגנית של הדארק, שצמחה סביב הלייבל Parvati Records מדנמרק. במקום רובוטים ומכונות, הצלילים מזכירים יער בלילה: חרקים, טפטופים, ענפים נשברים.",
+      "sound_he": "מהיר והיפנוטי, עם טקסטורות אורגניות וצלילי טבע מעוותים.",
+      "bpm": "150–160", "artists": ["Atriohm", "Derango", "Procs"],
+      "track": null, "disputed_he": null
+    },
+    {
+      "id": "zenonesque", "name_he": "זנונסק", "name_en": "Zenonesque",
+      "era": 4, "year": 2003, "family": "psy", "origin_he": "אוסטרליה", "parents": ["progressive-psy", "dark-psy"],
+      "story_he": "ז'אנר שנקרא על שם לייבל. Sensient הקים את Zenon Records ב-2003, והצליל של הלייבל, פרוגרסיב אפל ומינימלי עם השפעות טכנו, היה ייחודי מספיק כדי לקבל שם משלו.",
+      "sound_he": "גרוב עמוק ואיטי יחסית, בס עבה, עיצוב סאונד מפורט וקר.",
+      "bpm": null, "artists": ["Sensient", "Tetrameth", "Grouch"],
+      "track": { "artist": "Sensient", "title": "Pressure Optimal", "year": 2005 }, "disputed_he": null
+    },
+
+    {
+      "id": "hitech", "name_he": "הייטק", "name_en": "Hi-tech psytrance",
+      "era": 5, "year": 2010, "family": "psy", "origin_he": "רוסיה", "parents": ["dark-psy"],
+      "story_he": "בשנות ה-2010 חלק מסצנת הדארק המשיך להאיץ. ההייטק מהיר, קופצני ומלא בגליצ'ים, ודוחף את הטמפו ל-170 פעימות בדקה ומעלה. מעליו נמצא רק הפסיקור (Psycore).",
+      "sound_he": "מהיר מאוד, עם לידים חותכים, שינויים בלתי פוסקים ועיצוב סאונד דיגיטלי קיצוני.",
+      "bpm": "170 ומעלה", "artists": ["Kindzadza", "Psykovsky", "Osom Music"],
+      "track": null,
+      "disputed_he": "אין נקודת לידה ברורה. ההייטק צמח בהדרגה מתוך הדארק, והמיקום ברוסיה משקף את האמנים המזוהים איתו יותר מאשר מקום מוסכם."
+    },
+    {
+      "id": "bigroom-trance", "name_he": "טראנס של במה מרכזית", "name_en": "Big room / EDM trance",
+      "era": 5, "year": 2012, "family": "club", "origin_he": "הולנד", "parents": ["uplifting", "tech-trance", "eurotrance"],
+      "story_he": "כשה-EDM כבש את הפסטיבלים, חלק מהטראנס התאים את עצמו לבמה המרכזית: טמפו איטי יותר ודרופים קצרים וחזקים בהשפעת אלקטרו האוס. הכינוי Trance 2.0 נדבק לגל הזה, והקהל הוותיק התווכח אם זה עדיין טראנס.",
+      "sound_he": "שבירה מלודית של טראנס, ואחריה דרופ קצר ובומבסטי בסגנון האוס.",
+      "bpm": "128–135", "artists": ["Armin van Buuren", "W&W", "Above & Beyond"],
+      "track": { "artist": "Armin van Buuren", "title": "Ping Pong", "year": 2014 }, "disputed_he": null
+    },
+    {
+      "id": "psy-mainstage", "name_he": "פסיי של הבמות הגדולות", "name_en": "Mainstage psytrance",
+      "era": 5, "year": 2016, "family": "psy", "origin_he": "ישראל", "parents": ["full-on", "progressive-psy", "bigroom-trance"],
+      "story_he": "הצמד הישראלי Vini Vici הביא את הבס של הפסייטראנס לבמות הכי גדולות בעולם. הרמיקס שלהם ל-Free Tibet היה קטע הפסייטראנס הראשון בעשירייה הראשונה של המצעד הכללי ב-Beatport, ובסוף 2016 יצא Great Spirit עם Armin van Buuren.",
+      "sound_he": "בס פסיי מתגלגל, שירה שבטית, שבירות ודרופים במבנה של EDM.",
+      "bpm": "138–140", "artists": ["Vini Vici", "Blastoyz", "Hilight Tribe"],
+      "track": { "artist": "Hilight Tribe", "title": "Free Tibet (Vini Vici Remix)", "year": 2016 }, "disputed_he": null
+    },
+    {
+      "id": "trance-revival", "name_he": "תחיית הטראנס", "name_en": "Trance revival",
+      "era": 5, "year": 2017, "family": "club", "origin_he": "ברלין ואירופה", "parents": ["early-trance", "hard-trance", "acid-trance", "german-techno"],
+      "story_he": "מ-2017 די-ג'ייז מעולם הטכנו, כמו Nina Kraviz, התחילו להחזיר קטעי טראנס ישנים לסטים. ב-2021 Charlotte de Witte ו-Enrico Sangiuliano עיבדו מחדש את The Age of Love, ובשנות ה-2020 דור שגדל על נוסטלגיה לניינטיז הפך את ההארד טראנס לצליל של מועדוני הטכנו.",
+      "sound_he": "בעיטת טכנו קשה ומהירה, ומעליה מלודיות וארפג'ים של טראנס מהניינטיז.",
+      "bpm": "140–150", "artists": ["Nina Kraviz", "KI/KI", "Marlon Hoffstadt", "DJ Heartstring"],
+      "track": { "artist": "Age of Love", "title": "The Age of Love (Charlotte de Witte & Enrico Sangiuliano Remix)", "year": 2021 },
+      "disputed_he": "יש ויכוח אם זה טראנס שחזר או טכנו עם מלודיות של טראנס."
+    }
+  ]
+}

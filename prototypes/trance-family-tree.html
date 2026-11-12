@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>אילן היוחסין של הטראנס</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/s2.css">
+<script src="../assets/s2-palette.js"></script>
+<script src="../assets/videos.js"></script>
+<script src="../assets/s2-video.js"></script>
+<style>
+/* Trance Family Tree on the S2 skin. Tokens and shared components: assets/s2.css.
+   Five era bands stacked top to bottom (time flows down). Lineage curves are an SVG
+   layer under the chips, redrawn from DOM positions. */
+.wrap{max-width:1260px;margin:0 auto;padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* masthead */
+.mast{margin-bottom:30px}
+.mast-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.mast h1{font-size:clamp(38px,7vw,72px);line-height:1.05;text-wrap:balance}
+.lede{max-width:62ch;font-size:17px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:2px 0 0;padding:0}
+.legend li{display:flex;align-items:center;gap:8px;padding:3px 12px 3px 10px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);font-weight:700;font-size:14px}
+
+/* families: fill color + marker shape, so color is never the only signal */
+[data-family="roots"]{--f:var(--fam-roots)}
+[data-family="club"]{--f:var(--fam-club)}
+[data-family="psy"]{--f:var(--fam-psy)}
+[data-family="out"]{--f:var(--fam-out)}
+.mark{flex:none;width:11px;height:11px;background:var(--ink);display:inline-block}
+[data-family="roots"] .mark,.mark[data-family="roots"]{border-radius:50%}
+[data-family="psy"] .mark,.mark[data-family="psy"]{transform:rotate(45deg) scale(.86)}
+[data-family="out"] .mark,.mark[data-family="out"]{clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+/* layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:28px;align-items:start}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);max-height:calc(100vh - 32px);overflow:auto;padding:4px 4px 12px;margin:-4px}
+.side:empty{display:none}
+@media (max-width:1019px){.layout{grid-template-columns:minmax(0,1fr)}.side{display:none}}
+
+/* tree */
+.tree{position:relative;display:grid;gap:22px}
+#edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.e{fill:none;stroke:var(--ink);stroke-width:1.5;opacity:.22}
+.tree.has-sel .e{opacity:.1}
+.tree.has-sel .e.lit{opacity:1;stroke-width:2.5}
+
+.era{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px 28px;padding:22px;background:var(--surface);border:var(--line-card) solid var(--ink);border-radius:var(--r-card);box-shadow:var(--shadow-card);margin-bottom:var(--lift-card)}
+.era-head{position:relative;z-index:2;display:grid;gap:10px;align-content:start;background:var(--surface)}
+.era-head h2{font-size:34px}
+.era-intro{font-size:15px;line-height:1.6;color:var(--muted)}
+.best{font-size:13px;color:var(--muted)}
+.era-rows{display:flex;flex-direction:column;gap:40px;min-width:0;padding-block:4px}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+@media (max-width:759px){
+  .era{grid-template-columns:minmax(0,1fr);padding:18px}
+  .era-head h2{font-size:30px}
+  .row{gap:12px 10px}
+}
+
+.chip{position:relative;z-index:1;display:grid;gap:3px;justify-items:start;text-align:start;min-width:138px;max-width:200px;padding:9px 12px 10px;
+  background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-sm);box-shadow:var(--shadow);margin-bottom:var(--lift);cursor:pointer;transition:transform .08s ease,box-shadow .08s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}
+.chip .he{font-weight:700;font-size:15px;line-height:1.25}
+.chip .en{font-size:12px;line-height:1.3;direction:ltr;unicode-bidi:isolate;text-align:right}
+.chip .meta{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.chip .mark{width:8px;height:8px}
+.tree.has-sel .chip:not(.kin):not(.sel){background:var(--surface-2);color:var(--muted);border-color:var(--muted);box-shadow:none;transform:translateY(var(--lift))}
+.tree.has-sel .chip:not(.kin):not(.sel) .mark{background:var(--muted)}
+.chip.sel{border-width:4px;padding:7px 10px 8px;box-shadow:none;transform:translateY(var(--lift))}
+/* Phone: 38 shadowed chips get busy, so chips go flat there. */
+@media (max-width:759px){.chip,.chip:hover{box-shadow:none;transform:none;margin-bottom:0}.tree.has-sel .chip:not(.kin):not(.sel),.chip.sel{transform:none}}
+@media (max-width:420px){.chip{min-width:calc(50% - 5px);max-width:calc(50% - 5px)}}
+@media (prefers-reduced-motion:reduce){.chip{transition:none}.chip:hover{transform:none}}
+
+/* detail card */
+.detail{position:relative;z-index:2;background:var(--white);gap:16px}
+.tree > .detail{margin:0}
+.d-tag{display:inline-flex;align-items:center;gap:8px;justify-self:start;padding:3px 12px 3px 10px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);font-size:13px;font-weight:700}
+.detail h3{font-size:36px}
+.d-en{font-size:15px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:12px 14px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-sm)}
+.facts div{display:grid;gap:2px;min-width:0}
+.facts dt{font-size:12.5px;color:var(--muted)}
+.facts dd{margin:0;font-size:14.5px;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
+.facts dd.num{font-variant-numeric:tabular-nums}
+.d-sec{display:grid;gap:6px}
+.d-sec h4{margin:0;font-size:14px;font-weight:700;color:var(--muted)}
+.d-sec p{font-size:15.5px;line-height:1.65}
+.d-names{font-size:15px;direction:ltr;unicode-bidi:isolate;text-align:right}
+.d-note{background:var(--star);border:var(--line) dashed var(--ink);border-radius:var(--r-sm);padding:10px 14px;font-size:14.5px;line-height:1.6}
+.d-note strong{display:block;font-size:13px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.link-chip{padding:4px 12px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);box-shadow:0 3px 0 var(--ink);margin-bottom:3px;font-size:14px;font-weight:700;cursor:pointer}
+.link-chip:active{transform:translateY(3px);box-shadow:none}
+.none{font-size:14.5px;color:var(--muted)}
+
+/* quiz */
+.quiz{grid-column:1/-1;position:relative;z-index:2;background:var(--white)}
+.q-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 12px}
+.q-prompt{font-size:20px;font-weight:700;line-height:1.4;text-wrap:balance}
+.q-quote{margin:0;padding:12px 16px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-sm);font-size:15.5px}
+.q-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:559px){.q-opts{grid-template-columns:minmax(0,1fr)}}
+.answer .verdict{font-weight:700;margin-inline-end:6px}
+.q-fb{display:grid;gap:12px;font-size:16px;line-height:1.6}
+.q-end{display:grid;gap:14px}
+.q-score{font-size:60px;line-height:1;font-weight:700}
+.q-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+.foot{margin-top:30px;font-size:14px;color:var(--muted);max-width:75ch}
+</style>
+
+</head>
+<body>
+<div class="wrap" dir="rtl" lang="he">
+  <header class="mast card">
+    <div class="mast-top"><a class="btn ghost small" href="trance-school.html">→ לבית ספר לטראנס</a><div data-palette-picker></div></div>
+    <h1><span class="marker">אילן היוחסין של הטראנס</span></h1>
+    <p class="lede" id="lede"></p>
+    <ul class="legend" id="legend" aria-label="מקרא משפחות"></ul>
+  </header>
+
+  <div class="layout">
+    <main class="tree" id="tree">
+      <svg id="edges" aria-hidden="true"></svg>
+    </main>
+    <aside class="side" id="side" aria-live="polite"></aside>
+  </div>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script type="application/json" id="trance-data">{"meta":{"title_he":"אילן היוחסין של הטראנס","title_en":"Trance family tree","language":"he","updated":"2026-11-12","schema":"Each genre: id, name_he, name_en, era (1-5), year (approximate year the style took shape), family (roots | club | psy | out), origin_he, parents (ids of direct sources), story_he, sound_he, bpm (string or null), artists, track ({artist, title, year} or null), disputed_he (string or null).","note_he":"השנים מקורבות. מקורות של ז'אנרים הם לעיתים קרובות עניין של ויכוח, ומה שמסומן כשנוי במחלוקת מוצג כך בכוונה."},"families":[{"id":"roots","name_he":"שורשים ושכנים","name_en":"Roots and neighbours"},{"id":"club","name_he":"הקו המועדוני","name_en":"Club line"},{"id":"psy","name_he":"הקו הפסיכדלי","name_en":"Psychedelic line"},{"id":"out","name_he":"יצא מהמשפחה","name_en":"Left the family"}],"eras":[{"id":1,"name_he":"השורשים","name_en":"Roots","from":1970,"to":1987,"years_he":"1970 עד 1987","intro_he":"לפני שהיה טראנס היו סינתיסייזרים, דיסקו וחוף אחד בהודו. בגרמניה גילו שרצף צלילים שחוזר על עצמו יכול להפנט, בשיקגו ובדטרויט נולדו ההאוס והטכנו, ובגואה היפים רקדו כל הלילה מתחת לירח מלא. כל מה שיבוא אחר כך נבנה מהחלקים האלה."},{"id":2,"name_he":"הלידה","name_en":"Birth of trance","from":1988,"to":1993,"years_he":"1988 עד 1993","intro_he":"האסיד האוס חוצה את האוקיינוס והופך את אירופה לרחבת ריקודים אחת. בפרנקפורט מוסיפים לטכנו מלודיה היפנוטית ונותנים לזה שם: טראנס. באותן שנים, בגואה, הקסטות של הדי-ג'ייז מתגבשות לצליל משלהן."},{"id":3,"name_he":"הפיצול הגדול","name_en":"The big split","from":1994,"to":1999,"years_he":"1994 עד 1999","intro_he":"הטראנס מתפצל לשני עולמות. במועדונים של אירופה הוא נהיה מלודי, רגשי וגדול, עד שהוא כובש את המצעדים. במסיבות הטבע הגואה טראנס מתקשח והופך לפסייטראנס, וישראל נעשית אחת הבירות שלו."},{"id":4,"name_he":"שנות האלפיים","name_en":"The 2000s","from":2000,"to":2009,"years_he":"2000 עד 2009","intro_he":"הענף המועדוני בשיא המסחרי שלו, עם זמרות, אצטדיונים ודי-ג'ייז כוכבים. הענף הפסיכדלי מתפצל לפי שעות היממה: פול-און מלודי לאור יום, דארק ופורסט ללילה, ופרוגרסיב איטי ועמוק ביניהם."},{"id":5,"name_he":"העידן המודרני","name_en":"Modern era","from":2010,"to":null,"years_he":"מ-2010 ועד היום","intro_he":"עידן ה-EDM שואב את הטראנס לבמות הענק, והפסיי מגיע לשם בעקבותיו. בקצה השני הטמפו ממשיך לטפס עם ההייטק. ובשנות ה-2020 דור חדש של די-ג'ייז טכנו מחזיר את המלודיות של הניינטיז."}],"genres":[{"id":"kosmische","name_he":"קוסמישה מוזיק","name_en":"Kosmische Musik / Krautrock","era":1,"year":1970,"family":"roots","origin_he":"מערב גרמניה","parents":[],"story_he":"מוזיקאים גרמנים צעירים רצו ליצור משהו שאינו רוק אמריקאי, ופנו לסינתיסייזרים ולסיקוונסרים (Sequencers). מהם הטראנס ירש את הארפג'ים החוזרים ואת הרעיון שקטע הוא מסע ארוך.","sound_he":"רצפי סינתיסייזר ארוכים והיפנוטיים שמתפתחים לאט, כמעט בלי תופים.","bpm":null,"artists":["Tangerine Dream","Klaus Schulze","Manuel Göttsching"],"track":{"artist":"Tangerine Dream","title":"Phaedra","year":1974},"disputed_he":null},{"id":"synthpop","name_he":"סינת'-פופ ואלקטרו","name_en":"Synth-pop / Electro","era":1,"year":1974,"family":"roots","origin_he":"דיסלדורף, גרמניה","parents":["kosmische"],"story_he":"Kraftwerk לקחו את הניסויים של הקוסמישה והפכו אותם לשירים קצרים עם קצב מכונה מדויק. הצליל שלהם הגיע לדטרויט, לבלגיה ואפילו לקסטות הראשונות שנוגנו בגואה.","sound_he":"מקצבים מכניים, מלודיות סינתיסייזר פשוטות וקליטות, קולות רובוטיים.","bpm":null,"artists":["Kraftwerk","Jean-Michel Jarre","Yellow Magic Orchestra"],"track":{"artist":"Kraftwerk","title":"Trans-Europe Express","year":1977},"disputed_he":null},{"id":"eurodisco","name_he":"יורו-דיסקו","name_en":"Euro disco","era":1,"year":1975,"family":"roots","origin_he":"מינכן, גרמניה","parents":[],"story_he":"במינכן המפיק Giorgio Moroder החליף את תזמורת הדיסקו בסינתיסייזר. I Feel Love מ-1977 היה להיט שנבנה כולו ממכונות, וממנו נמשך קו ישר להאוס ולכל מוזיקת המועדונים.","sound_he":"בעיטת בס על כל רבע (Four-on-the-floor), קו בס סינתטי רץ, שירה מרחפת.","bpm":"120–130","artists":["Giorgio Moroder","Donna Summer","Cerrone"],"track":{"artist":"Donna Summer","title":"I Feel Love","year":1977},"disputed_he":null},{"id":"ambient","name_he":"אמביינט","name_en":"Ambient","era":1,"year":1978,"family":"roots","origin_he":"אנגליה","parents":["kosmische"],"story_he":"Brian Eno נתן שם למוזיקה שאפשר להקשיב לה וגם להתעלם ממנה. בלי האמביינט לא היו חדרי הצ'יל-אאוט (Chill-out) של הרייבים, וגם לא הפסיביינט שיגיע אחר כך.","sound_he":"משטחי צליל איטיים בלי קצב, אווירה במקום מלודיה.","bpm":null,"artists":["Brian Eno","Harold Budd"],"track":{"artist":"Brian Eno","title":"Music for Airports 1/1","year":1978},"disputed_he":null},{"id":"goa-parties","name_he":"מסיבות החוף של גואה","name_en":"Goa party scene","era":1,"year":1970,"family":"roots","origin_he":"גואה, הודו","parents":[],"story_he":"היפים שהגיעו לגואה בסוף שנות ה-60 התחילו לחגוג על החוף בלילות ירח מלא, בהתחלה עם רוק פסיכדלי. ב-1983 הדי-ג'ייז Laurent ו-Fred Disko, ואחריהם Goa Gil, עברו למוזיקה אלקטרונית שניגנו מקסטות, כי תקליטים לא שרדו את החום והאבק.","sound_he":"סטים של לילה שלם בטבע: רוק פסיכדלי בשנות ה-70, ואחר כך EBM, ניו ביט ואסיד האוס בעריכות מיוחדות.","bpm":null,"artists":["Goa Gil","Laurent","Fred Disko"],"track":null,"disputed_he":"התיעוד מהשנים הראשונות דל, והסיפור נשען בעיקר על עדויות של מי שהיו שם."},{"id":"ebm","name_he":"EBM ואינדסטריאל","name_en":"Electronic Body Music","era":1,"year":1981,"family":"roots","origin_he":"בלגיה ומערב גרמניה","parents":["synthpop"],"story_he":"להקות כמו DAF ו-Front 242 חיברו את האגרסיביות של הפאנק לסיקוונסרים. התקליטים שלהן נוגנו גם במועדוני פרנקפורט וגם על החוף בגואה, ולכן ה-EBM הוא אב משותף לשני ענפי הטראנס.","sound_he":"קו בס סינתטי קשוח וחוזר, תופים צבאיים, צעקות במקום שירה.","bpm":null,"artists":["Front 242","DAF","Nitzer Ebb"],"track":{"artist":"Front 242","title":"Headhunter","year":1988},"disputed_he":null},{"id":"chicago-house","name_he":"האוס שיקגו","name_en":"Chicago house","era":1,"year":1984,"family":"roots","origin_he":"שיקגו, ארה״ב","parents":["eurodisco"],"story_he":"כשהדיסקו ירד מהרדיו, די-ג'ייז בשיקגו המשיכו לנגן אותו במועדונים והוסיפו מעליו מכונות תופים. כך נולד ההאוס, התבנית של כל מוזיקת הריקודים האלקטרונית.","sound_he":"בעיטה על כל רבע, היי-האט באוף-ביט, פסנתר וקולות סול.","bpm":"118–125","artists":["Frankie Knuckles","Marshall Jefferson","Larry Heard"],"track":{"artist":"Marshall Jefferson","title":"Move Your Body","year":1986},"disputed_he":null},{"id":"detroit-techno","name_he":"טכנו דטרויט","name_en":"Detroit techno","era":1,"year":1985,"family":"roots","origin_he":"דטרויט, ארה״ב","parents":["synthpop","chicago-house"],"story_he":"שלושה חברים מפרבר של דטרויט, Juan Atkins, Derrick May ו-Kevin Saunderson, שילבו את Kraftwerk עם פאנק (Funk) והאוס ויצרו מוזיקה שנשמעת כמו העתיד. כשהיא הגיעה לגרמניה היא הפכה לבסיס שעליו נבנה הטראנס.","sound_he":"מכני, קר ועתידני, עם מיתרים סינתטיים ומעט מאוד שירה.","bpm":"120–135","artists":["Juan Atkins","Derrick May","Kevin Saunderson"],"track":{"artist":"Rhythim Is Rhythim","title":"Strings of Life","year":1987},"disputed_he":null},{"id":"acid-house","name_he":"אסיד האוס","name_en":"Acid house","era":1,"year":1987,"family":"roots","origin_he":"שיקגו, ארה״ב","parents":["chicago-house"],"story_he":"חברי Phuture שיחקו עם הכפתורים של Roland TB-303, מכונת בס שנכשלה מסחרית, וגילו צליל מתפתל וחומצי. הצליל הזה עובר דרך כמעט כל ענף בעץ, מפרנקפורט ועד גואה.","sound_he":"קו בס של 303, מייבב ומתפתל, מעל קצב האוס פשוט.","bpm":"120–130","artists":["Phuture","DJ Pierre"],"track":{"artist":"Phuture","title":"Acid Tracks","year":1987},"disputed_he":null},{"id":"new-beat","name_he":"ניו ביט","name_en":"New beat","era":1,"year":1987,"family":"roots","origin_he":"בלגיה","parents":["ebm","eurodisco","acid-house"],"story_he":"די-ג'יי בלגי ניגן את התקליט Flesh של A Split-Second במהירות 33 במקום 45, והרחבה השתגעה. מהטעות הזאת צמח ז'אנר שלם, איטי וכבד, שהשפיע על הטכנו האירופי ועל הטראנס הראשון.","sound_he":"EBM מואט: קצב זוחל וכבד, בסים עמוקים, אווירה אפלה.","bpm":"90–115","artists":["A Split-Second","Confetti's","Lords of Acid"],"track":{"artist":"A Split-Second","title":"Flesh","year":1986},"disputed_he":"יש כמה גרסאות לשאלה מי האט ראשון את התקליט. השם שחוזר הכי הרבה הוא Dikke Ronny, ואחרים מזכירים את Marc Grouls."},{"id":"uk-rave","name_he":"רייב בריטי ובלארי","name_en":"UK acid house / Balearic","era":2,"year":1988,"family":"roots","origin_he":"איביזה ובריטניה","parents":["acid-house","chicago-house"],"story_he":"די-ג'ייז בריטים חזרו מחופשה באיביזה עם רעיון למסיבה אחרת, והביאו את האסיד האוס ללונדון ולמנצ'סטר. קיץ 1988 נקרא קיץ האהבה השני, וממנו נולדה תרבות הרייב. באותה שנה The KLF הוציאו קטע עם הכיתוב Pure Trance.","sound_he":"אסיד האוס מעורבב בכל מה שעובד על רחבה, במסיבות מחסנים ובשדות פתוחים.","bpm":"120–130","artists":["Paul Oakenfold","Danny Rampling","The KLF"],"track":{"artist":"The KLF","title":"What Time Is Love? (Pure Trance)","year":1988},"disputed_he":null},{"id":"ambient-house","name_he":"אמביינט האוס","name_en":"Ambient house / Chill-out","era":2,"year":1989,"family":"roots","origin_he":"לונדון, אנגליה","parents":["ambient","acid-house"],"story_he":"ברייבים נפתחו חדרי מנוחה, והדי-ג'ייז שם חיברו אמביינט עם קצב האוס רך וסמפלים. מכאן הגיע הרעיון שלכל מסיבה יש גם צד שקט, מה שיהפוך אחר כך לרחבת הצ'יל במסיבות הטבע.","sound_he":"משטחי אמביינט, סמפלים של קולות וטבע, לפעמים קצב עדין.","bpm":null,"artists":["The Orb","The KLF","Mixmaster Morris"],"track":{"artist":"The Orb","title":"Little Fluffy Clouds","year":1990},"disputed_he":null},{"id":"german-techno","name_he":"טכנו גרמני","name_en":"German techno","era":2,"year":1989,"family":"roots","origin_he":"ברלין ופרנקפורט, גרמניה","parents":["detroit-techno","ebm","new-beat"],"story_he":"הטכנו מדטרויט פגש בגרמניה את ה-EBM ואת הניו ביט, ואחרי נפילת חומת ברלין קיבל מבנים ריקים לחגוג בהם. מהסצנה הזאת, ובעיקר מפרנקפורט, יצא הטראנס.","sound_he":"קשה ומהיר יותר מהמקור האמריקאי, רפטטיבי ותעשייתי.","bpm":"130–145","artists":["Westbam","Talla 2XLC","Dr. Motte"],"track":{"artist":"3 Phase feat. Dr. Motte","title":"Der Klang der Familie","year":1992},"disputed_he":null},{"id":"early-trance","name_he":"טראנס מוקדם","name_en":"Early trance / Frankfurt trance","era":2,"year":1990,"family":"club","origin_he":"פרנקפורט, גרמניה","parents":["german-techno","ebm","new-beat","acid-house","kosmische","goa-parties"],"story_he":"במועדונים Dorian Gray ו-Omen בפרנקפורט, Sven Väth וחבריו חיפשו צליל היפנוטי יותר מטכנו. Väth, שהושפע מהמסיבות בגואה, הקים את הלייבלים Eye Q ב-1991 ו-Harthouse ב-1992. DJ Dag מהצמד Dance 2 Trance טוען שהוא הראשון שקרא למוזיקה הזאת טראנס.","sound_he":"מלודיה קצרה שחוזרת שוב ושוב מעל קצב טכנו, עם בנייה איטית של מתח.","bpm":"125–140","artists":["Sven Väth","Dance 2 Trance","Jam & Spoon","Cosmic Baby"],"track":{"artist":"Age of Love","title":"The Age of Love","year":1990},"disputed_he":"אין הסכמה מהו תקליט הטראנס הראשון. המועמדים: What Time Is Love? (Pure Trance) של The KLF מ-1988, The Age of Love מ-1990 ו-We Came in Peace של Dance 2 Trance מ-1990."},{"id":"acid-trance","name_he":"אסיד טראנס","name_en":"Acid trance","era":2,"year":1992,"family":"club","origin_he":"גרמניה ובריטניה","parents":["early-trance","acid-house"],"story_he":"הצליל של ה-303 חזר, הפעם בתוך המבנה הארוך וההיפנוטי של הטראנס. Acperience של Hardfloor יצא ב-Harthouse והפך להמנון, ובאנגליה הלייבל Platipus המשיך את הקו.","sound_he":"כמה קווי 303 שמתפתלים זה סביב זה ונבנים לאט לשיא.","bpm":"130–145","artists":["Hardfloor","Union Jack","Art of Trance"],"track":{"artist":"Hardfloor","title":"Acperience 1","year":1992},"disputed_he":null},{"id":"hard-trance","name_he":"הארד טראנס","name_en":"Hard trance","era":2,"year":1993,"family":"club","origin_he":"גרמניה ובלגיה","parents":["early-trance","german-techno"],"story_he":"גרסה מהירה וקשוחה של הטראנס, שהלייבל הבלגי Bonzai הפך לסמל שלה. כאן נקבעה התבנית של שבירה (Breakdown), בנייה (Build-up) והמנון, שכמעט כל טראנס מועדוני ישתמש בה אחר כך.","sound_he":"בעיטה חזקה, טמפו גבוה, פאדים קצוצים ומלודיות המנוניות.","bpm":"140–155","artists":["Jones & Stephenson","Cherry Moon Trax","Scot Project"],"track":{"artist":"Jones & Stephenson","title":"The First Rebirth","year":1993},"disputed_he":null},{"id":"goa-trance","name_he":"גואה טראנס","name_en":"Goa trance","era":2,"year":1992,"family":"psy","origin_he":"גואה, הודו","parents":["goa-parties","acid-house","ebm","new-beat","early-trance"],"story_he":"מפיקים שחזרו מגואה התחילו ליצור מוזיקה במיוחד בשביל המסיבות שם. סביב 1992 כבר היה לסצנה דופק משלה, והשם גואה טראנס התקבע ב-1994. הלייבל הלונדוני Dragonfly נחשב לראשון שהוקדש לצליל הזה, ותרמילאים אירופים וישראלים הפיצו אותו בעולם.","sound_he":"שכבות של מלודיות מתפתלות בסולמות מזרחיים, קווי אסיד, קטעים ארוכים של שמונה דקות ויותר.","bpm":"135–150","artists":["Hallucinogen","Juno Reactor","Astral Projection","Man With No Name"],"track":{"artist":"Hallucinogen","title":"LSD","year":1994},"disputed_he":null},{"id":"progressive-trance","name_he":"פרוגרסיב טראנס","name_en":"Progressive trance","era":3,"year":1994,"family":"club","origin_he":"בריטניה","parents":["early-trance","uk-rave"],"story_he":"הבריטים לקחו את הטראנס הגרמני וקירבו אותו להאוס: איטי יותר, עם התפתחות הדרגתית ושבירות ארוכות. לייבלים כמו Platipus ו-Hooj Choons הובילו, ועד סוף העשור זה היה הצליל של הרחבות הגדולות.","sound_he":"שכבות שנכנסות ויוצאות לאט, אקורדים רחבים, פחות המנון ויותר זרימה.","bpm":"125–135","artists":["Sasha","John Digweed","BT"],"track":{"artist":"BT","title":"Flaming June","year":1997},"disputed_he":null},{"id":"dream-trance","name_he":"דרים טראנס","name_en":"Dream trance","era":3,"year":1995,"family":"club","origin_he":"איטליה","parents":["progressive-trance","early-trance"],"story_he":"באיטליה של תחילת שנות ה-90 צעירים נהרגו בתאונות דרכים בדרך חזרה ממועדונים. Robert Miles כתב את Children כקטע רגוע לסוף הלילה, והפסנתר שלו הפך ללהיט עולמי שהכניס את הטראנס למצעדים.","sound_he":"מלודיית פסנתר חולמנית מעל קצב יציב ורך.","bpm":"130–138","artists":["Robert Miles","DJ Dado","Zhi-Vago"],"track":{"artist":"Robert Miles","title":"Children","year":1995},"disputed_he":null},{"id":"balearic-trance","name_he":"בלארי טראנס","name_en":"Balearic / Ibiza trance","era":3,"year":1996,"family":"club","origin_he":"איביזה, ספרד","parents":["uk-rave","progressive-trance","ambient-house"],"story_he":"הטראנס פוגש את השקיעה של איביזה. הקטע Café del Mar של Energy 52 נקרא על שם הבר המפורסם באי, ו-Chicane הפך את הצליל הזה לסימן ההיכר שלו.","sound_he":"גיטרות ומיתרים חמים, מלודיות רכות, תחושה של קיץ וים.","bpm":"125–135","artists":["Chicane","Energy 52","Solarstone"],"track":{"artist":"Chicane","title":"Offshore","year":1996},"disputed_he":null},{"id":"uplifting","name_he":"אפליפטינג טראנס","name_en":"Uplifting / Epic trance","era":3,"year":1997,"family":"club","origin_he":"הולנד וגרמניה","parents":["hard-trance","progressive-trance","dream-trance"],"story_he":"בסוף שנות ה-90 הטראנס המועדוני מצא את הנוסחה שלו: שבירה ארוכה, בנייה עם תופי סנר ושיא אופורי. דור של די-ג'ייז הולנדים, עם Ferry Corsten, Tiësto ו-Armin van Buuren, הפך אותו למוזיקה של אצטדיונים.","sound_he":"לידים רחבים ורגשיים (Supersaw), שבירות ארוכות, שיא שמרים את הידיים.","bpm":"136–142","artists":["Ferry Corsten","Paul van Dyk","Tiësto","Armin van Buuren"],"track":{"artist":"System F","title":"Out of the Blue","year":1999},"disputed_he":null},{"id":"eurotrance","name_he":"יורוטראנס","name_en":"Eurotrance","era":3,"year":1998,"family":"club","origin_he":"גרמניה","parents":["uplifting","dream-trance"],"story_he":"הגרסה הרדיופונית: מלודיה אחת קליטה, קטע של שלוש דקות, לפעמים זמרת. 9 PM (Till I Come) של ATB פתח את הדלת ללהיטים כמו Better Off Alone ו-Sandstorm.","sound_he":"הוקים פשוטים וקליטים, מבנה של שיר פופ, הפקה מבריקה.","bpm":"130–142","artists":["ATB","Alice Deejay","Darude"],"track":{"artist":"ATB","title":"9 PM (Till I Come)","year":1998},"disputed_he":null},{"id":"psytrance","name_he":"פסייטראנס","name_en":"Psychedelic trance","era":3,"year":1997,"family":"psy","origin_he":"אירופה וישראל","parents":["goa-trance","german-techno"],"story_he":"בסוף שנות ה-90 הגואה טראנס הגיע לרוויה. מפיקים עברו לעבוד במחשב, הורידו מלודיות והתמקדו בגרוב, בבס ובעיצוב סאונד. האלבום Radio של X-Dream מ-1998 נחשב לאחד מסימני הדרך של המעבר.","sound_he":"קו בס מתגלגל בשש-עשריות, בעיטה הדוקה, אפקטים וצלילים מעוותים במקום מלודיות ארוכות.","bpm":"140–150","artists":["X-Dream","Hallucinogen","GMS","Infected Mushroom"],"track":{"artist":"X-Dream","title":"Radio","year":1998},"disputed_he":"הגבול בין גואה טראנס לפסייטראנס לא חד. יש מי שמשתמשים בשני השמות לאותו דבר, ויש מי שמתארכים את הפסייטראנס כבר לתחילת שנות ה-90."},{"id":"nitzhonot","name_he":"ניצחונות","name_en":"Nitzhonot","era":3,"year":1997,"family":"psy","origin_he":"ישראל","parents":["goa-trance","uplifting"],"story_he":"גרסה ישראלית, מהירה ומלודית של גואה טראנס, שפרצה מהמסיבות אל המיינסטרים. האלבום Good Morning Israel של אייל ברקן מ-1998 היה אלבום הטראנס הראשון שהגיע בארץ למעמד זהב. אחרי שרוב האמנים בישראל עברו לפול-און, הסגנון המשיך ביוון.","sound_he":"בעיטות חדות שמכונות לייזר-קיקס (Laserkicks), מלודיות מזרחיות המנוניות.","bpm":"145–155","artists":["Eyal Barkan","Cyan","Cherouvim"],"track":{"artist":"Eyal Barkan","title":"Good Morning Israel","year":1998},"disputed_he":null},{"id":"psybient","name_he":"פסיביינט","name_en":"Psybient / Psychill","era":3,"year":1998,"family":"psy","origin_he":"אנגליה","parents":["goa-trance","ambient-house"],"story_he":"באלבומי גואה היה נהוג לסיים בקטע איטי לצ'יל-אאוט. Simon Posford (Hallucinogen) ו-Raja Ram הפכו את הקטע הזה לעולם שלם עם Shpongle, והאלבום Are You Shpongled? מ-1998 נחשב לזה שהגדיר את הז'אנר.","sound_he":"קצב איטי, צלילים פסיכדליים, כלים וקולות מכל העולם, השפעות דאב.","bpm":"מתחת ל-120","artists":["Shpongle","The Infinity Project","Ott"],"track":{"artist":"Shpongle","title":"Divine Moments of Truth","year":1998},"disputed_he":null},{"id":"suomisaundi","name_he":"סואומיסאונדי","name_en":"Suomisaundi","era":3,"year":1996,"family":"psy","origin_he":"פינלנד","parents":["goa-trance"],"story_he":"השם פירושו פשוט הסאונד הפיני. מפיקים בהלסינקי לקחו את הגואה טראנס ושברו את כל החוקים שלו, עם הומור, שינויי קצב פתאומיים ומבנים לא צפויים. האלבום הראשון של Texas Faggott מ-1999 היה ההצלחה המסחרית הראשונה של הסגנון.","sound_he":"פסיי חופשי ומשוגע: גרובים עקומים, סמפלים מצחיקים, בלי שום נוסחה.","bpm":null,"artists":["Texas Faggott","Squaremeat","Haltya"],"track":null,"disputed_he":null},{"id":"vocal-trance","name_he":"ווקאל טראנס","name_en":"Vocal trance","era":4,"year":2000,"family":"club","origin_he":"אירופה","parents":["uplifting","eurotrance"],"story_he":"בתחילת שנות ה-2000 נכנסה לאפליפטינג שירה בסגנון פופ, בדרך כלל קול נשי גבוה ומרחף. הרמיקס של Tiësto ל-Silence הפך להמנון, והסגנון החזיק את הטראנס ברדיו לאורך כל העשור.","sound_he":"מבנה של בית ופזמון בתוך קטע טראנס, קול נשי אוורירי מעל לידים רחבים.","bpm":"130–140","artists":["Above & Beyond","Armin van Buuren","Dash Berlin"],"track":{"artist":"Delerium feat. Sarah McLachlan","title":"Silence (DJ Tiësto Remix)","year":2000},"disputed_he":null},{"id":"tech-trance","name_he":"טק טראנס","name_en":"Tech trance","era":4,"year":2000,"family":"club","origin_he":"גרמניה והולנד","parents":["hard-trance","german-techno","uplifting"],"story_he":"חיבור בין הכוח של הטכנו למבנה של הטראנס. השורשים באמצע שנות ה-90 בגרמניה, אצל מפיקים כמו Oliver Lieb, אבל הסגנון התגבש בשנות ה-2000 עם די-ג'ייז הולנדים כמו Marco V.","sound_he":"תופים ופרקשן חזקים, קו בס קבוע, פחות מלודיה ויותר דחיפה.","bpm":"132–140","artists":["Oliver Lieb","Marco V","Sander van Doorn"],"track":{"artist":"Marco V","title":"Simulated","year":2001},"disputed_he":"קשה לתארך: יש מקורות שממקמים את ההתחלה כבר באמצע שנות ה-90."},{"id":"hardstyle","name_he":"הארדסטייל","name_en":"Hardstyle","era":4,"year":2000,"family":"out","origin_he":"הולנד, איטליה ובלגיה","parents":["hard-trance"],"story_he":"ענף שיצא מהמשפחה. די-ג'ייז הולנדים חיברו את הבס ההפוך (Reverse bass) של ההארד טראנס עם הקשיחות של הגאבר (Gabber). האירוע הראשון שנחשב להארדסטייל, Qlubtempo, נערך בשנת 2000, ומשם הז'אנר הלך בדרך משלו.","sound_he":"בעיטה מעוותת וכבדה, בס הפוך באוף-ביט, מלודיות שנשארו מהטראנס.","bpm":"140–150","artists":["The Prophet","Lady Dana","Showtek","Headhunterz"],"track":null,"disputed_he":"אין נקודת התחלה מוסכמת. יש מי שמצביעים על תקליטים מ-1997, והשנים 2000 ו-2001 מופיעות שתיהן כשנת הלידה."},{"id":"full-on","name_he":"פול-און","name_en":"Full-on","era":4,"year":2000,"family":"psy","origin_he":"ישראל","parents":["psytrance","nitzhonot"],"story_he":"הצליל הישראלי שכבש את העולם. מפיקים כמו Infected Mushroom ו-Astrix לקחו את הפסייטראנס והחזירו לו מלודיות גדולות, שבירות דרמטיות והפקה מלוטשת. השנים 2004 עד 2009 נחשבות לתור הזהב של הסגנון.","sound_he":"בס מתגלגל ואנרגטי, לידים מלודיים, שיאים גדולים. מוזיקה של בוקר ואור.","bpm":"142–148","artists":["Infected Mushroom","Astrix","GMS","Skazi"],"track":{"artist":"Infected Mushroom","title":"Bust a Move","year":2000},"disputed_he":null},{"id":"progressive-psy","name_he":"פרוגרסיב פסיי","name_en":"Progressive psytrance","era":4,"year":2000,"family":"psy","origin_he":"שוודיה, דנמרק וגרמניה","parents":["psytrance","progressive-trance"],"story_he":"בסקנדינביה האטו את הפסייטראנס והשאירו בו רק את מה שחייב להיות שם. אמנים שוודים כמו Atmos ו-Son Kite והלייבל הדני Iboga הגדירו את הצליל, ולקראת סוף העשור גל חדש בהובלת Neelix קירב אותו לקהל רחב.","sound_he":"איטי ועמוק יותר, גרוב היפנוטי, מעט אלמנטים שמתפתחים בסבלנות.","bpm":"130–140","artists":["Atmos","Son Kite","Neelix"],"track":{"artist":"Son Kite","title":"On Air","year":2004},"disputed_he":null},{"id":"dark-psy","name_he":"דארק פסיי","name_en":"Dark psytrance","era":4,"year":2003,"family":"psy","origin_he":"גרמניה ורוסיה","parents":["psytrance"],"story_he":"הצד הלילי של הפסייטראנס. הגרמני Xenomorph הכניס לז'אנר אסתטיקה אפלה כבר באלבום Cassandra's Nightmare מ-1998, ואחרי 2003 הדארק התגבש כסגנון נפרד, עם סצנה חזקה ברוסיה. הוא התפתח כתגובה למלודיות של הפול-און.","sound_he":"מהיר, צפוף ומאיים: בלי מלודיות, עם שכבות של רעשים, סמפלים מסרטי אימה ואווירה של לילה.","bpm":"148 ומעלה","artists":["Xenomorph","Parasense","Kindzadza","Psykovsky"],"track":{"artist":"Xenomorph","title":"Cassandra's Nightmare","year":1998},"disputed_he":null},{"id":"forest","name_he":"פורסט","name_en":"Forest psytrance","era":4,"year":2004,"family":"psy","origin_he":"סקנדינביה","parents":["dark-psy"],"story_he":"גרסה אורגנית של הדארק, שצמחה סביב הלייבל Parvati Records מדנמרק. במקום רובוטים ומכונות, הצלילים מזכירים יער בלילה: חרקים, טפטופים, ענפים נשברים.","sound_he":"מהיר והיפנוטי, עם טקסטורות אורגניות וצלילי טבע מעוותים.","bpm":"150–160","artists":["Atriohm","Derango","Procs"],"track":null,"disputed_he":null},{"id":"zenonesque","name_he":"זנונסק","name_en":"Zenonesque","era":4,"year":2003,"family":"psy","origin_he":"אוסטרליה","parents":["progressive-psy","dark-psy"],"story_he":"ז'אנר שנקרא על שם לייבל. Sensient הקים את Zenon Records ב-2003, והצליל של הלייבל, פרוגרסיב אפל ומינימלי עם השפעות טכנו, היה ייחודי מספיק כדי לקבל שם משלו.","sound_he":"גרוב עמוק ואיטי יחסית, בס עבה, עיצוב סאונד מפורט וקר.","bpm":null,"artists":["Sensient","Tetrameth","Grouch"],"track":{"artist":"Sensient","title":"Pressure Optimal","year":2005},"disputed_he":null},{"id":"hitech","name_he":"הייטק","name_en":"Hi-tech psytrance","era":5,"year":2010,"family":"psy","origin_he":"רוסיה","parents":["dark-psy"],"story_he":"בשנות ה-2010 חלק מסצנת הדארק המשיך להאיץ. ההייטק מהיר, קופצני ומלא בגליצ'ים, ודוחף את הטמפו ל-170 פעימות בדקה ומעלה. מעליו נמצא רק הפסיקור (Psycore).","sound_he":"מהיר מאוד, עם לידים חותכים, שינויים בלתי פוסקים ועיצוב סאונד דיגיטלי קיצוני.","bpm":"170 ומעלה","artists":["Kindzadza","Psykovsky","Osom Music"],"track":null,"disputed_he":"אין נקודת לידה ברורה. ההייטק צמח בהדרגה מתוך הדארק, והמיקום ברוסיה משקף את האמנים המזוהים איתו יותר מאשר מקום מוסכם."},{"id":"bigroom-trance","name_he":"טראנס של במה מרכזית","name_en":"Big room / EDM trance","era":5,"year":2012,"family":"club","origin_he":"הולנד","parents":["uplifting","tech-trance","eurotrance"],"story_he":"כשה-EDM כבש את הפסטיבלים, חלק מהטראנס התאים את עצמו לבמה המרכזית: טמפו איטי יותר ודרופים קצרים וחזקים בהשפעת אלקטרו האוס. הכינוי Trance 2.0 נדבק לגל הזה, והקהל הוותיק התווכח אם זה עדיין טראנס.","sound_he":"שבירה מלודית של טראנס, ואחריה דרופ קצר ובומבסטי בסגנון האוס.","bpm":"128–135","artists":["Armin van Buuren","W&W","Above & Beyond"],"track":{"artist":"Armin van Buuren","title":"Ping Pong","year":2014},"disputed_he":null},{"id":"psy-mainstage","name_he":"פסיי של הבמות הגדולות","name_en":"Mainstage psytrance","era":5,"year":2016,"family":"psy","origin_he":"ישראל","parents":["full-on","progressive-psy","bigroom-trance"],"story_he":"הצמד הישראלי Vini Vici הביא את הבס של הפסייטראנס לבמות הכי גדולות בעולם. הרמיקס שלהם ל-Free Tibet היה קטע הפסייטראנס הראשון בעשירייה הראשונה של המצעד הכללי ב-Beatport, ובסוף 2016 יצא Great Spirit עם Armin van Buuren.","sound_he":"בס פסיי מתגלגל, שירה שבטית, שבירות ודרופים במבנה של EDM.","bpm":"138–140","artists":["Vini Vici","Blastoyz","Hilight Tribe"],"track":{"artist":"Hilight Tribe","title":"Free Tibet (Vini Vici Remix)","year":2016},"disputed_he":null},{"id":"trance-revival","name_he":"תחיית הטראנס","name_en":"Trance revival","era":5,"year":2017,"family":"club","origin_he":"ברלין ואירופה","parents":["early-trance","hard-trance","acid-trance","german-techno"],"story_he":"מ-2017 די-ג'ייז מעולם הטכנו, כמו Nina Kraviz, התחילו להחזיר קטעי טראנס ישנים לסטים. ב-2021 Charlotte de Witte ו-Enrico Sangiuliano עיבדו מחדש את The Age of Love, ובשנות ה-2020 דור שגדל על נוסטלגיה לניינטיז הפך את ההארד טראנס לצליל של מועדוני הטכנו.","sound_he":"בעיטת טכנו קשה ומהירה, ומעליה מלודיות וארפג'ים של טראנס מהניינטיז.","bpm":"140–150","artists":["Nina Kraviz","KI/KI","Marlon Hoffstadt","DJ Heartstring"],"track":{"artist":"Age of Love","title":"The Age of Love (Charlotte de Witte & Enrico Sangiuliano Remix)","year":2021},"disputed_he":"יש ויכוח אם זה טראנס שחזר או טכנו עם מלודיות של טראנס."}]}</script>
+<script>
+(function () {
+  'use strict';
+  const DATA = JSON.parse(document.getElementById('trance-data').textContent);
+  const genres = DATA.genres;
+  const eras = DATA.eras;
+  const byId = new Map(genres.map(g => [g.id, g]));
+  const kids = new Map(genres.map(g => [g.id, []]));
+  genres.forEach(g => g.parents.forEach(p => kids.get(p).push(g.id)));
+  const famName = Object.fromEntries(DATA.families.map(f => [f.id, f.name_he]));
+  const famOrder = ['roots', 'club', 'out', 'psy'];
+  const eraById = new Map(eras.map(e => [e.id, e]));
+
+  function walk(id, next, acc) {
+    acc = acc || new Set();
+    next(id).forEach(n => { if (!acc.has(n)) { acc.add(n); walk(n, next, acc); } });
+    return acc;
+  }
+  const ancestors = id => walk(id, i => byId.get(i).parents);
+  const descendants = id => walk(id, i => kids.get(i));
+
+  // Generation depth inside an era: a genre sits one row below its latest same-era parent.
+  const depth = new Map();
+  function depthOf(g) {
+    if (depth.has(g.id)) return depth.get(g.id);
+    const same = g.parents.map(p => byId.get(p)).filter(p => p.era === g.era);
+    const v = same.length ? 1 + Math.max.apply(null, same.map(depthOf)) : 0;
+    depth.set(g.id, v);
+    return v;
+  }
+  genres.forEach(depthOf);
+
+  // In RTL text "1990–1995" displays as "1995–1990". Wrap number ranges in an LTR isolate (LRI…PDI).
+  const isoRanges = t => String(t).replace(/\d+\s?[–-]\s?\d+/g, m => '\u2066' + m + '\u2069');
+  function h(tag, attrs, children) {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k === 'text') n.textContent = isoRanges(attrs[k]);
+      else if (k.slice(0, 2) === 'on') n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(c => { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(isoRanges(c)) : c); });
+    return n;
+  }
+  const mark = fam => h('span', { class: 'mark', 'data-family': fam, 'aria-hidden': 'true' });
+
+  const tree = document.getElementById('tree');
+  const svg = document.getElementById('edges');
+  const side = document.getElementById('side');
+  const narrow = window.matchMedia('(max-width: 1019px)');
+  const chipEls = new Map();
+  let selected = null;
+
+  // ---------- masthead ----------
+  const edgeCount = genres.reduce((s, g) => s + g.parents.length, 0);
+  document.getElementById('lede').textContent =
+    genres.length + " ז'אנרים, " + eras.length + ' עידנים ו-' + edgeCount +
+    ' קשרים בעץ אחד שמראה מי הגיע ממי. הזמן זורם מלמעלה למטה. לחיצה על ז\'אנר מאירה את השושלת שלו: מאיפה הוא בא ומה צמח ממנו.';
+  const legend = document.getElementById('legend');
+  DATA.families.forEach(f => legend.appendChild(h('li', { 'data-family': f.id }, [mark(f.id), f.name_he])));
+  document.getElementById('foot').textContent =
+    'המידע נבדק מול ויקיפדיה ומקורות נוספים, והשנים מקורבות. ' + DATA.meta.note_he + ' הקטעים להאזנה נטענים מ-YouTube רק כשלוחצים עליהם, ולידם קישור לחיפוש למקרה שסרטון ירד.';
+
+  // ---------- tree ----------
+  eras.forEach(era => {
+    const list = genres.filter(g => g.era === era.id);
+    const maxDepth = Math.max.apply(null, list.map(g => depth.get(g.id)));
+    const rows = h('div', { class: 'era-rows' });
+    for (let d = 0; d <= maxDepth; d++) {
+      const row = h('div', { class: 'row' });
+      list.filter(g => depth.get(g.id) === d)
+        .sort((a, b) => famOrder.indexOf(a.family) - famOrder.indexOf(b.family) || a.year - b.year)
+        .forEach(g => {
+          const chip = h('button', {
+            class: 'chip', type: 'button', id: 'g-' + g.id, 'data-family': g.family, 'aria-pressed': 'false',
+            onclick: () => select(g.id, true)
+          }, [
+            h('span', { class: 'he', text: g.name_he }),
+            h('span', { class: 'en', text: g.name_en }),
+            h('span', { class: 'meta' }, [mark(g.family), String(g.year)])
+          ]);
+          chipEls.set(g.id, chip);
+          row.appendChild(chip);
+        });
+      rows.appendChild(row);
+    }
+    const best = h('span', { class: 'best', id: 'best-' + era.id });
+    const quiz = h('div', { class: 'quiz card flat', id: 'quiz-' + era.id });
+    quiz.hidden = true;
+    const head = h('header', { class: 'era-head' }, [
+      h('p', { class: 'pill', text: 'עידן ' + era.id + ' · ' + era.years_he }),
+      h('h2', { text: era.name_he }),
+      h('p', { class: 'era-intro', text: era.intro_he }),
+      h('button', { class: 'btn alt small', type: 'button', id: 'quiz-open-' + era.id, text: 'חידון על העידן', onclick: () => startQuiz(era.id) }),
+      best
+    ]);
+    tree.appendChild(h('section', { class: 'era', id: 'era-' + era.id, 'aria-label': era.name_he }, [head, rows, quiz]));
+    showBest(era.id);
+  });
+
+  // ---------- edges ----------
+  const NS = 'http://www.w3.org/2000/svg';
+  function drawEdges() {
+    const box = tree.getBoundingClientRect();
+    const anc = selected ? ancestors(selected) : new Set();
+    const desc = selected ? descendants(selected) : new Set();
+    const up = new Set(anc); if (selected) up.add(selected);
+    const down = new Set(desc); if (selected) down.add(selected);
+    const plain = [], lit = [];
+    genres.forEach(c => {
+      const cr = chipEls.get(c.id).getBoundingClientRect();
+      c.parents.forEach(pid => {
+        const pr = chipEls.get(pid).getBoundingClientRect();
+        const x1 = pr.left + pr.width / 2 - box.left, y1 = pr.bottom - box.top;
+        const x2 = cr.left + cr.width / 2 - box.left, y2 = cr.top - box.top;
+        const dy = Math.max(26, (y2 - y1) / 2);
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' C' + x1.toFixed(1) + ' ' + (y1 + dy).toFixed(1) +
+          ' ' + x2.toFixed(1) + ' ' + (y2 - dy).toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1));
+        path.setAttribute('data-family', c.family);
+        const isLit = selected && ((up.has(c.id) && up.has(pid)) || (down.has(c.id) && down.has(pid)));
+        path.setAttribute('class', isLit ? 'e lit' : 'e');
+        (isLit ? lit : plain).push(path);
+      });
+    });
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    plain.concat(lit).forEach(p => svg.appendChild(p));
+  }
+
+  // ---------- selection + detail card ----------
+  function linkChip(id) {
+    const g = byId.get(id);
+    return h('button', { class: 'link-chip', type: 'button', 'data-family': g.family, text: g.name_he, onclick: () => select(id, true) });
+  }
+  function section(title, nodes) {
+    return h('div', { class: 'd-sec' }, [h('h4', { text: title })].concat(nodes));
+  }
+  function renderDetail(g) {
+    const card = h('article', { class: 'detail card', id: 'detail', 'data-family': g.family });
+    card.appendChild(h('p', { class: 'd-tag' }, [mark(g.family), famName[g.family] + ' · ' + eraById.get(g.era).name_he]));
+    card.appendChild(h('div', null, [h('h3', { text: g.name_he }), h('p', { class: 'd-en' }, [h('span', { class: 'ltr', text: g.name_en })])]));
+    card.appendChild(h('dl', { class: 'facts' }, [
+      h('div', null, [h('dt', { text: 'מתי' }), h('dd', { class: 'num', text: 'בערך ' + g.year })]),
+      h('div', null, [h('dt', { text: 'איפה' }), h('dd', { text: g.origin_he })]),
+      h('div', null, [h('dt', { text: 'BPM' }), h('dd', { class: 'num', text: g.bpm || 'משתנה' })])
+    ]));
+    card.appendChild(section('מאיפה זה הגיע', [h('p', { text: g.story_he })]));
+    card.appendChild(section('איך זה נשמע', [h('p', { text: g.sound_he })]));
+    card.appendChild(section('שמות מפתח', [h('p', { class: 'd-names', text: g.artists.join(' · ') })]));
+    if (g.track) {
+      card.appendChild(section('קטע להאזנה', [window.S2Video.player({ artist: g.track.artist, title: g.track.title, note: String(g.track.year) })]));
+    }
+    if (g.disputed_he) card.appendChild(h('div', { class: 'd-note' }, [h('strong', { text: 'שנוי במחלוקת' }), g.disputed_he]));
+    card.appendChild(section('מקורות ישירים',
+      g.parents.length ? [h('div', { class: 'links' }, g.parents.map(linkChip))] : [h('p', { class: 'none', text: 'נקודת התחלה בעץ הזה.' })]));
+    const ch = kids.get(g.id);
+    card.appendChild(section('מה צמח מזה',
+      ch.length ? [h('div', { class: 'links' }, ch.map(linkChip))] : [h('p', { class: 'none', text: 'עדיין אין צאצאים בעץ.' })]));
+    return card;
+  }
+  function placeDetail(card) {
+    const old = document.getElementById('detail');
+    if (old) old.remove();
+    if (narrow.matches) {
+      const sec = document.getElementById('era-' + byId.get(selected).era);
+      sec.parentNode.insertBefore(card, sec.nextSibling);
+    } else {
+      side.appendChild(card);
+    }
+  }
+  function select(id, byUser) {
+    selected = id;
+    const anc = ancestors(id), desc = descendants(id);
+    tree.classList.add('has-sel');
+    chipEls.forEach((el, gid) => {
+      el.classList.toggle('sel', gid === id);
+      el.classList.toggle('kin', anc.has(gid) || desc.has(gid));
+      el.setAttribute('aria-pressed', gid === id ? 'true' : 'false');
+    });
+    const card = renderDetail(byId.get(id));
+    placeDetail(card);
+    drawEdges();
+    if (byUser) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const target = narrow.matches ? card : chipEls.get(id);
+      target.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+  narrow.addEventListener('change', () => { if (selected) { placeDetail(document.getElementById('detail') || renderDetail(byId.get(selected))); drawEdges(); } });
+
+  // ---------- quiz ----------
+  const rnd = n => Math.floor(Math.random() * n);
+  function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = rnd(i + 1); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  const sentence = s => s.split('. ')[0].replace(/\.$/, '') + '.';
+  function unrelated(g) {
+    const a = ancestors(g.id), d = descendants(g.id);
+    const all = genres.filter(x => x.id !== g.id && !a.has(x.id) && !d.has(x.id));
+    const near = all.filter(x => Math.abs(x.era - g.era) <= 1);
+    return near.length >= 3 ? near : all;
+  }
+  const tokens = s => new Set(s.split(/[\s,]+/).map(t => (t.length > 3 && t[0] === 'ו') ? t.slice(1) : t).filter(t => t.length > 1));
+  const overlap = (a, b) => { for (const t of a) if (b.has(t)) return true; return false; };
+  const genreOpt = (x, correct) => ({ label: x.name_he, sub: x.name_en, correct: !!correct });
+
+  const makers = {
+    sound(g) {
+      const others = shuffle(unrelated(g)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: "איזה ז'אנר מתואר כאן?", quote: g.sound_he,
+        options: [genreOpt(g, true)].concat(others.map(x => genreOpt(x))),
+        explain: g.name_he + ': ' + g.origin_he + ', בערך ' + g.year + '. ' + sentence(g.story_he) };
+    },
+    origin(g) {
+      const mine = tokens(g.origin_he), picked = [], seen = [mine];
+      shuffle(genres).forEach(x => {
+        if (picked.length >= 3) return;
+        const t = tokens(x.origin_he);
+        if (seen.some(s => overlap(s, t))) return;
+        seen.push(t); picked.push(x.origin_he);
+      });
+      if (picked.length < 3) return null;
+      return { prompt: 'איפה צמח ' + g.name_he + '?',
+        options: [{ label: g.origin_he, correct: true }].concat(picked.map(o => ({ label: o }))),
+        explain: g.story_he };
+    },
+    parent(g) {
+      if (!g.parents.length) return null;
+      const right = byId.get(g.parents[rnd(g.parents.length)]);
+      const a = ancestors(g.id);
+      const others = shuffle(genres.filter(x => x.id !== g.id && !a.has(x.id) && x.year <= g.year + 8)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: 'מי מהבאים הוא אחד המקורות הישירים של ' + g.name_he + '?',
+        options: [genreOpt(right, true)].concat(others.map(x => genreOpt(x))),
+        explain: 'המקורות הישירים של ' + g.name_he + ': ' + g.parents.map(p => byId.get(p).name_he).join(', ') + '.' };
+    },
+    artist(g) {
+      const right = g.artists[rnd(g.artists.length)];
+      const pool = [];
+      unrelated(g).forEach(x => x.artists.forEach(n => { if (g.artists.indexOf(n) < 0 && pool.indexOf(n) < 0) pool.push(n); }));
+      const others = shuffle(pool).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: 'איזה שם מזוהה עם ' + g.name_he + '?', ltr: true,
+        options: [{ label: right, correct: true }].concat(others.map(n => ({ label: n }))),
+        explain: right + ' הוא אחד משמות המפתח של ' + g.name_he + '. ' + sentence(g.story_he) };
+    },
+    track(g) {
+      if (!g.track) return null;
+      const others = shuffle(unrelated(g)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: "לאיזה ז'אנר שייך הקטע הזה?", quote: g.track.artist + ' – ' + g.track.title, quoteLtr: true,
+        options: [genreOpt(g, true)].concat(others.map(x => genreOpt(x))),
+        explain: 'הקטע יצא ב-' + g.track.year + ' ומזוהה עם ' + g.name_he + '.' };
+    },
+    first(g) {
+      const later = shuffle(genres.filter(x => x.year >= g.year + 3)).slice(0, 3);
+      if (later.length < 3) return null;
+      const all = [g].concat(later).sort((a, b) => a.year - b.year);
+      return { prompt: 'מי מהבאים הופיע ראשון?',
+        options: [genreOpt(g, true)].concat(later.map(x => genreOpt(x))),
+        explain: all.map(x => x.name_he + ' (' + x.year + ')').join(', ') + '.' };
+    }
+  };
+
+  function buildQuiz(eraId, count) {
+    const pool = shuffle(genres.filter(g => g.era === eraId));
+    const types = shuffle(Object.keys(makers));
+    const out = [], usedGenre = new Set(), usedPair = new Set();
+    for (let i = 0; out.length < count && i < count * 6; i++) {
+      const type = types[i % types.length];
+      let made = null;
+      for (const strict of [true, false]) {
+        for (const g of pool) {
+          if (strict ? usedGenre.has(g.id) : usedPair.has(type + g.id)) continue;
+          const q = makers[type](g);
+          if (q) { made = q; usedGenre.add(g.id); usedPair.add(type + g.id); break; }
+        }
+        if (made) break;
+      }
+      if (made) { made.options = shuffle(made.options); out.push(made); }
+    }
+    return out;
+  }
+
+  function readBest(eraId) { try { return parseInt(localStorage.getItem('trance-best-' + eraId), 10) || 0; } catch (e) { return 0; } }
+  function writeBest(eraId, v) { try { localStorage.setItem('trance-best-' + eraId, String(v)); } catch (e) { /* storage unavailable */ } }
+  function showBest(eraId) {
+    const b = readBest(eraId);
+    document.getElementById('best-' + eraId).textContent = b ? 'השיא שלך: ' + b + ' מתוך 5' : '';
+  }
+
+  function startQuiz(eraId) {
+    const panel = document.getElementById('quiz-' + eraId);
+    const era = eraById.get(eraId);
+    const questions = buildQuiz(eraId, 5);
+    let i = 0, score = 0;
+    panel.hidden = false;
+
+    function close() { panel.hidden = true; panel.textContent = ''; drawEdges(); document.getElementById('quiz-open-' + eraId).focus(); }
+    function top(text) {
+      return h('div', { class: 'q-top' }, [h('span', { class: 'pill', text: text }),
+        h('button', { class: 'text-btn', type: 'button', text: 'סגירה', onclick: close })]);
+    }
+    function ask() {
+      const q = questions[i];
+      panel.textContent = '';
+      panel.appendChild(top('חידון: ' + era.name_he + ' · שאלה ' + (i + 1) + ' מתוך ' + questions.length));
+      panel.appendChild(h('p', { class: 'q-prompt', text: q.prompt }));
+      if (q.quote) panel.appendChild(h('blockquote', { class: 'q-quote' }, [q.quoteLtr ? h('span', { class: 'ltr', text: q.quote }) : q.quote]));
+      const opts = h('div', { class: 'q-opts' });
+      const fb = h('div', { class: 'q-fb' });
+      fb.hidden = true;
+      q.options.forEach(o => {
+        const btn = h('button', { class: 'q-opt answer', type: 'button' }, [q.ltr ? h('span', { class: 'ltr', text: o.label }) : o.label]);
+        btn.addEventListener('click', () => {
+          Array.prototype.forEach.call(opts.children, (b, k) => {
+            b.disabled = true;
+            if (q.options[k].correct) { b.classList.add('right'); b.insertBefore(h('span', { class: 'verdict', text: '✓' }), b.firstChild); }
+          });
+          if (o.correct) score++;
+          else { btn.classList.add('wrong'); btn.insertBefore(h('span', { class: 'verdict', text: '✗' }), btn.firstChild); }
+          fb.appendChild(h('p', null, [h('strong', { class: o.correct ? 'ok' : 'no', text: o.correct ? 'נכון. ' : 'לא הפעם. ' }), q.explain]));
+          const last = i === questions.length - 1;
+          const next = h('button', { class: 'btn', type: 'button', text: last ? 'לתוצאה' : 'לשאלה הבאה', onclick: () => { i++; last ? finish() : ask(); } });
+          fb.appendChild(next);
+          fb.hidden = false;
+          drawEdges();
+          next.focus();
+        });
+        opts.appendChild(btn);
+      });
+      panel.appendChild(opts);
+      panel.appendChild(fb);
+      drawEdges();
+    }
+    function finish() {
+      if (score > readBest(eraId)) writeBest(eraId, score);
+      showBest(eraId);
+      panel.textContent = '';
+      panel.appendChild(top('חידון: ' + era.name_he));
+      const verdict = score === questions.length ? 'מושלם. העידן הזה אצלך בכיס.'
+        : score >= 3 ? 'יפה. עוד סיבוב אחד וזה יושב.'
+        : 'כדאי לעבור שוב על הכרטיסים של העידן ולנסות עוד פעם.';
+      panel.appendChild(h('div', { class: 'q-end' }, [
+        h('p', { class: 'q-score', text: score + ' / ' + questions.length }),
+        h('p', { text: verdict }),
+        h('div', { class: 'q-actions' }, [
+          h('button', { class: 'btn', type: 'button', text: 'סיבוב נוסף', onclick: () => startQuiz(eraId) }),
+          h('button', { class: 'btn ghost', type: 'button', text: 'סגירה', onclick: close })
+        ])
+      ]));
+      drawEdges();
+    }
+    if (!questions.length) { close(); return; }
+    ask();
+    panel.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
+  // ---------- boot ----------
+  select('psytrance', false);
+  if (window.ResizeObserver) new ResizeObserver(drawEdges).observe(tree);
+  window.addEventListener('resize', drawEdges);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawEdges);
+})();
+</script>
+
+</body>
+</html>

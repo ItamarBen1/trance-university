@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S2 component sheet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/s2.css">
+<script src="../assets/s2-palette.js"></script>
+<style>
+/* Sheet chrome only. Everything else comes from assets/s2.css. */
+main{max-width:900px;margin:0 auto;padding:32px 16px 72px;display:grid;gap:28px}
+h1{font-size:clamp(36px,7vw,56px)}
+h2{font-size:24px}
+.note{color:var(--muted);font-size:14px;max-width:65ch}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start}
+.sw{display:grid;gap:4px;font-size:12px}
+.sw i{display:block;width:80px;height:44px;border:2px solid var(--ink);border-radius:10px}
+table{border-collapse:collapse;font-size:14px;width:100%}
+td,th{padding:6px 8px;border-bottom:2px solid var(--surface-2);text-align:start}
+td.num{font-variant-numeric:tabular-nums;direction:ltr;text-align:end}
+.ok{color:#2F6B12;font-weight:700}.no{color:#A3122F;font-weight:700}
+.fontcheck{font-size:15px}
+
+/* Preview of the step-2 machine panel. Not in s2.css yet. */
+.grid{display:grid;grid-template-columns:44px repeat(16,minmax(0,1fr));gap:5px 3px;align-items:center;direction:ltr}
+.g-label{font-size:13px;font-weight:700;text-align:right}
+.cell{height:30px;border:2px solid var(--ink);border-radius:6px;background:var(--white)}
+.cell.beat{background:var(--surface-2)}
+.cell.on{background:var(--good)}
+.cell.on.b{background:var(--accent)}
+.cell.now{box-shadow:0 0 0 3px var(--white),0 0 0 6px var(--ink)}
+/* Preview of the step-3 genre chips. */
+.chip{display:grid;gap:2px;min-width:140px;padding:9px 12px;background:var(--f);border:2px solid var(--ink);border-radius:var(--r-sm);box-shadow:var(--shadow);text-align:start;cursor:pointer}
+.chip .he{font-weight:700;font-size:15px}.chip .en{font-size:12px;direction:ltr;text-align:right}
+.chip.sel{box-shadow:none;transform:translateY(var(--lift));border-width:4px;padding:7px 10px}
+@media (max-width:559px){.grid{grid-template-columns:32px repeat(16,minmax(0,1fr));gap:4px 2px}.cell{height:24px;border-width:1.5px;border-radius:4px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 64 64"><path d="M32 5l8.2 17.6 19.3 2.3-14.2 13.2 3.8 19.1L32 47.6 14.9 57.2l3.8-19.1L4.5 24.9l19.3-2.3z"/></symbol>
+</svg>
+<main>
+  <header class="card">
+    <span class="pill">גיליון רכיבים · S2</span>
+    <h1><span class="marker">בית הספר לטראנס</span></h1>
+    <p>כל הרכיבים של הסקין, בכל המצבים, לפני שנוגעים בדפים. הכותרות בדיו עם סימון בצבע הראשי מאחור, וכל הטקסט על צבע הוא בדיו.</p>
+    <p class="fontcheck" id="fontcheck">בודק גופן…</p>
+  </header>
+
+  <section class="card white">
+    <h2>בורר פלטה</h2>
+    <p class="note">אותו רכיב שיופיע בשני הדפים. הבחירה נשמרת בדפדפן (<span class="ltr">localStorage</span>), ברירת המחדל היא UV.</p>
+    <div data-palette-picker></div>
+  </section>
+
+  <section class="card">
+    <h2>פלטה</h2>
+    <div class="row" dir="ltr">
+      <span class="sw"><i style="background:var(--page)"></i>page</span>
+      <span class="sw"><i style="background:var(--surface)"></i>surface</span>
+      <span class="sw"><i style="background:var(--surface-2)"></i>surface-2</span>
+      <span class="sw"><i style="background:var(--white)"></i>white</span>
+      <span class="sw"><i style="background:var(--ink)"></i>ink</span>
+      <span class="sw"><i style="background:var(--muted)"></i>muted</span>
+      <span class="sw"><i style="background:var(--link)"></i>link</span>
+      <span class="sw"><i style="background:var(--primary)"></i>primary</span>
+      <span class="sw"><i style="background:var(--accent)"></i>accent</span>
+      <span class="sw"><i style="background:var(--good)"></i>good</span>
+      <span class="sw"><i style="background:var(--good-t)"></i>good-t</span>
+      <span class="sw"><i style="background:var(--bad-t)"></i>bad-t</span>
+      <span class="sw"><i style="background:var(--star)"></i>star</span>
+    </div>
+  </section>
+
+  <div class="cols">
+    <section class="card">
+      <h2>כפתורים</h2>
+      <p class="note">ריחוף משנה גוון. לחיצה מורידה את הכפתור 4px ומעלימה את הצל. כפתור "פועל" (נגן/עצור) נשאר לחוץ.</p>
+      <div class="row">
+        <button class="btn" type="button">▶ נגן</button>
+        <button class="btn" type="button" aria-pressed="true">■ עצור</button>
+      </div>
+      <div class="row">
+        <button class="btn alt" type="button">לאתגר</button>
+        <button class="btn go" type="button">לשלב הבא</button>
+        <button class="btn ghost" type="button">שוב</button>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" disabled>נעול</button>
+        <button class="btn small" type="button">קטן</button>
+        <button class="text-btn" type="button">פתח את כל השלבים</button>
+      </div>
+      <p>קישור: <a href="#">האזינו ב־<span class="ltr">YouTube</span></a></p>
+    </section>
+
+    <section class="card">
+      <h2>גלולות, התקדמות, כוכבים</h2>
+      <div class="row">
+        <span class="pill">שלב 3</span>
+        <span class="pill gold">2/3</span>
+        <span class="pill good">עבר</span>
+        <span class="pill white"><span class="ltr">138 BPM</span></span>
+      </div>
+      <div class="bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" aria-label="התקדמות"><i style="width:43%"></i></div>
+      <span class="stars" role="img" aria-label="שני כוכבים מתוך שלושה">
+        <svg class="star on"><use href="#star"/></svg><svg class="star on"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg>
+      </span>
+      <span class="stars big" role="img" aria-label="שלושה כוכבים מתוך שלושה">
+        <svg class="star on"><use href="#star"/></svg><svg class="star on"><use href="#star"/></svg><svg class="star on"><use href="#star"/></svg>
+      </span>
+      <input class="s2" type="range" min="60" max="180" value="138" aria-label="קצב">
+    </section>
+  </div>
+
+  <section class="card white">
+    <div class="row" style="justify-content:space-between"><span class="pill">שאלה 2 מתוך 3</span><span class="stars" aria-hidden="true"><svg class="star on"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg></span></div>
+    <h3 style="font-size:20px">מה ההבדל בין בס אוף־ביט (<span class="ltr">Offbeat</span>) לבס מתגלגל (<span class="ltr">Rolling</span>)?</h3>
+    <div class="cols" style="gap:10px">
+      <button class="answer" type="button">תשובה רגילה (ריחוף ולחיצה)</button>
+      <button class="answer right" type="button" disabled><span class="v">✓</span>תשובה נכונה</button>
+      <button class="answer wrong" type="button" disabled><span class="v">✗</span>תשובה שגויה</button>
+      <button class="answer" type="button" disabled>תשובה אחרי שענו</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>תצוגה מקדימה: המכונה (שלב 2) ופס השלבים</h2>
+    <p class="note">לוח לבן עם קו דיו. ירוק ותכלת לצעדים דולקים, טבעת דיו עבה לצעד שמתנגן.</p>
+    <div class="card white flat" style="padding:16px">
+      <div class="grid" id="grid"></div>
+    </div>
+    <div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+      <div class="card flat" style="padding:12px;gap:6px;border-width:2px;border-radius:var(--r-sm);background:var(--good-t)"><span class="pill">1</span><strong>קצב</strong><span class="stars" aria-hidden="true"><svg class="star on"><use href="#star"/></svg><svg class="star on"><use href="#star"/></svg><svg class="star on"><use href="#star"/></svg></span></div>
+      <div class="card flat" style="padding:12px;gap:6px;border-width:4px;border-radius:var(--r-sm)"><span class="pill">3</span><strong>הבס</strong><span class="stars" aria-hidden="true"><svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg></span></div>
+      <div class="card flat locked" style="padding:12px;gap:6px;border-width:2px;border-radius:var(--r-sm)"><span class="pill white">4</span><strong>שכבות</strong><svg class="icon" style="width:24px;height:24px" viewBox="0 0 64 64" aria-label="נעול"><rect x="14" y="28" width="36" height="28" rx="6" style="fill:var(--star)"/><path d="M22 28v-8a10 10 0 0 1 20 0v8" fill="none"/></svg></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>תצוגה מקדימה: צ'יפים של העץ (שלב 3)</h2>
+    <p class="note">ארבע משפחות, טקסט בדיו על כולן. הנבחר יורד ומקבל קו עבה.</p>
+    <div class="row">
+      <button class="chip" style="--f:var(--fam-roots)" type="button"><span class="he">שורשים</span><span class="en">Roots</span></button>
+      <button class="chip" style="--f:var(--fam-club)" type="button"><span class="he">טראנס מועדונים</span><span class="en">Club trance</span></button>
+      <button class="chip sel" style="--f:var(--fam-psy)" type="button"><span class="he">גואה (נבחר)</span><span class="en">Goa trance</span></button>
+      <button class="chip" style="--f:var(--fam-out)" type="button"><span class="he">יצא מהמשפחה</span><span class="en">Left the family</span></button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>אייקונים</h2>
+    <p class="note">חדשים, באותו סגנון של הברק: קו דיו 4px, פינות מעוגלות, מילוי שטוח.</p>
+    <div class="row" style="gap:20px">
+      <svg class="icon" viewBox="0 0 64 64" aria-label="רמקול"><rect x="14" y="6" width="36" height="52" rx="6" style="fill:var(--primary)"/><circle cx="32" cy="38" r="11" style="fill:var(--star)"/><circle cx="32" cy="38" r="3" style="fill:var(--ink)"/><circle cx="32" cy="17" r="5" style="fill:var(--accent)"/></svg>
+      <svg class="icon" viewBox="0 0 64 64" aria-label="גל קול"><g style="fill:var(--star)"><rect x="6" y="26" width="10" height="12" rx="4"/><rect x="20" y="14" width="10" height="36" rx="4"/><rect x="34" y="20" width="10" height="24" rx="4"/><rect x="48" y="8" width="10" height="48" rx="4"/></g></svg>
+      <svg class="icon" viewBox="0 0 64 64" aria-label="תו"><path d="M24 14 50 6v12L24 26z" style="fill:var(--star)"/><path d="M24 26v21M50 18v21" fill="none"/><ellipse cx="17" cy="48" rx="9" ry="7" style="fill:var(--primary)"/><ellipse cx="43" cy="40" rx="9" ry="7" style="fill:var(--primary)"/></svg>
+      <svg class="icon" viewBox="0 0 64 64" aria-label="אוזניות"><path d="M10 40v-8a22 22 0 0 1 44 0v8" fill="none"/><rect x="6" y="36" width="14" height="20" rx="5" style="fill:var(--accent)"/><rect x="44" y="36" width="14" height="20" rx="5" style="fill:var(--accent)"/></svg>
+      <svg class="icon" viewBox="0 0 64 64" aria-label="עץ משפחה"><path d="M32 20 16 42M32 20l16 22" fill="none"/><circle cx="32" cy="13" r="9" style="fill:var(--good)"/><circle cx="15" cy="49" r="9" style="fill:var(--accent)"/><circle cx="49" cy="49" r="9" style="fill:var(--primary)"/></svg>
+      <svg class="icon" viewBox="0 0 64 64" aria-label="מנעול"><rect x="14" y="28" width="36" height="28" rx="6" style="fill:var(--star)"/><path d="M22 28v-8a10 10 0 0 1 20 0v8" fill="none"/></svg>
+    </div>
+  </section>
+
+  <section class="card white">
+    <h2>ניגודיות (מחושב מהטוקנים החיים)</h2>
+    <p class="note">טקסט רגיל צריך 4.5. טקסט גדול ורכיבי ממשק צריכים 3.</p>
+    <table dir="ltr"><thead><tr><th>Pair</th><th>Ratio</th><th>Need</th><th></th></tr></thead><tbody id="contrast"></tbody></table>
+  </section>
+</main>
+<script>
+(() => {
+  const v = n => getComputedStyle(document.documentElement).getPropertyValue('--' + n).trim();
+
+  document.addEventListener('palettechange', () => drawContrast());
+
+  // step-grid preview
+  const grid = document.getElementById('grid');
+  const rows = [['kick', [0,4,8,12], ''], ['bass', [2,6,10,14], 'b'], ['hat', [2,6,10,14], '']];
+  for (const [label, on, cls] of rows) {
+    grid.insertAdjacentHTML('beforeend', `<span class="g-label">${label}</span>`);
+    for (let i = 0; i < 16; i++) {
+      const c = ['cell', i % 4 === 0 && 'beat', on.includes(i) && 'on', on.includes(i) && cls, i === 6 && 'now'].filter(Boolean).join(' ');
+      grid.insertAdjacentHTML('beforeend', `<span class="${c}"></span>`);
+    }
+  }
+
+  // font check: is Fredoka actually rendering Hebrew at both weights?
+  document.fonts.ready.then(async () => {
+    await Promise.all(['500', '700'].map(w => document.fonts.load(`${w} 16px Fredoka`, 'שלום')));
+    const ok = ['500', '700'].map(w => document.fonts.check(`${w} 16px Fredoka`, 'שלום'));
+    const loadedHe = [...document.fonts].filter(f => f.family.replace(/"/g, '') === 'Fredoka' && f.status === 'loaded' && f.unicodeRange.includes('590'));
+    document.getElementById('fontcheck').textContent =
+      `Fredoka עברית: 500 ${ok[0] && loadedHe.some(f => f.weight === '500') ? '✓' : '✗'} · 700 ${ok[1] && loadedHe.some(f => f.weight === '700') ? '✓' : '✗'}`;
+  });
+
+  // contrast table
+  const lum = hex => {
+    const c = hex.replace('#', '').match(/../g).map(x => parseInt(x, 16) / 255)
+      .map(x => x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+  const pairs = [
+    ['ink on page', 'ink', 'page', 4.5], ['ink on surface', 'ink', 'surface', 4.5], ['muted on surface', 'muted', 'surface', 4.5],
+    ['muted on page', 'muted', 'page', 4.5], ['muted on surface-2 (locked)', 'muted', 'surface-2', 4.5], ['link on surface', 'link', 'surface', 4.5],
+    ['ink on primary (button)', 'ink', 'primary', 4.5], ['ink on accent (pill)', 'ink', 'accent', 4.5], ['ink on good (right)', 'ink', 'good', 4.5],
+    ['ink on bad-t (wrong)', 'ink', 'bad-t', 4.5], ['ink on star', 'ink', 'star', 4.5], ['ink on fam-psy', 'ink', 'fam-psy', 4.5],
+  ];
+  function drawContrast() {
+    document.getElementById('contrast').innerHTML = pairs.map(([n, f, b, need]) => {
+      const r = ratio(v(f), v(b));
+      return `<tr><td>${n}</td><td class="num">${r.toFixed(2)}</td><td class="num">${need}</td><td class="${r >= need ? 'ok' : 'no'}">${r >= need ? 'pass' : 'FAIL'}</td></tr>`;
+    }).join('');
+  }
+  drawContrast();
+})();
+</script>
+</body>
+</html>

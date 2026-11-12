@@ -1,0 +1,494 @@
+<title>אילן היוחסין של הטראנס</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/s2.css">
+<script src="../assets/s2-palette.js"></script>
+<script src="../assets/videos.js"></script>
+<script src="../assets/s2-video.js"></script>
+<style>
+/* Trance Family Tree on the S2 skin. Tokens and shared components: assets/s2.css.
+   Five era bands stacked top to bottom (time flows down). Lineage curves are an SVG
+   layer under the chips, redrawn from DOM positions. */
+.wrap{max-width:1260px;margin:0 auto;padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* masthead */
+.mast{margin-bottom:30px}
+.mast-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.mast h1{font-size:clamp(38px,7vw,72px);line-height:1.05;text-wrap:balance}
+.lede{max-width:62ch;font-size:17px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:2px 0 0;padding:0}
+.legend li{display:flex;align-items:center;gap:8px;padding:3px 12px 3px 10px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);font-weight:700;font-size:14px}
+
+/* families: fill color + marker shape, so color is never the only signal */
+[data-family="roots"]{--f:var(--fam-roots)}
+[data-family="club"]{--f:var(--fam-club)}
+[data-family="psy"]{--f:var(--fam-psy)}
+[data-family="out"]{--f:var(--fam-out)}
+.mark{flex:none;width:11px;height:11px;background:var(--ink);display:inline-block}
+[data-family="roots"] .mark,.mark[data-family="roots"]{border-radius:50%}
+[data-family="psy"] .mark,.mark[data-family="psy"]{transform:rotate(45deg) scale(.86)}
+[data-family="out"] .mark,.mark[data-family="out"]{clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+/* layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:28px;align-items:start}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);max-height:calc(100vh - 32px);overflow:auto;padding:4px 4px 12px;margin:-4px}
+.side:empty{display:none}
+@media (max-width:1019px){.layout{grid-template-columns:minmax(0,1fr)}.side{display:none}}
+
+/* tree */
+.tree{position:relative;display:grid;gap:22px}
+#edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.e{fill:none;stroke:var(--ink);stroke-width:1.5;opacity:.22}
+.tree.has-sel .e{opacity:.1}
+.tree.has-sel .e.lit{opacity:1;stroke-width:2.5}
+
+.era{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px 28px;padding:22px;background:var(--surface);border:var(--line-card) solid var(--ink);border-radius:var(--r-card);box-shadow:var(--shadow-card);margin-bottom:var(--lift-card)}
+.era-head{position:relative;z-index:2;display:grid;gap:10px;align-content:start;background:var(--surface)}
+.era-head h2{font-size:34px}
+.era-intro{font-size:15px;line-height:1.6;color:var(--muted)}
+.best{font-size:13px;color:var(--muted)}
+.era-rows{display:flex;flex-direction:column;gap:40px;min-width:0;padding-block:4px}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+@media (max-width:759px){
+  .era{grid-template-columns:minmax(0,1fr);padding:18px}
+  .era-head h2{font-size:30px}
+  .row{gap:12px 10px}
+}
+
+.chip{position:relative;z-index:1;display:grid;gap:3px;justify-items:start;text-align:start;min-width:138px;max-width:200px;padding:9px 12px 10px;
+  background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-sm);box-shadow:var(--shadow);margin-bottom:var(--lift);cursor:pointer;transition:transform .08s ease,box-shadow .08s ease}
+.chip:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}
+.chip .he{font-weight:700;font-size:15px;line-height:1.25}
+.chip .en{font-size:12px;line-height:1.3;direction:ltr;unicode-bidi:isolate;text-align:right}
+.chip .meta{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.chip .mark{width:8px;height:8px}
+.tree.has-sel .chip:not(.kin):not(.sel){background:var(--surface-2);color:var(--muted);border-color:var(--muted);box-shadow:none;transform:translateY(var(--lift))}
+.tree.has-sel .chip:not(.kin):not(.sel) .mark{background:var(--muted)}
+.chip.sel{border-width:4px;padding:7px 10px 8px;box-shadow:none;transform:translateY(var(--lift))}
+/* Phone: 38 shadowed chips get busy, so chips go flat there. */
+@media (max-width:759px){.chip,.chip:hover{box-shadow:none;transform:none;margin-bottom:0}.tree.has-sel .chip:not(.kin):not(.sel),.chip.sel{transform:none}}
+@media (max-width:420px){.chip{min-width:calc(50% - 5px);max-width:calc(50% - 5px)}}
+@media (prefers-reduced-motion:reduce){.chip{transition:none}.chip:hover{transform:none}}
+
+/* detail card */
+.detail{position:relative;z-index:2;background:var(--white);gap:16px}
+.tree > .detail{margin:0}
+.d-tag{display:inline-flex;align-items:center;gap:8px;justify-self:start;padding:3px 12px 3px 10px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);font-size:13px;font-weight:700}
+.detail h3{font-size:36px}
+.d-en{font-size:15px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:12px 14px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-sm)}
+.facts div{display:grid;gap:2px;min-width:0}
+.facts dt{font-size:12.5px;color:var(--muted)}
+.facts dd{margin:0;font-size:14.5px;font-weight:700;line-height:1.35;overflow-wrap:anywhere}
+.facts dd.num{font-variant-numeric:tabular-nums}
+.d-sec{display:grid;gap:6px}
+.d-sec h4{margin:0;font-size:14px;font-weight:700;color:var(--muted)}
+.d-sec p{font-size:15.5px;line-height:1.65}
+.d-names{font-size:15px;direction:ltr;unicode-bidi:isolate;text-align:right}
+.d-note{background:var(--star);border:var(--line) dashed var(--ink);border-radius:var(--r-sm);padding:10px 14px;font-size:14.5px;line-height:1.6}
+.d-note strong{display:block;font-size:13px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.link-chip{padding:4px 12px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);box-shadow:0 3px 0 var(--ink);margin-bottom:3px;font-size:14px;font-weight:700;cursor:pointer}
+.link-chip:active{transform:translateY(3px);box-shadow:none}
+.none{font-size:14.5px;color:var(--muted)}
+
+/* quiz */
+.quiz{grid-column:1/-1;position:relative;z-index:2;background:var(--white)}
+.q-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 12px}
+.q-prompt{font-size:20px;font-weight:700;line-height:1.4;text-wrap:balance}
+.q-quote{margin:0;padding:12px 16px;background:var(--surface);border:var(--line) solid var(--ink);border-radius:var(--r-sm);font-size:15.5px}
+.q-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:559px){.q-opts{grid-template-columns:minmax(0,1fr)}}
+.answer .verdict{font-weight:700;margin-inline-end:6px}
+.q-fb{display:grid;gap:12px;font-size:16px;line-height:1.6}
+.q-end{display:grid;gap:14px}
+.q-score{font-size:60px;line-height:1;font-weight:700}
+.q-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+.foot{margin-top:30px;font-size:14px;color:var(--muted);max-width:75ch}
+</style>
+
+<div class="wrap" dir="rtl" lang="he">
+  <header class="mast card">
+    <div class="mast-top"><a class="btn ghost small" href="trance-school.html">→ לבית ספר לטראנס</a><div data-palette-picker></div></div>
+    <h1><span class="marker">אילן היוחסין של הטראנס</span></h1>
+    <p class="lede" id="lede"></p>
+    <ul class="legend" id="legend" aria-label="מקרא משפחות"></ul>
+  </header>
+
+  <div class="layout">
+    <main class="tree" id="tree">
+      <svg id="edges" aria-hidden="true"></svg>
+    </main>
+    <aside class="side" id="side" aria-live="polite"></aside>
+  </div>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script type="application/json" id="trance-data">/*__DATA__*/</script>
+<script>
+(function () {
+  'use strict';
+  const DATA = JSON.parse(document.getElementById('trance-data').textContent);
+  const genres = DATA.genres;
+  const eras = DATA.eras;
+  const byId = new Map(genres.map(g => [g.id, g]));
+  const kids = new Map(genres.map(g => [g.id, []]));
+  genres.forEach(g => g.parents.forEach(p => kids.get(p).push(g.id)));
+  const famName = Object.fromEntries(DATA.families.map(f => [f.id, f.name_he]));
+  const famOrder = ['roots', 'club', 'out', 'psy'];
+  const eraById = new Map(eras.map(e => [e.id, e]));
+
+  function walk(id, next, acc) {
+    acc = acc || new Set();
+    next(id).forEach(n => { if (!acc.has(n)) { acc.add(n); walk(n, next, acc); } });
+    return acc;
+  }
+  const ancestors = id => walk(id, i => byId.get(i).parents);
+  const descendants = id => walk(id, i => kids.get(i));
+
+  // Generation depth inside an era: a genre sits one row below its latest same-era parent.
+  const depth = new Map();
+  function depthOf(g) {
+    if (depth.has(g.id)) return depth.get(g.id);
+    const same = g.parents.map(p => byId.get(p)).filter(p => p.era === g.era);
+    const v = same.length ? 1 + Math.max.apply(null, same.map(depthOf)) : 0;
+    depth.set(g.id, v);
+    return v;
+  }
+  genres.forEach(depthOf);
+
+  // In RTL text "1990–1995" displays as "1995–1990". Wrap number ranges in an LTR isolate (LRI…PDI).
+  const isoRanges = t => String(t).replace(/\d+\s?[–-]\s?\d+/g, m => '\u2066' + m + '\u2069');
+  function h(tag, attrs, children) {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k === 'text') n.textContent = isoRanges(attrs[k]);
+      else if (k.slice(0, 2) === 'on') n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(c => { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(isoRanges(c)) : c); });
+    return n;
+  }
+  const mark = fam => h('span', { class: 'mark', 'data-family': fam, 'aria-hidden': 'true' });
+
+  const tree = document.getElementById('tree');
+  const svg = document.getElementById('edges');
+  const side = document.getElementById('side');
+  const narrow = window.matchMedia('(max-width: 1019px)');
+  const chipEls = new Map();
+  let selected = null;
+
+  // ---------- masthead ----------
+  const edgeCount = genres.reduce((s, g) => s + g.parents.length, 0);
+  document.getElementById('lede').textContent =
+    genres.length + " ז'אנרים, " + eras.length + ' עידנים ו-' + edgeCount +
+    ' קשרים בעץ אחד שמראה מי הגיע ממי. הזמן זורם מלמעלה למטה. לחיצה על ז\'אנר מאירה את השושלת שלו: מאיפה הוא בא ומה צמח ממנו.';
+  const legend = document.getElementById('legend');
+  DATA.families.forEach(f => legend.appendChild(h('li', { 'data-family': f.id }, [mark(f.id), f.name_he])));
+  document.getElementById('foot').textContent =
+    'המידע נבדק מול ויקיפדיה ומקורות נוספים, והשנים מקורבות. ' + DATA.meta.note_he + ' הקטעים להאזנה נטענים מ-YouTube רק כשלוחצים עליהם, ולידם קישור לחיפוש למקרה שסרטון ירד.';
+
+  // ---------- tree ----------
+  eras.forEach(era => {
+    const list = genres.filter(g => g.era === era.id);
+    const maxDepth = Math.max.apply(null, list.map(g => depth.get(g.id)));
+    const rows = h('div', { class: 'era-rows' });
+    for (let d = 0; d <= maxDepth; d++) {
+      const row = h('div', { class: 'row' });
+      list.filter(g => depth.get(g.id) === d)
+        .sort((a, b) => famOrder.indexOf(a.family) - famOrder.indexOf(b.family) || a.year - b.year)
+        .forEach(g => {
+          const chip = h('button', {
+            class: 'chip', type: 'button', id: 'g-' + g.id, 'data-family': g.family, 'aria-pressed': 'false',
+            onclick: () => select(g.id, true)
+          }, [
+            h('span', { class: 'he', text: g.name_he }),
+            h('span', { class: 'en', text: g.name_en }),
+            h('span', { class: 'meta' }, [mark(g.family), String(g.year)])
+          ]);
+          chipEls.set(g.id, chip);
+          row.appendChild(chip);
+        });
+      rows.appendChild(row);
+    }
+    const best = h('span', { class: 'best', id: 'best-' + era.id });
+    const quiz = h('div', { class: 'quiz card flat', id: 'quiz-' + era.id });
+    quiz.hidden = true;
+    const head = h('header', { class: 'era-head' }, [
+      h('p', { class: 'pill', text: 'עידן ' + era.id + ' · ' + era.years_he }),
+      h('h2', { text: era.name_he }),
+      h('p', { class: 'era-intro', text: era.intro_he }),
+      h('button', { class: 'btn alt small', type: 'button', id: 'quiz-open-' + era.id, text: 'חידון על העידן', onclick: () => startQuiz(era.id) }),
+      best
+    ]);
+    tree.appendChild(h('section', { class: 'era', id: 'era-' + era.id, 'aria-label': era.name_he }, [head, rows, quiz]));
+    showBest(era.id);
+  });
+
+  // ---------- edges ----------
+  const NS = 'http://www.w3.org/2000/svg';
+  function drawEdges() {
+    const box = tree.getBoundingClientRect();
+    const anc = selected ? ancestors(selected) : new Set();
+    const desc = selected ? descendants(selected) : new Set();
+    const up = new Set(anc); if (selected) up.add(selected);
+    const down = new Set(desc); if (selected) down.add(selected);
+    const plain = [], lit = [];
+    genres.forEach(c => {
+      const cr = chipEls.get(c.id).getBoundingClientRect();
+      c.parents.forEach(pid => {
+        const pr = chipEls.get(pid).getBoundingClientRect();
+        const x1 = pr.left + pr.width / 2 - box.left, y1 = pr.bottom - box.top;
+        const x2 = cr.left + cr.width / 2 - box.left, y2 = cr.top - box.top;
+        const dy = Math.max(26, (y2 - y1) / 2);
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' C' + x1.toFixed(1) + ' ' + (y1 + dy).toFixed(1) +
+          ' ' + x2.toFixed(1) + ' ' + (y2 - dy).toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1));
+        path.setAttribute('data-family', c.family);
+        const isLit = selected && ((up.has(c.id) && up.has(pid)) || (down.has(c.id) && down.has(pid)));
+        path.setAttribute('class', isLit ? 'e lit' : 'e');
+        (isLit ? lit : plain).push(path);
+      });
+    });
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    plain.concat(lit).forEach(p => svg.appendChild(p));
+  }
+
+  // ---------- selection + detail card ----------
+  function linkChip(id) {
+    const g = byId.get(id);
+    return h('button', { class: 'link-chip', type: 'button', 'data-family': g.family, text: g.name_he, onclick: () => select(id, true) });
+  }
+  function section(title, nodes) {
+    return h('div', { class: 'd-sec' }, [h('h4', { text: title })].concat(nodes));
+  }
+  function renderDetail(g) {
+    const card = h('article', { class: 'detail card', id: 'detail', 'data-family': g.family });
+    card.appendChild(h('p', { class: 'd-tag' }, [mark(g.family), famName[g.family] + ' · ' + eraById.get(g.era).name_he]));
+    card.appendChild(h('div', null, [h('h3', { text: g.name_he }), h('p', { class: 'd-en' }, [h('span', { class: 'ltr', text: g.name_en })])]));
+    card.appendChild(h('dl', { class: 'facts' }, [
+      h('div', null, [h('dt', { text: 'מתי' }), h('dd', { class: 'num', text: 'בערך ' + g.year })]),
+      h('div', null, [h('dt', { text: 'איפה' }), h('dd', { text: g.origin_he })]),
+      h('div', null, [h('dt', { text: 'BPM' }), h('dd', { class: 'num', text: g.bpm || 'משתנה' })])
+    ]));
+    card.appendChild(section('מאיפה זה הגיע', [h('p', { text: g.story_he })]));
+    card.appendChild(section('איך זה נשמע', [h('p', { text: g.sound_he })]));
+    card.appendChild(section('שמות מפתח', [h('p', { class: 'd-names', text: g.artists.join(' · ') })]));
+    if (g.track) {
+      card.appendChild(section('קטע להאזנה', [window.S2Video.player({ artist: g.track.artist, title: g.track.title, note: String(g.track.year) })]));
+    }
+    if (g.disputed_he) card.appendChild(h('div', { class: 'd-note' }, [h('strong', { text: 'שנוי במחלוקת' }), g.disputed_he]));
+    card.appendChild(section('מקורות ישירים',
+      g.parents.length ? [h('div', { class: 'links' }, g.parents.map(linkChip))] : [h('p', { class: 'none', text: 'נקודת התחלה בעץ הזה.' })]));
+    const ch = kids.get(g.id);
+    card.appendChild(section('מה צמח מזה',
+      ch.length ? [h('div', { class: 'links' }, ch.map(linkChip))] : [h('p', { class: 'none', text: 'עדיין אין צאצאים בעץ.' })]));
+    return card;
+  }
+  function placeDetail(card) {
+    const old = document.getElementById('detail');
+    if (old) old.remove();
+    if (narrow.matches) {
+      const sec = document.getElementById('era-' + byId.get(selected).era);
+      sec.parentNode.insertBefore(card, sec.nextSibling);
+    } else {
+      side.appendChild(card);
+    }
+  }
+  function select(id, byUser) {
+    selected = id;
+    const anc = ancestors(id), desc = descendants(id);
+    tree.classList.add('has-sel');
+    chipEls.forEach((el, gid) => {
+      el.classList.toggle('sel', gid === id);
+      el.classList.toggle('kin', anc.has(gid) || desc.has(gid));
+      el.setAttribute('aria-pressed', gid === id ? 'true' : 'false');
+    });
+    const card = renderDetail(byId.get(id));
+    placeDetail(card);
+    drawEdges();
+    if (byUser) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const target = narrow.matches ? card : chipEls.get(id);
+      target.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+  narrow.addEventListener('change', () => { if (selected) { placeDetail(document.getElementById('detail') || renderDetail(byId.get(selected))); drawEdges(); } });
+
+  // ---------- quiz ----------
+  const rnd = n => Math.floor(Math.random() * n);
+  function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = rnd(i + 1); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  const sentence = s => s.split('. ')[0].replace(/\.$/, '') + '.';
+  function unrelated(g) {
+    const a = ancestors(g.id), d = descendants(g.id);
+    const all = genres.filter(x => x.id !== g.id && !a.has(x.id) && !d.has(x.id));
+    const near = all.filter(x => Math.abs(x.era - g.era) <= 1);
+    return near.length >= 3 ? near : all;
+  }
+  const tokens = s => new Set(s.split(/[\s,]+/).map(t => (t.length > 3 && t[0] === 'ו') ? t.slice(1) : t).filter(t => t.length > 1));
+  const overlap = (a, b) => { for (const t of a) if (b.has(t)) return true; return false; };
+  const genreOpt = (x, correct) => ({ label: x.name_he, sub: x.name_en, correct: !!correct });
+
+  const makers = {
+    sound(g) {
+      const others = shuffle(unrelated(g)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: "איזה ז'אנר מתואר כאן?", quote: g.sound_he,
+        options: [genreOpt(g, true)].concat(others.map(x => genreOpt(x))),
+        explain: g.name_he + ': ' + g.origin_he + ', בערך ' + g.year + '. ' + sentence(g.story_he) };
+    },
+    origin(g) {
+      const mine = tokens(g.origin_he), picked = [], seen = [mine];
+      shuffle(genres).forEach(x => {
+        if (picked.length >= 3) return;
+        const t = tokens(x.origin_he);
+        if (seen.some(s => overlap(s, t))) return;
+        seen.push(t); picked.push(x.origin_he);
+      });
+      if (picked.length < 3) return null;
+      return { prompt: 'איפה צמח ' + g.name_he + '?',
+        options: [{ label: g.origin_he, correct: true }].concat(picked.map(o => ({ label: o }))),
+        explain: g.story_he };
+    },
+    parent(g) {
+      if (!g.parents.length) return null;
+      const right = byId.get(g.parents[rnd(g.parents.length)]);
+      const a = ancestors(g.id);
+      const others = shuffle(genres.filter(x => x.id !== g.id && !a.has(x.id) && x.year <= g.year + 8)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: 'מי מהבאים הוא אחד המקורות הישירים של ' + g.name_he + '?',
+        options: [genreOpt(right, true)].concat(others.map(x => genreOpt(x))),
+        explain: 'המקורות הישירים של ' + g.name_he + ': ' + g.parents.map(p => byId.get(p).name_he).join(', ') + '.' };
+    },
+    artist(g) {
+      const right = g.artists[rnd(g.artists.length)];
+      const pool = [];
+      unrelated(g).forEach(x => x.artists.forEach(n => { if (g.artists.indexOf(n) < 0 && pool.indexOf(n) < 0) pool.push(n); }));
+      const others = shuffle(pool).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: 'איזה שם מזוהה עם ' + g.name_he + '?', ltr: true,
+        options: [{ label: right, correct: true }].concat(others.map(n => ({ label: n }))),
+        explain: right + ' הוא אחד משמות המפתח של ' + g.name_he + '. ' + sentence(g.story_he) };
+    },
+    track(g) {
+      if (!g.track) return null;
+      const others = shuffle(unrelated(g)).slice(0, 3);
+      if (others.length < 3) return null;
+      return { prompt: "לאיזה ז'אנר שייך הקטע הזה?", quote: g.track.artist + ' – ' + g.track.title, quoteLtr: true,
+        options: [genreOpt(g, true)].concat(others.map(x => genreOpt(x))),
+        explain: 'הקטע יצא ב-' + g.track.year + ' ומזוהה עם ' + g.name_he + '.' };
+    },
+    first(g) {
+      const later = shuffle(genres.filter(x => x.year >= g.year + 3)).slice(0, 3);
+      if (later.length < 3) return null;
+      const all = [g].concat(later).sort((a, b) => a.year - b.year);
+      return { prompt: 'מי מהבאים הופיע ראשון?',
+        options: [genreOpt(g, true)].concat(later.map(x => genreOpt(x))),
+        explain: all.map(x => x.name_he + ' (' + x.year + ')').join(', ') + '.' };
+    }
+  };
+
+  function buildQuiz(eraId, count) {
+    const pool = shuffle(genres.filter(g => g.era === eraId));
+    const types = shuffle(Object.keys(makers));
+    const out = [], usedGenre = new Set(), usedPair = new Set();
+    for (let i = 0; out.length < count && i < count * 6; i++) {
+      const type = types[i % types.length];
+      let made = null;
+      for (const strict of [true, false]) {
+        for (const g of pool) {
+          if (strict ? usedGenre.has(g.id) : usedPair.has(type + g.id)) continue;
+          const q = makers[type](g);
+          if (q) { made = q; usedGenre.add(g.id); usedPair.add(type + g.id); break; }
+        }
+        if (made) break;
+      }
+      if (made) { made.options = shuffle(made.options); out.push(made); }
+    }
+    return out;
+  }
+
+  function readBest(eraId) { try { return parseInt(localStorage.getItem('trance-best-' + eraId), 10) || 0; } catch (e) { return 0; } }
+  function writeBest(eraId, v) { try { localStorage.setItem('trance-best-' + eraId, String(v)); } catch (e) { /* storage unavailable */ } }
+  function showBest(eraId) {
+    const b = readBest(eraId);
+    document.getElementById('best-' + eraId).textContent = b ? 'השיא שלך: ' + b + ' מתוך 5' : '';
+  }
+
+  function startQuiz(eraId) {
+    const panel = document.getElementById('quiz-' + eraId);
+    const era = eraById.get(eraId);
+    const questions = buildQuiz(eraId, 5);
+    let i = 0, score = 0;
+    panel.hidden = false;
+
+    function close() { panel.hidden = true; panel.textContent = ''; drawEdges(); document.getElementById('quiz-open-' + eraId).focus(); }
+    function top(text) {
+      return h('div', { class: 'q-top' }, [h('span', { class: 'pill', text: text }),
+        h('button', { class: 'text-btn', type: 'button', text: 'סגירה', onclick: close })]);
+    }
+    function ask() {
+      const q = questions[i];
+      panel.textContent = '';
+      panel.appendChild(top('חידון: ' + era.name_he + ' · שאלה ' + (i + 1) + ' מתוך ' + questions.length));
+      panel.appendChild(h('p', { class: 'q-prompt', text: q.prompt }));
+      if (q.quote) panel.appendChild(h('blockquote', { class: 'q-quote' }, [q.quoteLtr ? h('span', { class: 'ltr', text: q.quote }) : q.quote]));
+      const opts = h('div', { class: 'q-opts' });
+      const fb = h('div', { class: 'q-fb' });
+      fb.hidden = true;
+      q.options.forEach(o => {
+        const btn = h('button', { class: 'q-opt answer', type: 'button' }, [q.ltr ? h('span', { class: 'ltr', text: o.label }) : o.label]);
+        btn.addEventListener('click', () => {
+          Array.prototype.forEach.call(opts.children, (b, k) => {
+            b.disabled = true;
+            if (q.options[k].correct) { b.classList.add('right'); b.insertBefore(h('span', { class: 'verdict', text: '✓' }), b.firstChild); }
+          });
+          if (o.correct) score++;
+          else { btn.classList.add('wrong'); btn.insertBefore(h('span', { class: 'verdict', text: '✗' }), btn.firstChild); }
+          fb.appendChild(h('p', null, [h('strong', { class: o.correct ? 'ok' : 'no', text: o.correct ? 'נכון. ' : 'לא הפעם. ' }), q.explain]));
+          const last = i === questions.length - 1;
+          const next = h('button', { class: 'btn', type: 'button', text: last ? 'לתוצאה' : 'לשאלה הבאה', onclick: () => { i++; last ? finish() : ask(); } });
+          fb.appendChild(next);
+          fb.hidden = false;
+          drawEdges();
+          next.focus();
+        });
+        opts.appendChild(btn);
+      });
+      panel.appendChild(opts);
+      panel.appendChild(fb);
+      drawEdges();
+    }
+    function finish() {
+      if (score > readBest(eraId)) writeBest(eraId, score);
+      showBest(eraId);
+      panel.textContent = '';
+      panel.appendChild(top('חידון: ' + era.name_he));
+      const verdict = score === questions.length ? 'מושלם. העידן הזה אצלך בכיס.'
+        : score >= 3 ? 'יפה. עוד סיבוב אחד וזה יושב.'
+        : 'כדאי לעבור שוב על הכרטיסים של העידן ולנסות עוד פעם.';
+      panel.appendChild(h('div', { class: 'q-end' }, [
+        h('p', { class: 'q-score', text: score + ' / ' + questions.length }),
+        h('p', { text: verdict }),
+        h('div', { class: 'q-actions' }, [
+          h('button', { class: 'btn', type: 'button', text: 'סיבוב נוסף', onclick: () => startQuiz(eraId) }),
+          h('button', { class: 'btn ghost', type: 'button', text: 'סגירה', onclick: close })
+        ])
+      ]));
+      drawEdges();
+    }
+    if (!questions.length) { close(); return; }
+    ask();
+    panel.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
+  // ---------- boot ----------
+  select('psytrance', false);
+  if (window.ResizeObserver) new ResizeObserver(drawEdges).observe(tree);
+  window.addEventListener('resize', drawEdges);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawEdges);
+})();
+</script>
