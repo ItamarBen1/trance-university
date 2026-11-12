@@ -33,6 +33,23 @@ for g in data["genres"]:
             problems.append(f"{g['id']}: empty {k}")
     if not g["artists"]:
         problems.append(f"{g['id']}: no artists")
+    # Optional: pioneers (who started it) and today (who leads it now), max 3 each.
+    for kind in ("pioneers", "today"):
+        people = g.get(kind) or []
+        if len(people) > 3:
+            problems.append(f"{g['id']}: more than 3 {kind}")
+        for p in people:
+            who = f"{g['id']}/{kind}/{p.get('name', '?')}"
+            t = p.get("track") or {}
+            if not p.get("name") or not p.get("role_he"):
+                problems.append(f"{who}: missing name or role_he")
+            # A pioneer may have no track (e.g. a DJ who never released records): track is null then.
+            if p.get("track") is not None and (not t.get("artist") or not t.get("title") or not isinstance(t.get("year"), int)):
+                problems.append(f"{who}: track needs artist, title and an integer year")
+            if not p.get("sources") or not all(str(u).startswith("http") for u in p["sources"]):
+                problems.append(f"{who}: needs at least one source URL")
+    if g.get("today") is not None and len(g["today"]) < 3 and not g.get("today_note_he"):
+        problems.append(f"{g['id']}: fewer than 3 'today' artists needs a today_note_he")
 
 def ancestors(i, seen=None):
     seen = seen if seen is not None else set()

@@ -12,8 +12,8 @@
 .wrap{max-width:1260px;margin:0 auto;padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
 /* masthead */
+.topnav{margin-bottom:18px}
 .mast{margin-bottom:30px}
-.mast-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
 .mast h1{font-size:clamp(38px,7vw,72px);line-height:1.05;text-wrap:balance}
 .lede{max-width:62ch;font-size:17px}
 .legend{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:2px 0 0;padding:0}
@@ -91,6 +91,8 @@
 .link-chip{padding:4px 12px;background:var(--f);border:var(--line) solid var(--ink);border-radius:var(--r-pill);box-shadow:0 3px 0 var(--ink);margin-bottom:3px;font-size:14px;font-weight:700;cursor:pointer}
 .link-chip:active{transform:translateY(3px);box-shadow:none}
 .none{font-size:14.5px;color:var(--muted)}
+.detail .people{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.detail .people .video figcaption{font-size:13.5px}
 
 /* quiz */
 .quiz{grid-column:1/-1;position:relative;z-index:2;background:var(--white)}
@@ -109,8 +111,14 @@
 </style>
 
 <div class="wrap" dir="rtl" lang="he">
+  <nav class="topnav" aria-label="ניווט ראשי">
+    <ul>
+      <li><a href="trance-school.html">בית ספר לטראנס</a></li>
+      <li><a href="trance-family-tree.html" aria-current="page">אילן היוחסין</a></li>
+    </ul>
+    <div data-palette-picker></div>
+  </nav>
   <header class="mast card">
-    <div class="mast-top"><a class="btn ghost small" href="trance-school.html">→ לבית ספר לטראנס</a><div data-palette-picker></div></div>
     <h1><span class="marker">אילן היוחסין של הטראנס</span></h1>
     <p class="lede" id="lede"></p>
     <ul class="legend" id="legend" aria-label="מקרא משפחות"></ul>
@@ -279,6 +287,21 @@
     card.appendChild(section('שמות מפתח', [h('p', { class: 'd-names', text: g.artists.join(' · ') })]));
     if (g.track) {
       card.appendChild(section('קטע להאזנה', [window.S2Video.player({ artist: g.track.artist, title: g.track.title, note: String(g.track.year) })]));
+    }
+    // Pioneers (who started it) and today's leaders, each with one playable track.
+    const people = list => h('div', { class: 'videos people' }, list.map(p => p.track
+      ? window.S2Video.player({
+          artist: p.track.artist, title: p.track.title,
+          note: (p.name !== p.track.artist ? p.name + ': ' : '') + p.role_he + ' (' + p.track.year + ')'
+        })
+      // No recording (e.g. a DJ): name and role only.
+      : h('figure', { class: 'video' }, [h('figcaption', null, [h('span', { class: 'ltr video-name', text: p.name }), h('span', { class: 'video-note', text: p.role_he })])])));
+    if (g.pioneers && g.pioneers.length) card.appendChild(section('החלוצים: מי התחיל את זה', [people(g.pioneers)]));
+    if ((g.today && g.today.length) || g.today_note_he) {
+      card.appendChild(section('המובילים היום', [
+        g.today_note_he ? h('p', { class: 'none', text: g.today_note_he }) : null,
+        g.today && g.today.length ? people(g.today) : null
+      ]));
     }
     if (g.disputed_he) card.appendChild(h('div', { class: 'd-note' }, [h('strong', { text: 'שנוי במחלוקת' }), g.disputed_he]));
     card.appendChild(section('מקורות ישירים',

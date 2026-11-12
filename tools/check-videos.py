@@ -14,6 +14,10 @@ videos = json.loads(re.search(r"window\.TRANCE_VIDEOS\s*=\s*(\{.*\});", src, re.
 # Every track the pages ask for: the tree's dataset plus the School's real-track lists.
 data = json.loads((root / "data" / "trance-data.json").read_text(encoding="utf-8"))
 wanted = {f"{g['track']['artist']} — {g['track']['title']}" for g in data["genres"] if g["track"]}
+for g in data["genres"]:
+    for p in (g.get("pioneers") or []) + (g.get("today") or []):
+        if p.get("track"):  # a pioneer without a recording has track: null
+            wanted.add(f"{p['track']['artist']} — {p['track']['title']}")
 school = (root / "prototypes" / "trance-school.html").read_text(encoding="utf-8")
 for line in re.findall(r"real: \[(.*)\] \}", school):
     for a, t in re.findall(r"\['((?:[^'\\]|\\.)*)', '((?:[^'\\]|\\.)*)', '(?:[^'\\]|\\.)*'\]", line):

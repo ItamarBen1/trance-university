@@ -8,351 +8,3681 @@
     "note_he": "השנים מקורבות. מקורות של ז'אנרים הם לעיתים קרובות עניין של ויכוח, ומה שמסומן כשנוי במחלוקת מוצג כך בכוונה."
   },
   "families": [
-    { "id": "roots", "name_he": "שורשים ושכנים", "name_en": "Roots and neighbours" },
-    { "id": "club", "name_he": "הקו המועדוני", "name_en": "Club line" },
-    { "id": "psy", "name_he": "הקו הפסיכדלי", "name_en": "Psychedelic line" },
-    { "id": "out", "name_he": "יצא מהמשפחה", "name_en": "Left the family" }
+    {
+      "id": "roots",
+      "name_he": "שורשים ושכנים",
+      "name_en": "Roots and neighbours"
+    },
+    {
+      "id": "club",
+      "name_he": "הקו המועדוני",
+      "name_en": "Club line"
+    },
+    {
+      "id": "psy",
+      "name_he": "הקו הפסיכדלי",
+      "name_en": "Psychedelic line"
+    },
+    {
+      "id": "out",
+      "name_he": "יצא מהמשפחה",
+      "name_en": "Left the family"
+    }
   ],
   "eras": [
     {
-      "id": 1, "name_he": "השורשים", "name_en": "Roots", "from": 1970, "to": 1987, "years_he": "1970 עד 1987",
+      "id": 1,
+      "name_he": "השורשים",
+      "name_en": "Roots",
+      "from": 1970,
+      "to": 1987,
+      "years_he": "1970 עד 1987",
       "intro_he": "לפני שהיה טראנס היו סינתיסייזרים, דיסקו וחוף אחד בהודו. בגרמניה גילו שרצף צלילים שחוזר על עצמו יכול להפנט, בשיקגו ובדטרויט נולדו ההאוס והטכנו, ובגואה היפים רקדו כל הלילה מתחת לירח מלא. כל מה שיבוא אחר כך נבנה מהחלקים האלה."
     },
     {
-      "id": 2, "name_he": "הלידה", "name_en": "Birth of trance", "from": 1988, "to": 1993, "years_he": "1988 עד 1993",
+      "id": 2,
+      "name_he": "הלידה",
+      "name_en": "Birth of trance",
+      "from": 1988,
+      "to": 1993,
+      "years_he": "1988 עד 1993",
       "intro_he": "האסיד האוס חוצה את האוקיינוס והופך את אירופה לרחבת ריקודים אחת. בפרנקפורט מוסיפים לטכנו מלודיה היפנוטית ונותנים לזה שם: טראנס. באותן שנים, בגואה, הקסטות של הדי-ג'ייז מתגבשות לצליל משלהן."
     },
     {
-      "id": 3, "name_he": "הפיצול הגדול", "name_en": "The big split", "from": 1994, "to": 1999, "years_he": "1994 עד 1999",
+      "id": 3,
+      "name_he": "הפיצול הגדול",
+      "name_en": "The big split",
+      "from": 1994,
+      "to": 1999,
+      "years_he": "1994 עד 1999",
       "intro_he": "הטראנס מתפצל לשני עולמות. במועדונים של אירופה הוא נהיה מלודי, רגשי וגדול, עד שהוא כובש את המצעדים. במסיבות הטבע הגואה טראנס מתקשח והופך לפסייטראנס, וישראל נעשית אחת הבירות שלו."
     },
     {
-      "id": 4, "name_he": "שנות האלפיים", "name_en": "The 2000s", "from": 2000, "to": 2009, "years_he": "2000 עד 2009",
+      "id": 4,
+      "name_he": "שנות האלפיים",
+      "name_en": "The 2000s",
+      "from": 2000,
+      "to": 2009,
+      "years_he": "2000 עד 2009",
       "intro_he": "הענף המועדוני בשיא המסחרי שלו, עם זמרות, אצטדיונים ודי-ג'ייז כוכבים. הענף הפסיכדלי מתפצל לפי שעות היממה: פול-און מלודי לאור יום, דארק ופורסט ללילה, ופרוגרסיב איטי ועמוק ביניהם."
     },
     {
-      "id": 5, "name_he": "העידן המודרני", "name_en": "Modern era", "from": 2010, "to": null, "years_he": "מ-2010 ועד היום",
+      "id": 5,
+      "name_he": "העידן המודרני",
+      "name_en": "Modern era",
+      "from": 2010,
+      "to": null,
+      "years_he": "מ-2010 ועד היום",
       "intro_he": "עידן ה-EDM שואב את הטראנס לבמות הענק, והפסיי מגיע לשם בעקבותיו. בקצה השני הטמפו ממשיך לטפס עם ההייטק. ובשנות ה-2020 דור חדש של די-ג'ייז טכנו מחזיר את המלודיות של הניינטיז."
     }
   ],
   "genres": [
     {
-      "id": "kosmische", "name_he": "קוסמישה מוזיק", "name_en": "Kosmische Musik / Krautrock",
-      "era": 1, "year": 1970, "family": "roots", "origin_he": "מערב גרמניה", "parents": [],
+      "id": "kosmische",
+      "name_he": "קוסמישה מוזיק",
+      "name_en": "Kosmische Musik / Krautrock",
+      "era": 1,
+      "year": 1970,
+      "family": "roots",
+      "origin_he": "מערב גרמניה",
+      "parents": [],
       "story_he": "מוזיקאים גרמנים צעירים רצו ליצור משהו שאינו רוק אמריקאי, ופנו לסינתיסייזרים ולסיקוונסרים (Sequencers). מהם הטראנס ירש את הארפג'ים החוזרים ואת הרעיון שקטע הוא מסע ארוך.",
       "sound_he": "רצפי סינתיסייזר ארוכים והיפנוטיים שמתפתחים לאט, כמעט בלי תופים.",
-      "bpm": null, "artists": ["Tangerine Dream", "Klaus Schulze", "Manuel Göttsching"],
-      "track": { "artist": "Tangerine Dream", "title": "Phaedra", "year": 1974 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Tangerine Dream",
+        "Klaus Schulze",
+        "Manuel Göttsching"
+      ],
+      "track": {
+        "artist": "Tangerine Dream",
+        "title": "Phaedra",
+        "year": 1974
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Tangerine Dream",
+          "role_he": "הלהקה מברלין שהפכה סינתיסייזר שחוזר על עצמו בלופ למוזיקה ארוכה ומרחפת",
+          "track": {
+            "artist": "Tangerine Dream",
+            "title": "Phaedra",
+            "year": 1974
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Phaedra_(album)",
+            "https://en.wikipedia.org/wiki/Tangerine_Dream"
+          ]
+        },
+        {
+          "name": "Klaus Schulze",
+          "role_he": "בנה יצירות של עשרים דקות ויותר מרצפים של צלילים שחוזרים ומשתנים לאט",
+          "track": {
+            "artist": "Klaus Schulze",
+            "title": "Bayreuth Return",
+            "year": 1975
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Timewind",
+            "https://en.wikipedia.org/wiki/Klaus_Schulze"
+          ]
+        },
+        {
+          "name": "Manuel Göttsching",
+          "role_he": "הגיטריסט של Ash Ra Tempel; היצירה E2-E4 שלו השפיעה ישירות על מוזיקת המועדונים",
+          "track": {
+            "artist": "Manuel Göttsching",
+            "title": "E2-E4",
+            "year": 1984
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/E2-E4",
+            "https://en.wikipedia.org/wiki/Manuel_G%C3%B6ttsching"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Tangerine Dream",
+          "role_he": "ההרכב של היום ממשיך להופיע ולהקליט ומנגן מחדש את Phaedra לרגל 50 שנה",
+          "track": {
+            "artist": "Tangerine Dream",
+            "title": "Raum",
+            "year": 2022
+          },
+          "sources": [
+            "https://www.loudersound.com/news/tangerine-dream-announce-new-from-virgin-to-quantum-years-coventry-cathedral-22-live-album",
+            "https://en.wikipedia.org/wiki/Raum_(album)"
+          ]
+        },
+        {
+          "name": "Steve Hauschildt",
+          "role_he": "מחבר מארה״ב שממשיך את סגנון הסינתיסייזרים המרחף של שנות ה-70",
+          "track": {
+            "artist": "Steve Hauschildt",
+            "title": "Statue of Verdigris",
+            "year": 2025
+          },
+          "sources": [
+            "https://starsend.org/Aeropsia.html"
+          ]
+        }
+      ],
+      "today_note_he": "אין היום סצנה חיה גדולה שקוראת לעצמה קוסמישה. הצליל ממשיך בעיקר אצל Tangerine Dream בהרכב חדש ואצל מוזיקאי אמביינט וסינתיסייזרים שמושפעים ממנו."
     },
     {
-      "id": "synthpop", "name_he": "סינת'-פופ ואלקטרו", "name_en": "Synth-pop / Electro",
-      "era": 1, "year": 1974, "family": "roots", "origin_he": "דיסלדורף, גרמניה", "parents": ["kosmische"],
+      "id": "synthpop",
+      "name_he": "סינת'-פופ ואלקטרו",
+      "name_en": "Synth-pop / Electro",
+      "era": 1,
+      "year": 1974,
+      "family": "roots",
+      "origin_he": "דיסלדורף, גרמניה",
+      "parents": [
+        "kosmische"
+      ],
       "story_he": "Kraftwerk לקחו את הניסויים של הקוסמישה והפכו אותם לשירים קצרים עם קצב מכונה מדויק. הצליל שלהם הגיע לדטרויט, לבלגיה ואפילו לקסטות הראשונות שנוגנו בגואה.",
       "sound_he": "מקצבים מכניים, מלודיות סינתיסייזר פשוטות וקליטות, קולות רובוטיים.",
-      "bpm": null, "artists": ["Kraftwerk", "Jean-Michel Jarre", "Yellow Magic Orchestra"],
-      "track": { "artist": "Kraftwerk", "title": "Trans-Europe Express", "year": 1977 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Kraftwerk",
+        "Jean-Michel Jarre",
+        "Yellow Magic Orchestra"
+      ],
+      "track": {
+        "artist": "Kraftwerk",
+        "title": "Trans-Europe Express",
+        "year": 1977
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Kraftwerk",
+          "role_he": "הלהקה מדיסלדורף שהראתה שאפשר לעשות פופ שלם ממכונות אלקטרוניות",
+          "track": {
+            "artist": "Kraftwerk",
+            "title": "Trans-Europe Express",
+            "year": 1977
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Trans-Europe_Express_(album)",
+            "https://en.wikipedia.org/wiki/Kraftwerk"
+          ]
+        },
+        {
+          "name": "Yellow Magic Orchestra",
+          "role_he": "השלישייה היפנית שהפכה צלילי מחשב ומשחקי וידאו ללהיטי פופ",
+          "track": {
+            "artist": "Yellow Magic Orchestra",
+            "title": "Firecracker",
+            "year": 1978
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yellow_Magic_Orchestra_(album)",
+            "https://en.wikipedia.org/wiki/Yellow_Magic_Orchestra"
+          ]
+        },
+        {
+          "name": "Jean-Michel Jarre",
+          "role_he": "האלבום Oxygène שלו הביא את הסינתיסייזר לקהל ענק ברחבי העולם",
+          "track": {
+            "artist": "Jean-Michel Jarre",
+            "title": "Oxygène (Part IV)",
+            "year": 1976
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Oxyg%C3%A8ne"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "The Midnight",
+          "role_he": "הצמד האמריקאי המוביל של הסינת׳ווייב, סינת׳-פופ בהשראת שנות ה-80",
+          "track": {
+            "artist": "The Midnight",
+            "title": "Chariot",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.iconvsicon.com/2025/08/01/the-midnight-syndicate-album-2025/"
+          ]
+        },
+        {
+          "name": "Kavinsky",
+          "role_he": "המפיק הצרפתי של Nightcall; גרסה חדשה של השיר יצאה ב-2024 והפכה ללהיט ענק בצרפת",
+          "track": {
+            "artist": "Kavinsky",
+            "title": "Renegade",
+            "year": 2022
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Kavinsky",
+            "https://en.wikipedia.org/wiki/Reborn_(Kavinsky_album)"
+          ]
+        },
+        {
+          "name": "Pet Shop Boys",
+          "role_he": "צמד הסינת׳-פופ הבריטי שפעיל מאז שנות ה-80 והוציא אלבום חדש ב-2024",
+          "track": {
+            "artist": "Pet Shop Boys",
+            "title": "Loneliness",
+            "year": 2024
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Nonetheless_(album)"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "eurodisco", "name_he": "יורו-דיסקו", "name_en": "Euro disco",
-      "era": 1, "year": 1975, "family": "roots", "origin_he": "מינכן, גרמניה", "parents": [],
+      "id": "eurodisco",
+      "name_he": "יורו-דיסקו",
+      "name_en": "Euro disco",
+      "era": 1,
+      "year": 1975,
+      "family": "roots",
+      "origin_he": "מינכן, גרמניה",
+      "parents": [],
       "story_he": "במינכן המפיק Giorgio Moroder החליף את תזמורת הדיסקו בסינתיסייזר. I Feel Love מ-1977 היה להיט שנבנה כולו ממכונות, וממנו נמשך קו ישר להאוס ולכל מוזיקת המועדונים.",
       "sound_he": "בעיטת בס על כל רבע (Four-on-the-floor), קו בס סינתטי רץ, שירה מרחפת.",
-      "bpm": "120–130", "artists": ["Giorgio Moroder", "Donna Summer", "Cerrone"],
-      "track": { "artist": "Donna Summer", "title": "I Feel Love", "year": 1977 }, "disputed_he": null
+      "bpm": "120–130",
+      "artists": [
+        "Giorgio Moroder",
+        "Donna Summer",
+        "Cerrone"
+      ],
+      "track": {
+        "artist": "Donna Summer",
+        "title": "I Feel Love",
+        "year": 1977
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Giorgio Moroder",
+          "role_he": "המפיק ממינכן שבנה דיסקו שלם על סינתיסייזר ורצף צלילים חוזר",
+          "track": {
+            "artist": "Giorgio Moroder",
+            "title": "From Here to Eternity",
+            "year": 1977
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/From_Here_to_Eternity_(Giorgio_Moroder_album)",
+            "https://en.wikipedia.org/wiki/I_Feel_Love"
+          ]
+        },
+        {
+          "name": "Donna Summer",
+          "role_he": "הזמרת של I Feel Love, השיר שבו כל הליווי הוא אלקטרוני",
+          "track": {
+            "artist": "Donna Summer",
+            "title": "I Feel Love",
+            "year": 1977
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/I_Feel_Love"
+          ]
+        },
+        {
+          "name": "Cerrone",
+          "role_he": "מתופף ומפיק צרפתי שהפך את הדיסקו האירופי לארוך, אפל ומלא סינתיסייזרים",
+          "track": {
+            "artist": "Cerrone",
+            "title": "Supernature",
+            "year": 1977
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Supernature_(Cerrone_album)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Purple Disco Machine",
+          "role_he": "המפיק הגרמני שמביא היום את צליל הדיסקו לפסטיבלים ולמצעדים",
+          "track": {
+            "artist": "Purple Disco Machine",
+            "title": "Beat Fantasy",
+            "year": 2024
+          },
+          "sources": [
+            "https://whenwedip.com/2024/08/review-purple-disco-machine-defected"
+          ]
+        },
+        {
+          "name": "Wolfram",
+          "role_he": "בין אמני הנו-דיסקו הנמכרים ביותר ב-Beatport ב-2024",
+          "track": {
+            "artist": "Wolfram & Josh Ludlow",
+            "title": "Yoyo Disco",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/780844-nu-disco-disco-the-top-selling-tracks-artists-and-labels-of-2024"
+          ]
+        },
+        {
+          "name": "Jessie Ware",
+          "role_he": "זמרת בריטית שהחזירה את הדיסקו לפופ; הופיעה בגלסטונברי 2024",
+          "track": {
+            "artist": "Jessie Ware",
+            "title": "Free Yourself",
+            "year": 2023
+          },
+          "sources": [
+            "https://www.udiscovermusic.com/news/jessie-ware-superbloom-new-album/"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "ambient", "name_he": "אמביינט", "name_en": "Ambient",
-      "era": 1, "year": 1978, "family": "roots", "origin_he": "אנגליה", "parents": ["kosmische"],
+      "id": "ambient",
+      "name_he": "אמביינט",
+      "name_en": "Ambient",
+      "era": 1,
+      "year": 1978,
+      "family": "roots",
+      "origin_he": "אנגליה",
+      "parents": [
+        "kosmische"
+      ],
       "story_he": "Brian Eno נתן שם למוזיקה שאפשר להקשיב לה וגם להתעלם ממנה. בלי האמביינט לא היו חדרי הצ'יל-אאוט (Chill-out) של הרייבים, וגם לא הפסיביינט שיגיע אחר כך.",
       "sound_he": "משטחי צליל איטיים בלי קצב, אווירה במקום מלודיה.",
-      "bpm": null, "artists": ["Brian Eno", "Harold Budd"],
-      "track": { "artist": "Brian Eno", "title": "Music for Airports 1/1", "year": 1978 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Brian Eno",
+        "Harold Budd"
+      ],
+      "track": {
+        "artist": "Brian Eno",
+        "title": "Music for Airports 1/1",
+        "year": 1978
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Brian Eno",
+          "role_he": "טבע את המונח אמביינט: מוזיקה שקטה שאפשר להקשיב לה או להתעלם ממנה",
+          "track": {
+            "artist": "Brian Eno",
+            "title": "1/1",
+            "year": 1978
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports"
+          ]
+        },
+        {
+          "name": "Harold Budd",
+          "role_he": "פסנתרן שהקליט עם אינו את Ambient 2, נגינה רכה עם הרבה הד",
+          "track": {
+            "artist": "Harold Budd & Brian Eno",
+            "title": "First Light",
+            "year": 1980
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ambient_2:_The_Plateaux_of_Mirror"
+          ]
+        },
+        {
+          "name": "Laraaji",
+          "role_he": "נגן ציתר; Ambient 3, האלבום שלו בסדרת האמביינט של בריאן אינו, הוא אבן דרך בסגנון",
+          "track": {
+            "artist": "Laraaji",
+            "title": "The Dance #1",
+            "year": 1980
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ambient_3:_Day_of_Radiance"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Carbon Based Lifeforms",
+          "role_he": "צמד שוודי של אמביינט אלקטרוני מרחף; מופיע קבוע בפסטיבל Ozora",
+          "track": {
+            "artist": "Carbon Based Lifeforms",
+            "title": "Seeker",
+            "year": 2023
+          },
+          "sources": [
+            "https://sputnikmusic.com/review/87191/carbon-based-lifeforms-seeker/",
+            "https://daily.bandcamp.com/carbon-based-lifeforms-balance-organic-and-synthetic-ambience"
+          ]
+        },
+        {
+          "name": "KMRU",
+          "role_he": "אמן צליל מניירובי שבונה אמביינט מהקלטות של טבע ורחוב",
+          "track": {
+            "artist": "KMRU",
+            "title": "Natur 1",
+            "year": 2024
+          },
+          "sources": [
+            "https://thequietus.com/news/kmru-details-new-album-natur"
+          ]
+        }
+      ],
+      "today_note_he": "אמביינט הוא תחום רחב מאוד ואין לו מנהיג אחד. נבחרו שני שמות עם פעילות מתועדת מ-2023 עד 2025, אחד מהם קרוב לעולם הטראנס."
     },
     {
-      "id": "goa-parties", "name_he": "מסיבות החוף של גואה", "name_en": "Goa party scene",
-      "era": 1, "year": 1970, "family": "roots", "origin_he": "גואה, הודו", "parents": [],
+      "id": "goa-parties",
+      "name_he": "מסיבות החוף של גואה",
+      "name_en": "Goa party scene",
+      "era": 1,
+      "year": 1970,
+      "family": "roots",
+      "origin_he": "גואה, הודו",
+      "parents": [],
       "story_he": "היפים שהגיעו לגואה בסוף שנות ה-60 התחילו לחגוג על החוף בלילות ירח מלא, בהתחלה עם רוק פסיכדלי. ב-1983 הדי-ג'ייז Laurent ו-Fred Disko, ואחריהם Goa Gil, עברו למוזיקה אלקטרונית שניגנו מקסטות, כי תקליטים לא שרדו את החום והאבק.",
       "sound_he": "סטים של לילה שלם בטבע: רוק פסיכדלי בשנות ה-70, ואחר כך EBM, ניו ביט ואסיד האוס בעריכות מיוחדות.",
-      "bpm": null, "artists": ["Goa Gil", "Laurent", "Fred Disko"],
+      "bpm": null,
+      "artists": [
+        "Goa Gil",
+        "Laurent",
+        "Fred Disko"
+      ],
       "track": null,
-      "disputed_he": "התיעוד מהשנים הראשונות דל, והסיפור נשען בעיקר על עדויות של מי שהיו שם."
+      "disputed_he": "התיעוד מהשנים הראשונות דל, והסיפור נשען בעיקר על עדויות של מי שהיו שם.",
+      "pioneers": [
+        {
+          "name": "Goa Gil",
+          "role_he": "אמריקאי שהגיע לגואה בשנות ה-70 ועיצב את מסיבות החוף הארוכות של אנג׳ונה",
+          "track": null,
+          "sources": [
+            "https://en.wikipedia.org/wiki/Goa_Gil",
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://djmag.com/news/goa-gil-psytrance-pioneer-dies-aged-72"
+          ]
+        },
+        {
+          "name": "Fred Disko",
+          "role_he": "מהדיג׳יים הראשונים שהחליפו בגואה את הרוק במוזיקה אלקטרונית, ב-1983",
+          "track": null,
+          "sources": [
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://dj.dancecult.net/index.php/dancecult/article/view/333"
+          ]
+        },
+        {
+          "name": "Laurent",
+          "role_he": "דיג׳יי צרפתי שניגן בגואה מקלטות, ערך מחדש שירי אלקטרו ובנה את הצליל המוקדם",
+          "track": null,
+          "sources": [
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://dj.dancecult.net/index.php/dancecult/article/view/333"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "מסיבות גואה הן סצנה ולא סגנון, והדור המייסד כבר לא פעיל: Goa Gil נפטר ב-2023. המורשת ממשיכה בפסטיבלי הפסייטראנס (Ozora, Boom) ובמועדון Hilltop בגואה, אבל לא מצאתי דיג׳יי אחד שמוביל היום את השושלת הזאת עם תיעוד מ-2024 עד 2026."
     },
     {
-      "id": "ebm", "name_he": "EBM ואינדסטריאל", "name_en": "Electronic Body Music",
-      "era": 1, "year": 1981, "family": "roots", "origin_he": "בלגיה ומערב גרמניה", "parents": ["synthpop"],
+      "id": "ebm",
+      "name_he": "EBM ואינדסטריאל",
+      "name_en": "Electronic Body Music",
+      "era": 1,
+      "year": 1981,
+      "family": "roots",
+      "origin_he": "בלגיה ומערב גרמניה",
+      "parents": [
+        "synthpop"
+      ],
       "story_he": "להקות כמו DAF ו-Front 242 חיברו את האגרסיביות של הפאנק לסיקוונסרים. התקליטים שלהן נוגנו גם במועדוני פרנקפורט וגם על החוף בגואה, ולכן ה-EBM הוא אב משותף לשני ענפי הטראנס.",
       "sound_he": "קו בס סינתטי קשוח וחוזר, תופים צבאיים, צעקות במקום שירה.",
-      "bpm": null, "artists": ["Front 242", "DAF", "Nitzer Ebb"],
-      "track": { "artist": "Front 242", "title": "Headhunter", "year": 1988 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Front 242",
+        "DAF",
+        "Nitzer Ebb"
+      ],
+      "track": {
+        "artist": "Front 242",
+        "title": "Headhunter",
+        "year": 1988
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Front 242",
+          "role_he": "הלהקה הבלגית שטבעה את השם EBM: מוזיקה אלקטרונית קשה שנועדה לגוף ולריקוד",
+          "track": {
+            "artist": "Front 242",
+            "title": "Headhunter",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Front_242",
+            "https://en.wikipedia.org/wiki/Electronic_body_music"
+          ]
+        },
+        {
+          "name": "DAF",
+          "role_he": "צמד מדיסלדורף ששילב בס חוזר של סינתיסייזר עם שירה צועקת",
+          "track": {
+            "artist": "DAF",
+            "title": "Der Mussolini",
+            "year": 1981
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Deutsch_Amerikanische_Freundschaft"
+          ]
+        },
+        {
+          "name": "Nitzer Ebb",
+          "role_he": "להקה אנגלית שהביאה את ה-EBM לרחבות הריקוד בסוף שנות ה-80",
+          "track": {
+            "artist": "Nitzer Ebb",
+            "title": "Join in the Chant",
+            "year": 1987
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Nitzer_Ebb"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Schwefelgelb",
+          "role_he": "צמד מברלין שמשלב EBM עם טכנו ומגדיר את המוזיקה שלו כמוזיקת גוף",
+          "track": {
+            "artist": "Schwefelgelb",
+            "title": "Dann Kommt Der Schleier",
+            "year": 2024
+          },
+          "sources": [
+            "https://theplayground.co.uk/schwefelgelb-whirlpool-gedanken/"
+          ]
+        },
+        {
+          "name": "Kontravoid",
+          "role_he": "מפיק קנדי במסכה שמביא את ה-EBM לקהל צעיר בהופעות חיות",
+          "track": {
+            "artist": "Kontravoid",
+            "title": "Reckoning",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.destroyexist.com/2024/02/kontravoid-reckoning.html"
+          ]
+        },
+        {
+          "name": "Rein",
+          "role_he": "אמנית שוודית שפתחה ב-2024 את הופעת הפרידה של Front 242 בלונדון",
+          "track": {
+            "artist": "The Hacker & Rein",
+            "title": "We Come Alive",
+            "year": 2026
+          },
+          "sources": [
+            "https://www.coldwarnightlife.com/tag/rein"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "chicago-house", "name_he": "האוס שיקגו", "name_en": "Chicago house",
-      "era": 1, "year": 1984, "family": "roots", "origin_he": "שיקגו, ארה״ב", "parents": ["eurodisco"],
+      "id": "chicago-house",
+      "name_he": "האוס שיקגו",
+      "name_en": "Chicago house",
+      "era": 1,
+      "year": 1984,
+      "family": "roots",
+      "origin_he": "שיקגו, ארה״ב",
+      "parents": [
+        "eurodisco"
+      ],
       "story_he": "כשהדיסקו ירד מהרדיו, די-ג'ייז בשיקגו המשיכו לנגן אותו במועדונים והוסיפו מעליו מכונות תופים. כך נולד ההאוס, התבנית של כל מוזיקת הריקודים האלקטרונית.",
       "sound_he": "בעיטה על כל רבע, היי-האט באוף-ביט, פסנתר וקולות סול.",
-      "bpm": "118–125", "artists": ["Frankie Knuckles", "Marshall Jefferson", "Larry Heard"],
-      "track": { "artist": "Marshall Jefferson", "title": "Move Your Body", "year": 1986 }, "disputed_he": null
+      "bpm": "118–125",
+      "artists": [
+        "Frankie Knuckles",
+        "Marshall Jefferson",
+        "Larry Heard"
+      ],
+      "track": {
+        "artist": "Marshall Jefferson",
+        "title": "Move Your Body",
+        "year": 1986
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Frankie Knuckles",
+          "role_he": "הדיג׳יי של מועדון Warehouse, שעל שמו נקרא הסגנון האוס",
+          "track": {
+            "artist": "Frankie Knuckles",
+            "title": "Your Love",
+            "year": 1987
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Frankie_Knuckles"
+          ]
+        },
+        {
+          "name": "Marshall Jefferson",
+          "role_he": "הכניס פסנתר להאוס; Move Your Body נקרא ״המנון ההאוס״",
+          "track": {
+            "artist": "Marshall Jefferson",
+            "title": "Move Your Body",
+            "year": 1986
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Move_Your_Body_(Marshall_Jefferson_song)",
+            "https://en.wikipedia.org/wiki/Chicago_house"
+          ]
+        },
+        {
+          "name": "Larry Heard",
+          "role_he": "בשם Mr. Fingers יצר האוס רך ורגשי שנקרא דיפ האוס",
+          "track": {
+            "artist": "Mr. Fingers",
+            "title": "Can You Feel It",
+            "year": 1986
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Larry_Heard"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Gene Farris",
+          "role_he": "מפיק ותיק משיקגו שהוציא ב-2024 אלבום האוס חדש",
+          "track": {
+            "artist": "Gene Farris",
+            "title": "Euphoria",
+            "year": 2024
+          },
+          "sources": [
+            "https://musiccrowns.org/new-music/gene-farris-delivers-euphoria-a-joyful-celebration-of-house-musics-timeless-energy"
+          ]
+        },
+        {
+          "name": "Ron Trent",
+          "role_he": "דיג׳יי ומפיק משיקגו מסוף שנות ה-80 שממשיך להוציא ולהופיע בעולם",
+          "track": {
+            "artist": "Ron Trent feat. Lars Bartkuhn",
+            "title": "Street Wave",
+            "year": 2025
+          },
+          "sources": [
+            "https://wisemusiccreative.com/uk/news/2025/05/new-ron-trent-album-lift-off-is-out-now"
+          ]
+        },
+        {
+          "name": "Green Velvet",
+          "role_he": "המפיק משיקגו מאחורי הלייבל Relief, מופיע בפסטיבלים גדולים",
+          "track": {
+            "artist": "Patrick Topping & Green Velvet",
+            "title": "Mad Motion",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.edmtunes.com/2024/09/green-velvet-patrick-topping-mad-motion/",
+            "https://mixmag.net/read/glasgows-riverside-festival-announces-stacked-2024-line-up-news"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "detroit-techno", "name_he": "טכנו דטרויט", "name_en": "Detroit techno",
-      "era": 1, "year": 1985, "family": "roots", "origin_he": "דטרויט, ארה״ב", "parents": ["synthpop", "chicago-house"],
+      "id": "detroit-techno",
+      "name_he": "טכנו דטרויט",
+      "name_en": "Detroit techno",
+      "era": 1,
+      "year": 1985,
+      "family": "roots",
+      "origin_he": "דטרויט, ארה״ב",
+      "parents": [
+        "synthpop",
+        "chicago-house"
+      ],
       "story_he": "שלושה חברים מפרבר של דטרויט, Juan Atkins, Derrick May ו-Kevin Saunderson, שילבו את Kraftwerk עם פאנק (Funk) והאוס ויצרו מוזיקה שנשמעת כמו העתיד. כשהיא הגיעה לגרמניה היא הפכה לבסיס שעליו נבנה הטראנס.",
       "sound_he": "מכני, קר ועתידני, עם מיתרים סינתטיים ומעט מאוד שירה.",
-      "bpm": "120–135", "artists": ["Juan Atkins", "Derrick May", "Kevin Saunderson"],
-      "track": { "artist": "Rhythim Is Rhythim", "title": "Strings of Life", "year": 1987 }, "disputed_he": null
+      "bpm": "120–135",
+      "artists": [
+        "Juan Atkins",
+        "Derrick May",
+        "Kevin Saunderson"
+      ],
+      "track": {
+        "artist": "Rhythim Is Rhythim",
+        "title": "Strings of Life",
+        "year": 1987
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Juan Atkins",
+          "role_he": "נחשב לאבי הטכנו; הקליט בשם Model 500 מוזיקה עתידנית ממכונות",
+          "track": {
+            "artist": "Model 500",
+            "title": "No UFO's",
+            "year": 1985
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Juan_Atkins",
+            "https://en.wikipedia.org/wiki/Model_500",
+            "https://en.wikipedia.org/wiki/Detroit_techno"
+          ]
+        },
+        {
+          "name": "Derrick May",
+          "role_he": "בשם Rhythim Is Rhythim יצר את Strings of Life, טכנו עם מיתרים מרגשים",
+          "track": {
+            "artist": "Rhythim Is Rhythim",
+            "title": "Strings of Life",
+            "year": 1987
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Strings_of_Life"
+          ]
+        },
+        {
+          "name": "Kevin Saunderson",
+          "role_he": "עם Inner City הביא את הטכנו של דטרויט למצעדי הפופ",
+          "track": {
+            "artist": "Inner City",
+            "title": "Big Fun",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Big_Fun_(Inner_City_song)",
+            "https://en.wikipedia.org/wiki/Inner_City_(band)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Jeff Mills",
+          "role_he": "מחלוצי הדור השני של דטרויט, ממשיך להוציא אלבומים ולהופיע ב-2024",
+          "track": {
+            "artist": "Jeff Mills",
+            "title": "In A Traumatized World",
+            "year": 2024
+          },
+          "sources": [
+            "https://djmag.com/news/jeff-mills-announces-new-album-eyewitness-shares-track-listen"
+          ]
+        },
+        {
+          "name": "DJ Stingray 313",
+          "role_he": "דיג׳יי ומפיק מדטרויט שמחזיק את צליל האלקטרו והטכנו המהיר של העיר",
+          "track": {
+            "artist": "DJ Stingray 313",
+            "title": "LARGE LANGUAGE MODEL",
+            "year": 2024
+          },
+          "sources": [
+            "https://djmag.com/news/dj-stingray-313-returns-tresor-industry-40-ep"
+          ]
+        },
+        {
+          "name": "Carl Craig",
+          "role_he": "מהדור השני של דטרויט; הלייבל שלו Planet E פעיל וב-2025 יצא סרט תיעודי עליו",
+          "track": {
+            "artist": "Junior Sanchez & Carl Craig",
+            "title": "Art-O-Fact (Detroit Remix)",
+            "year": 2024
+          },
+          "sources": [
+            "https://electronicgroove.com/carl-craig-announces-soundtrack-for-life-documentary-desire/",
+            "https://www.forcedexposure.com/CATALOG/PLE.65410EP.html"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "acid-house", "name_he": "אסיד האוס", "name_en": "Acid house",
-      "era": 1, "year": 1987, "family": "roots", "origin_he": "שיקגו, ארה״ב", "parents": ["chicago-house"],
+      "id": "acid-house",
+      "name_he": "אסיד האוס",
+      "name_en": "Acid house",
+      "era": 1,
+      "year": 1987,
+      "family": "roots",
+      "origin_he": "שיקגו, ארה״ב",
+      "parents": [
+        "chicago-house"
+      ],
       "story_he": "חברי Phuture שיחקו עם הכפתורים של Roland TB-303, מכונת בס שנכשלה מסחרית, וגילו צליל מתפתל וחומצי. הצליל הזה עובר דרך כמעט כל ענף בעץ, מפרנקפורט ועד גואה.",
       "sound_he": "קו בס של 303, מייבב ומתפתל, מעל קצב האוס פשוט.",
-      "bpm": "120–130", "artists": ["Phuture", "DJ Pierre"],
-      "track": { "artist": "Phuture", "title": "Acid Tracks", "year": 1987 }, "disputed_he": null
+      "bpm": "120–130",
+      "artists": [
+        "Phuture",
+        "DJ Pierre"
+      ],
+      "track": {
+        "artist": "Phuture",
+        "title": "Acid Tracks",
+        "year": 1987
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Phuture",
+          "role_he": "השלישייה של DJ Pierre שגילתה את הצליל המקרקר של מכונת הבס TB-303",
+          "track": {
+            "artist": "Phuture",
+            "title": "Acid Tracks",
+            "year": 1987
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Acid_Tracks",
+            "https://en.wikipedia.org/wiki/Phuture"
+          ]
+        },
+        {
+          "name": "Sleezy D",
+          "role_he": "I've Lost Control שלו מ-1986 נחשב לאחד מתקליטי האסיד הראשונים",
+          "track": {
+            "artist": "Sleezy D",
+            "title": "I've Lost Control",
+            "year": 1986
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Acid_house"
+          ]
+        },
+        {
+          "name": "Armando",
+          "role_he": "מפיק משיקגו שהקליט כמה מתקליטי האסיד המוקדמים והחשוכים ביותר",
+          "track": {
+            "artist": "Armando",
+            "title": "Land of Confusion",
+            "year": 1987
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Armando_(musician)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Ceephax Acid Crew",
+          "role_he": "מפיק בריטי שעובד כבר שני עשורים רק עם מכונות אסיד, אלבום חדש ב-2025",
+          "track": {
+            "artist": "Ceephax Acid Crew",
+            "title": "Slam Zone",
+            "year": 2025
+          },
+          "sources": [
+            "https://newtone-records.com/product/9058200"
+          ]
+        },
+        {
+          "name": "Posthuman",
+          "role_he": "צמד בריטי שמנהל את ערבי I Love Acid ואת הלייבל Balkan Vinyl",
+          "track": {
+            "artist": "Posthuman",
+            "title": "Builder",
+            "year": 2024
+          },
+          "sources": [
+            "https://posthuman.bandcamp.com/album/posthuman-builder-ep"
+          ]
+        },
+        {
+          "name": "Hardfloor",
+          "role_he": "צמד גרמני מ-1991 שעדיין מוציא אסיד; אלבום חדש ב-2024",
+          "track": {
+            "artist": "Hardfloor",
+            "title": "Still Lost In The Silver Box",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.bonedo.de/artikel/hardfloor-still-lost-in-the-silver-box-neues-album-nach-7-jahren/",
+            "https://en.wikipedia.org/wiki/Hardfloor"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "new-beat", "name_he": "ניו ביט", "name_en": "New beat",
-      "era": 1, "year": 1987, "family": "roots", "origin_he": "בלגיה", "parents": ["ebm", "eurodisco", "acid-house"],
+      "id": "new-beat",
+      "name_he": "ניו ביט",
+      "name_en": "New beat",
+      "era": 1,
+      "year": 1987,
+      "family": "roots",
+      "origin_he": "בלגיה",
+      "parents": [
+        "ebm",
+        "eurodisco",
+        "acid-house"
+      ],
       "story_he": "די-ג'יי בלגי ניגן את התקליט Flesh של A Split-Second במהירות 33 במקום 45, והרחבה השתגעה. מהטעות הזאת צמח ז'אנר שלם, איטי וכבד, שהשפיע על הטכנו האירופי ועל הטראנס הראשון.",
       "sound_he": "EBM מואט: קצב זוחל וכבד, בסים עמוקים, אווירה אפלה.",
-      "bpm": "90–115", "artists": ["A Split-Second", "Confetti's", "Lords of Acid"],
-      "track": { "artist": "A Split-Second", "title": "Flesh", "year": 1986 },
-      "disputed_he": "יש כמה גרסאות לשאלה מי האט ראשון את התקליט. השם שחוזר הכי הרבה הוא Dikke Ronny, ואחרים מזכירים את Marc Grouls."
+      "bpm": "90–115",
+      "artists": [
+        "A Split-Second",
+        "Confetti's",
+        "Lords of Acid"
+      ],
+      "track": {
+        "artist": "A Split-Second",
+        "title": "Flesh",
+        "year": 1986
+      },
+      "disputed_he": "יש כמה גרסאות לשאלה מי האט ראשון את התקליט. השם שחוזר הכי הרבה הוא Dikke Ronny, ואחרים מזכירים את Marc Grouls.",
+      "pioneers": [
+        {
+          "name": "A Split-Second",
+          "role_he": "התקליט שלהם Flesh הואט בטעות במועדון והוליד את הניו ביט",
+          "track": {
+            "artist": "A Split-Second",
+            "title": "Flesh",
+            "year": 1986
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/New_beat",
+            "https://en.wikipedia.org/wiki/A_Split-Second"
+          ]
+        },
+        {
+          "name": "Confetti's",
+          "role_he": "להקה בלגית שהפכה את הניו ביט ללהיט מסחרי עם The Sound of C",
+          "track": {
+            "artist": "Confetti's",
+            "title": "The Sound of C",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Confetti%27s"
+          ]
+        },
+        {
+          "name": "Lords of Acid",
+          "role_he": "הרכב בלגי שצמח בסצנת הניו ביט; I Sit on Acid הוא מהלהיטים המזוהים ביותר עם הסגנון",
+          "track": {
+            "artist": "Lords of Acid",
+            "title": "I Sit on Acid",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Lords_of_Acid",
+            "https://side-line.com/lords-of-acid-announce-2025-praise-the-lords-tour/"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Kris Baha",
+          "role_he": "מפיק שמשלב EBM וניו ביט בטכנו איטי וכבד",
+          "track": {
+            "artist": "Kris Baha",
+            "title": "Digital Shadows",
+            "year": 2024
+          },
+          "sources": [
+            "https://post-punk.com/kris-baha-debuts-video-for-digital-shadows-from-cyber-body-music-vol-1-compilation/"
+          ]
+        }
+      ],
+      "today_note_he": "הניו ביט היה גל קצר בבלגיה בסוף שנות ה-80 ואין לו היום סצנה משלו. הצליל חוזר אצל מפיקי EBM וטכנו איטי, וצמד הדיג׳יים Front de Cadeaux מבריסל ממשיך את שיטת האטת התקליטים, אבל לא מצאתי עליו תיעוד מתוארך מ-2024 עד 2026."
     },
-
     {
-      "id": "uk-rave", "name_he": "רייב בריטי ובלארי", "name_en": "UK acid house / Balearic",
-      "era": 2, "year": 1988, "family": "roots", "origin_he": "איביזה ובריטניה", "parents": ["acid-house", "chicago-house"],
+      "id": "uk-rave",
+      "name_he": "רייב בריטי ובלארי",
+      "name_en": "UK acid house / Balearic",
+      "era": 2,
+      "year": 1988,
+      "family": "roots",
+      "origin_he": "איביזה ובריטניה",
+      "parents": [
+        "acid-house",
+        "chicago-house"
+      ],
       "story_he": "די-ג'ייז בריטים חזרו מחופשה באיביזה עם רעיון למסיבה אחרת, והביאו את האסיד האוס ללונדון ולמנצ'סטר. קיץ 1988 נקרא קיץ האהבה השני, וממנו נולדה תרבות הרייב. באותה שנה The KLF הוציאו קטע עם הכיתוב Pure Trance.",
       "sound_he": "אסיד האוס מעורבב בכל מה שעובד על רחבה, במסיבות מחסנים ובשדות פתוחים.",
-      "bpm": "120–130", "artists": ["Paul Oakenfold", "Danny Rampling", "The KLF"],
-      "track": { "artist": "The KLF", "title": "What Time Is Love? (Pure Trance)", "year": 1988 }, "disputed_he": null
+      "bpm": "120–130",
+      "artists": [
+        "Paul Oakenfold",
+        "Danny Rampling",
+        "The KLF"
+      ],
+      "track": {
+        "artist": "The KLF",
+        "title": "What Time Is Love? (Pure Trance)",
+        "year": 1988
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Paul Oakenfold",
+          "role_he": "חזר מאיביזה ב-1987, פתח את מועדוני Future ו-Spectrum והביא את הסגנון הבלארי ללונדון",
+          "track": {
+            "artist": "Electra",
+            "title": "Jibaro",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Electra_(band)",
+            "https://909originals.com/2018/07/09/ibiza-oakenfold-mullets-it-could-only-be-the-video-for-electras-jibaro-august-1988"
+          ]
+        },
+        {
+          "name": "Andrew Weatherall",
+          "role_he": "תקליטן מסצנת Shoom שהפך שיר רוק ללהיט ריקודים, וחיבר בין רוק לאסיד האוס",
+          "track": {
+            "artist": "Primal Scream",
+            "title": "Loaded",
+            "year": 1990
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Andrew_Weatherall",
+            "https://en.wikipedia.org/wiki/Loaded_(Primal_Scream_song)"
+          ]
+        },
+        {
+          "name": "A Guy Called Gerald",
+          "role_he": "מנצ'סטר: אחד מתקליטי האסיד האוס הבריטיים הראשונים שהפכו ללהיט",
+          "track": {
+            "artist": "A Guy Called Gerald",
+            "title": "Voodoo Ray",
+            "year": 1988
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Voodoo_Ray"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "זו סצנה היסטורית של 1988–1990 ואין לה ממשיכים פעילים כסגנון נפרד. הצליל הבלארי חי היום בעיקר כסגנון 'צ'יל' באיביזה (למשל ב-Café del Mar), ו-Paul Oakenfold עדיין מופיע, אבל כתקליטן טראנס."
     },
     {
-      "id": "ambient-house", "name_he": "אמביינט האוס", "name_en": "Ambient house / Chill-out",
-      "era": 2, "year": 1989, "family": "roots", "origin_he": "לונדון, אנגליה", "parents": ["ambient", "acid-house"],
+      "id": "ambient-house",
+      "name_he": "אמביינט האוס",
+      "name_en": "Ambient house / Chill-out",
+      "era": 2,
+      "year": 1989,
+      "family": "roots",
+      "origin_he": "לונדון, אנגליה",
+      "parents": [
+        "ambient",
+        "acid-house"
+      ],
       "story_he": "ברייבים נפתחו חדרי מנוחה, והדי-ג'ייז שם חיברו אמביינט עם קצב האוס רך וסמפלים. מכאן הגיע הרעיון שלכל מסיבה יש גם צד שקט, מה שיהפוך אחר כך לרחבת הצ'יל במסיבות הטבע.",
       "sound_he": "משטחי אמביינט, סמפלים של קולות וטבע, לפעמים קצב עדין.",
-      "bpm": null, "artists": ["The Orb", "The KLF", "Mixmaster Morris"],
-      "track": { "artist": "The Orb", "title": "Little Fluffy Clouds", "year": 1990 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "The Orb",
+        "The KLF",
+        "Mixmaster Morris"
+      ],
+      "track": {
+        "artist": "The Orb",
+        "title": "Little Fluffy Clouds",
+        "year": 1990
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "The Orb",
+          "role_he": "הצמד שהמציא את ה'אמביינט האוס': מוזיקת האוס איטית וחלומית לחדר המנוחה במועדון",
+          "track": {
+            "artist": "The Orb",
+            "title": "Little Fluffy Clouds",
+            "year": 1990
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Orb",
+            "https://en.wikipedia.org/wiki/Little_Fluffy_Clouds"
+          ]
+        },
+        {
+          "name": "The KLF",
+          "role_he": "אלבום Chill Out שלהם הוא אחד מאלבומי הצ'יל-אאוט הראשונים והמשפיעים",
+          "track": {
+            "artist": "The KLF",
+            "title": "Chill Out",
+            "year": 1990
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chill_Out_(album)",
+            "https://en.wikipedia.org/wiki/The_KLF"
+          ]
+        },
+        {
+          "name": "Mixmaster Morris",
+          "role_he": "תקליטן שניגן באולמות המנוחה של הרייבים ושם האלבום Flying High בשם The Irresistible Force",
+          "track": {
+            "artist": "The Irresistible Force",
+            "title": "Sky High",
+            "year": 1992
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mixmaster_Morris"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "The Orb",
+          "role_he": "עדיין פעילים: אלבומם ה-18 מ-2025 הגיע למקום 1 במצעד אלבומי הדאנס הבריטי",
+          "track": {
+            "artist": "The Orb",
+            "title": "Under The Bed",
+            "year": 2025
+          },
+          "sources": [
+            "https://arcana.fm/2025/08/25/orb-under-the-bed/",
+            "https://en.wikipedia.org/wiki/Buddhist_Hipsters"
+          ]
+        }
+      ],
+      "today_note_he": "אין היום סצנת 'אמביינט האוס' מוגדרת עם כוכבים חדשים. הצליל ממשיך דרך The Orb עצמם ודרך מוזיקת צ'יל-אאוט ואמביינט באופן כללי."
     },
     {
-      "id": "german-techno", "name_he": "טכנו גרמני", "name_en": "German techno",
-      "era": 2, "year": 1989, "family": "roots", "origin_he": "ברלין ופרנקפורט, גרמניה", "parents": ["detroit-techno", "ebm", "new-beat"],
+      "id": "german-techno",
+      "name_he": "טכנו גרמני",
+      "name_en": "German techno",
+      "era": 2,
+      "year": 1989,
+      "family": "roots",
+      "origin_he": "ברלין ופרנקפורט, גרמניה",
+      "parents": [
+        "detroit-techno",
+        "ebm",
+        "new-beat"
+      ],
       "story_he": "הטכנו מדטרויט פגש בגרמניה את ה-EBM ואת הניו ביט, ואחרי נפילת חומת ברלין קיבל מבנים ריקים לחגוג בהם. מהסצנה הזאת, ובעיקר מפרנקפורט, יצא הטראנס.",
       "sound_he": "קשה ומהיר יותר מהמקור האמריקאי, רפטטיבי ותעשייתי.",
-      "bpm": "130–145", "artists": ["Westbam", "Talla 2XLC", "Dr. Motte"],
-      "track": { "artist": "3 Phase feat. Dr. Motte", "title": "Der Klang der Familie", "year": 1992 }, "disputed_he": null
+      "bpm": "130–145",
+      "artists": [
+        "Westbam",
+        "Talla 2XLC",
+        "Dr. Motte"
+      ],
+      "track": {
+        "artist": "3 Phase feat. Dr. Motte",
+        "title": "Der Klang der Familie",
+        "year": 1992
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Westbam",
+          "role_he": "תקליטן ברלינאי מהמייסדים של סצנת הטכנו הגרמנית ושל מסיבות Mayday",
+          "track": {
+            "artist": "Westbam",
+            "title": "Celebration Generation",
+            "year": 1994
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Westbam"
+          ]
+        },
+        {
+          "name": "Dr. Motte",
+          "role_he": "מייסד מצעד האהבה (Love Parade) בברלין ב-1989, שהפך את הטכנו לתופעת המונים",
+          "track": {
+            "artist": "3 Phase feat. Dr. Motte",
+            "title": "Der Klang der Familie",
+            "year": 1992
+          },
+          "sources": [
+            "https://de.wikipedia.org/wiki/Dr._Motte",
+            "https://en.wikipedia.org/wiki/Love_Parade"
+          ]
+        },
+        {
+          "name": "Basic Channel",
+          "role_he": "צמד ברלינאי (Moritz von Oswald ו-Mark Ernestus) שעיצב את הצליל המינימלי והעמוק של טכנו ברלין",
+          "track": {
+            "artist": "Basic Channel",
+            "title": "Phylyps Trak",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Basic_Channel"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Ellen Allien",
+          "role_he": "תקליטנית ברלינאית ותיקה ומנהלת הלייבל BPitch, ממשיכה להוציא טכנו ב-2025",
+          "track": {
+            "artist": "Ellen Allien",
+            "title": "Under The Ocean",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.bpitch.de/?p=18803",
+            "https://forcedexposure.com/Catalog/allien-ellen-rave-luv-12-/BPX.036EP.html"
+          ]
+        },
+        {
+          "name": "Marcel Dettmann",
+          "role_he": "מתקליטני הבית של Berghain, המועדון המזוהה ביותר עם טכנו ברלין",
+          "track": {
+            "artist": "Marcel Dettmann",
+            "title": "Fear Of Programming",
+            "year": 2025
+          },
+          "sources": [
+            "https://dekmantel.com/editorial/dekmantel-records-2025",
+            "https://electronicgroove.com/marcel-dettmann-presents-new-alias-my-own-shadow-shares-single/"
+          ]
+        },
+        {
+          "name": "FJAAK",
+          "role_he": "צמד ברלינאי צעיר שמנגן טכנו אנלוגי חי ומוציא בלייבל עצמאי",
+          "track": {
+            "artist": "FJAAK",
+            "title": "Rekorder",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.skiddle.com/news/all/German-duo-FJAAK-bring-groove-loaded-industrial-energy-on-new-EP-FJAAK012/60419/amp.html",
+            "https://ra.co/news/80409"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "early-trance", "name_he": "טראנס מוקדם", "name_en": "Early trance / Frankfurt trance",
-      "era": 2, "year": 1990, "family": "club", "origin_he": "פרנקפורט, גרמניה",
-      "parents": ["german-techno", "ebm", "new-beat", "acid-house", "kosmische", "goa-parties"],
+      "id": "early-trance",
+      "name_he": "טראנס מוקדם",
+      "name_en": "Early trance / Frankfurt trance",
+      "era": 2,
+      "year": 1990,
+      "family": "club",
+      "origin_he": "פרנקפורט, גרמניה",
+      "parents": [
+        "german-techno",
+        "ebm",
+        "new-beat",
+        "acid-house",
+        "kosmische",
+        "goa-parties"
+      ],
       "story_he": "במועדונים Dorian Gray ו-Omen בפרנקפורט, Sven Väth וחבריו חיפשו צליל היפנוטי יותר מטכנו. Väth, שהושפע מהמסיבות בגואה, הקים את הלייבלים Eye Q ב-1991 ו-Harthouse ב-1992. DJ Dag מהצמד Dance 2 Trance טוען שהוא הראשון שקרא למוזיקה הזאת טראנס.",
       "sound_he": "מלודיה קצרה שחוזרת שוב ושוב מעל קצב טכנו, עם בנייה איטית של מתח.",
-      "bpm": "125–140", "artists": ["Sven Väth", "Dance 2 Trance", "Jam & Spoon", "Cosmic Baby"],
-      "track": { "artist": "Age of Love", "title": "The Age of Love", "year": 1990 },
-      "disputed_he": "אין הסכמה מהו תקליט הטראנס הראשון. המועמדים: What Time Is Love? (Pure Trance) של The KLF מ-1988, The Age of Love מ-1990 ו-We Came in Peace של Dance 2 Trance מ-1990."
+      "bpm": "125–140",
+      "artists": [
+        "Sven Väth",
+        "Dance 2 Trance",
+        "Jam & Spoon",
+        "Cosmic Baby"
+      ],
+      "track": {
+        "artist": "Age of Love",
+        "title": "The Age of Love",
+        "year": 1990
+      },
+      "disputed_he": "אין הסכמה מהו תקליט הטראנס הראשון. המועמדים: What Time Is Love? (Pure Trance) של The KLF מ-1988, The Age of Love מ-1990 ו-We Came in Peace של Dance 2 Trance מ-1990.",
+      "pioneers": [
+        {
+          "name": "Age of Love",
+          "role_he": "צמד איטלקי-בלגי שתקליטו מ-1990 נחשב בעיני רבים לתקליט הטראנס הראשון",
+          "track": {
+            "artist": "Age of Love",
+            "title": "The Age of Love",
+            "year": 1990
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Age_of_Love"
+          ]
+        },
+        {
+          "name": "Jam & Spoon",
+          "role_he": "צמד מפרנקפורט שהגדיר את הטראנס המלודי המוקדם עם Stella והרמיקס ל-Age of Love",
+          "track": {
+            "artist": "Jam & Spoon",
+            "title": "Stella",
+            "year": 1992
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Jam_%26_Spoon"
+          ]
+        },
+        {
+          "name": "Sven Väth",
+          "role_he": "תקליטן מפרנקפורט שייסד את הלייבלים Eye Q ו-Harthouse, בית מרכזי לטראנס המוקדם",
+          "track": {
+            "artist": "Sven Väth",
+            "title": "L'Esperanza",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sven_V%C3%A4th"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "הטראנס המוקדם הוא סגנון היסטורי. הצליל שלו חזר דרך 'תחיית הטראנס' של שנות ה-2020: למשל הרמיקס של Charlotte de Witte ו-Enrico Sangiuliano ל-The Age of Love, שהיה ברשימת הנמכרים של Beatport ב-2025."
     },
     {
-      "id": "acid-trance", "name_he": "אסיד טראנס", "name_en": "Acid trance",
-      "era": 2, "year": 1992, "family": "club", "origin_he": "גרמניה ובריטניה", "parents": ["early-trance", "acid-house"],
+      "id": "acid-trance",
+      "name_he": "אסיד טראנס",
+      "name_en": "Acid trance",
+      "era": 2,
+      "year": 1992,
+      "family": "club",
+      "origin_he": "גרמניה ובריטניה",
+      "parents": [
+        "early-trance",
+        "acid-house"
+      ],
       "story_he": "הצליל של ה-303 חזר, הפעם בתוך המבנה הארוך וההיפנוטי של הטראנס. Acperience של Hardfloor יצא ב-Harthouse והפך להמנון, ובאנגליה הלייבל Platipus המשיך את הקו.",
       "sound_he": "כמה קווי 303 שמתפתלים זה סביב זה ונבנים לאט לשיא.",
-      "bpm": "130–145", "artists": ["Hardfloor", "Union Jack", "Art of Trance"],
-      "track": { "artist": "Hardfloor", "title": "Acperience 1", "year": 1992 }, "disputed_he": null
+      "bpm": "130–145",
+      "artists": [
+        "Hardfloor",
+        "Union Jack",
+        "Art of Trance"
+      ],
+      "track": {
+        "artist": "Hardfloor",
+        "title": "Acperience 1",
+        "year": 1992
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Hardfloor",
+          "role_he": "צמד גרמני שבנה את Acperience כולו סביב צליל ה'אסיד' המפתל של הסינתיסייזר TB-303",
+          "track": {
+            "artist": "Hardfloor",
+            "title": "Acperience 1",
+            "year": 1992
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hardfloor"
+          ]
+        },
+        {
+          "name": "Union Jack",
+          "role_he": "צמד בריטי מהלייבל Platipus שהלהיט שלו הפך לקלאסיקה של אסיד טראנס",
+          "track": {
+            "artist": "Union Jack",
+            "title": "Two Full Moons and a Trout",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Union_Jack_(band)",
+            "https://en.wikipedia.org/wiki/Platipus_Records"
+          ]
+        },
+        {
+          "name": "Art of Trance",
+          "role_he": "הפרויקט של Simon Berry, מייסד Platipus, מהלייבלים המרכזיים של הסגנון",
+          "track": {
+            "artist": "Art of Trance",
+            "title": "Octopus",
+            "year": 1995
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Platipus_Records"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Paul van Dyk",
+          "role_he": "ותיק הטראנס הגרמני חזר לסינתיסייזר ה-303 בשיתוף עם DJ Pierre, אחד מממציאי האסיד",
+          "track": {
+            "artist": "Paul van Dyk x Phuture x DJ Pierre",
+            "title": "Acid Traxxx",
+            "year": 2023
+          },
+          "sources": [
+            "https://mixmag.net/read/dj-pierre-paul-van-dyk-join-forces-new-ep-acid-traxxx-roland-303-news",
+            "https://djmag.com/news/paul-van-dyk-unveils-new-live-show-concept-essence-of-acid"
+          ]
+        },
+        {
+          "name": "Lostly",
+          "role_he": "מפיק דרום-אפריקאי-גרמני שמוציא טראנס עם צליל 303 בולט, נבחר להמלצת Beatport ב-2026",
+          "track": {
+            "artist": "Lostly",
+            "title": "303 Ways",
+            "year": 2026
+          },
+          "sources": [
+            "https://www.beatportal.com/tracks/1341898-lostly-303-ways"
+          ]
+        }
+      ],
+      "today_note_he": "אין היום סצנת 'אסיד טראנס' נפרדת. צליל ה-303 חוזר בתוך טראנס וטכנו עכשוויים, ו-Hardfloor המקוריים עדיין מוציאים מוזיקה."
     },
     {
-      "id": "hard-trance", "name_he": "הארד טראנס", "name_en": "Hard trance",
-      "era": 2, "year": 1993, "family": "club", "origin_he": "גרמניה ובלגיה", "parents": ["early-trance", "german-techno"],
+      "id": "hard-trance",
+      "name_he": "הארד טראנס",
+      "name_en": "Hard trance",
+      "era": 2,
+      "year": 1993,
+      "family": "club",
+      "origin_he": "גרמניה ובלגיה",
+      "parents": [
+        "early-trance",
+        "german-techno"
+      ],
       "story_he": "גרסה מהירה וקשוחה של הטראנס, שהלייבל הבלגי Bonzai הפך לסמל שלה. כאן נקבעה התבנית של שבירה (Breakdown), בנייה (Build-up) והמנון, שכמעט כל טראנס מועדוני ישתמש בה אחר כך.",
       "sound_he": "בעיטה חזקה, טמפו גבוה, פאדים קצוצים ומלודיות המנוניות.",
-      "bpm": "140–155", "artists": ["Jones & Stephenson", "Cherry Moon Trax", "Scot Project"],
-      "track": { "artist": "Jones & Stephenson", "title": "The First Rebirth", "year": 1993 }, "disputed_he": null
+      "bpm": "140–155",
+      "artists": [
+        "Jones & Stephenson",
+        "Cherry Moon Trax",
+        "Scot Project"
+      ],
+      "track": {
+        "artist": "Jones & Stephenson",
+        "title": "The First Rebirth",
+        "year": 1993
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Jones & Stephenson",
+          "role_he": "צמד בלגי שהתקליט שלו מ-1993 הוא מהמגדירים של הטראנס הקשה והמהיר",
+          "track": {
+            "artist": "Jones & Stephenson",
+            "title": "The First Rebirth",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hard_trance"
+          ]
+        },
+        {
+          "name": "Yves Deruyter",
+          "role_he": "תקליטן ומפיק בלגי מהלייבל Bonzai, שהלהיט שלו נוגן בכל מסיבה ב-1993",
+          "track": {
+            "artist": "Yves Deruyter",
+            "title": "Rave City",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hard_trance"
+          ]
+        },
+        {
+          "name": "Cherry Moon Trax",
+          "role_he": "הפרויקט של המועדון הבלגי Cherry Moon, מוקד הסצנה הקשה של שנות ה-90",
+          "track": {
+            "artist": "Cherrymoon Trax",
+            "title": "The House of House",
+            "year": 1994
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hard_trance"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "DJ HEARTSTRING",
+          "role_he": "צמד ברלינאי שמשלב טראנס מהיר, טכנו ויורודאנס, מופיע ב-Berghain ובפסטיבלים גדולים",
+          "track": {
+            "artist": "DJ HEARTSTRING",
+            "title": "Stay Awake",
+            "year": 2025
+          },
+          "sources": [
+            "https://mixmag.net/feature/dj-heartstring-interview-cover-feature-berlin-trance-techno-dance-music",
+            "https://2025.pukkelpop.be/en/bands/dj-heartstring-1"
+          ]
+        },
+        {
+          "name": "mischluft",
+          "role_he": "מפיקה ותקליטנית שמחברת מלודיות טראנס עם קצב 'באונס' קשה",
+          "track": {
+            "artist": "mischluft & t e s t p r e s s",
+            "title": "BOUNCE N BREAK",
+            "year": 2025
+          },
+          "sources": [
+            "https://findyoursounds.com/mischluft-and-t-e-s-t-p-r-e-s-s-join-forces-for-bumpy-high-voltage-techno-infused-collab-bounce-n-break-via-hard-recs/",
+            "https://www.time-warp.de/artists/mischluft/"
+          ]
+        }
+      ],
+      "today_note_he": "הטראנס הקשה חזר בשנות ה-2020 כחלק מגל חדש שמתערבב עם טכנו מהיר (ראו 'תחיית הטראנס'). אמנים ותיקים מהתקופה, כמו Mauro Picotto ו-Talla 2XLC, נמצאים ב-2025 ברשימת אמני הטראנס הנמכרים ב-Beatport."
     },
     {
-      "id": "goa-trance", "name_he": "גואה טראנס", "name_en": "Goa trance",
-      "era": 2, "year": 1992, "family": "psy", "origin_he": "גואה, הודו",
-      "parents": ["goa-parties", "acid-house", "ebm", "new-beat", "early-trance"],
+      "id": "goa-trance",
+      "name_he": "גואה טראנס",
+      "name_en": "Goa trance",
+      "era": 2,
+      "year": 1992,
+      "family": "psy",
+      "origin_he": "גואה, הודו",
+      "parents": [
+        "goa-parties",
+        "acid-house",
+        "ebm",
+        "new-beat",
+        "early-trance"
+      ],
       "story_he": "מפיקים שחזרו מגואה התחילו ליצור מוזיקה במיוחד בשביל המסיבות שם. סביב 1992 כבר היה לסצנה דופק משלה, והשם גואה טראנס התקבע ב-1994. הלייבל הלונדוני Dragonfly נחשב לראשון שהוקדש לצליל הזה, ותרמילאים אירופים וישראלים הפיצו אותו בעולם.",
       "sound_he": "שכבות של מלודיות מתפתלות בסולמות מזרחיים, קווי אסיד, קטעים ארוכים של שמונה דקות ויותר.",
-      "bpm": "135–150", "artists": ["Hallucinogen", "Juno Reactor", "Astral Projection", "Man With No Name"],
-      "track": { "artist": "Hallucinogen", "title": "LSD", "year": 1994 }, "disputed_he": null
+      "bpm": "135–150",
+      "artists": [
+        "Hallucinogen",
+        "Juno Reactor",
+        "Astral Projection",
+        "Man With No Name"
+      ],
+      "track": {
+        "artist": "Hallucinogen",
+        "title": "LSD",
+        "year": 1994
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Hallucinogen",
+          "role_he": "הפרויקט של Simon Posford הבריטי, LSD הוא מההמנונים הגדולים של הגואה",
+          "track": {
+            "artist": "Hallucinogen",
+            "title": "LSD",
+            "year": 1994
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hallucinogen_(musician)"
+          ]
+        },
+        {
+          "name": "Juno Reactor",
+          "role_he": "להקה בריטית שאלבום הבכורה שלה ב-1993 חיבר טכנו, אסיד ומוזיקת עולם, בסיס לגואה",
+          "track": {
+            "artist": "Juno Reactor",
+            "title": "Laughing Gas",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Juno_Reactor"
+          ]
+        },
+        {
+          "name": "Astral Projection",
+          "role_he": "צמד ישראלי מהחלוצים של גואה טראנס, People Can Fly הוא אחד הלהיטים הגדולים שלו",
+          "track": {
+            "artist": "Astral Projection",
+            "title": "People Can Fly",
+            "year": 1996
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Astral_Projection_(band)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Khetzal",
+          "role_he": "מפיק מהלייבל Suntrip, הלייבל המרכזי של גואה טראנס בגל החדש",
+          "track": {
+            "artist": "Khetzal",
+            "title": "Mysteria Abbatiae",
+            "year": 2026
+          },
+          "sources": [
+            "https://suntriprecords.bandcamp.com/album/nectar-double-digital-album-vinyl-12-ep",
+            "https://en.wikipedia.org/wiki/Suntrip_Records"
+          ]
+        },
+        {
+          "name": "Hypnoxock",
+          "role_he": "מפיק מברצלונה שמתמקד בעשור האחרון בגואה טראנס, עם EP ואלבום ב-Suntrip ב-2025 וב-2026",
+          "track": {
+            "artist": "Hypnoxock",
+            "title": "Magma",
+            "year": 2025
+          },
+          "sources": [
+            "https://suntriprecords.bandcamp.com/album/magma-ep-digital-12",
+            "https://suntriprecords.bandcamp.com/album/distorted-reality"
+          ]
+        },
+        {
+          "name": "Median Project",
+          "role_he": "מפיק (Sergei Petrenko) של גואה מלודית, אלבום חדש ב-Suntrip ב-2026",
+          "track": {
+            "artist": "Median Project",
+            "title": "Universe",
+            "year": 2026
+          },
+          "sources": [
+            "https://suntriprecords.bandcamp.com/album/universe"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
-
     {
-      "id": "progressive-trance", "name_he": "פרוגרסיב טראנס", "name_en": "Progressive trance",
-      "era": 3, "year": 1994, "family": "club", "origin_he": "בריטניה", "parents": ["early-trance", "uk-rave"],
+      "id": "progressive-trance",
+      "name_he": "פרוגרסיב טראנס",
+      "name_en": "Progressive trance",
+      "era": 3,
+      "year": 1994,
+      "family": "club",
+      "origin_he": "בריטניה",
+      "parents": [
+        "early-trance",
+        "uk-rave"
+      ],
       "story_he": "הבריטים לקחו את הטראנס הגרמני וקירבו אותו להאוס: איטי יותר, עם התפתחות הדרגתית ושבירות ארוכות. לייבלים כמו Platipus ו-Hooj Choons הובילו, ועד סוף העשור זה היה הצליל של הרחבות הגדולות.",
       "sound_he": "שכבות שנכנסות ויוצאות לאט, אקורדים רחבים, פחות המנון ויותר זרימה.",
-      "bpm": "125–135", "artists": ["Sasha", "John Digweed", "BT"],
-      "track": { "artist": "BT", "title": "Flaming June", "year": 1997 }, "disputed_he": null
+      "bpm": "125–135",
+      "artists": [
+        "Sasha",
+        "John Digweed",
+        "BT"
+      ],
+      "track": {
+        "artist": "BT",
+        "title": "Flaming June",
+        "year": 1997
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Sasha",
+          "role_he": "די.ג'יי וולשי שעיצב עם דיגווד את הצליל הפרוגרסיבי הארוך והמהפנט של סוף שנות ה-90",
+          "track": {
+            "artist": "Sasha",
+            "title": "Xpander",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sasha_(DJ)"
+          ]
+        },
+        {
+          "name": "John Digweed",
+          "role_he": "שותפו של סשה; כמפיק (Bedrock) הביא בנייה איטית והדרגתית לרחבה",
+          "track": {
+            "artist": "Bedrock",
+            "title": "For What You Dream Of",
+            "year": 1993
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/John_Digweed"
+          ]
+        },
+        {
+          "name": "BT",
+          "role_he": "אמריקאי שחיבר מנגינות רגשיות עם הפקה מפורטת; 'Flaming June' הפך להמנון",
+          "track": {
+            "artist": "BT",
+            "title": "Flaming June",
+            "year": 1997
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Flaming_June_(song)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "ilan Bluestone",
+          "role_he": "מפיק מוביל בלייבל Anjunabeats; אלבומו Ignite יצא ב-2025",
+          "track": {
+            "artist": "ilan Bluestone & Jasper Blunk",
+            "title": "40",
+            "year": 2025
+          },
+          "sources": [
+            "https://anjunabeats.com/products/511397-ignite",
+            "https://fluxbpmonline.blogspot.com/2025/08/album-review-ilan-bluestone-ignite-out.html"
+          ]
+        },
+        {
+          "name": "Andrew Bayer",
+          "role_he": "ותיק Anjunabeats שממשיך להוציא טראנס פרוגרסיבי מלודי ושקט יחסית",
+          "track": {
+            "artist": "Andrew Bayer",
+            "title": "Magitek",
+            "year": 2025
+          },
+          "sources": [
+            "https://music.anjunabeats.com/artist/57281-andrew-bayer",
+            "https://www.edmtunes.com/2026/09/11/interview-andrew-bayer/"
+          ]
+        },
+        {
+          "name": "Genix",
+          "role_he": "מפיק בריטי ב-Anjunabeats שמשלב טראנס פרוגרסיבי עם השפעות של שנות ה-90",
+          "track": {
+            "artist": "Genix & Bebi",
+            "title": "Feels Like",
+            "year": 2026
+          },
+          "sources": [
+            "https://anjunabeats.com/products/569022-feels-like",
+            "https://www.youtube.com/watch?v=hMmU8by42Mc"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "dream-trance", "name_he": "דרים טראנס", "name_en": "Dream trance",
-      "era": 3, "year": 1995, "family": "club", "origin_he": "איטליה", "parents": ["progressive-trance", "early-trance"],
+      "id": "dream-trance",
+      "name_he": "דרים טראנס",
+      "name_en": "Dream trance",
+      "era": 3,
+      "year": 1995,
+      "family": "club",
+      "origin_he": "איטליה",
+      "parents": [
+        "progressive-trance",
+        "early-trance"
+      ],
       "story_he": "באיטליה של תחילת שנות ה-90 צעירים נהרגו בתאונות דרכים בדרך חזרה ממועדונים. Robert Miles כתב את Children כקטע רגוע לסוף הלילה, והפסנתר שלו הפך ללהיט עולמי שהכניס את הטראנס למצעדים.",
       "sound_he": "מלודיית פסנתר חולמנית מעל קצב יציב ורך.",
-      "bpm": "130–138", "artists": ["Robert Miles", "DJ Dado", "Zhi-Vago"],
-      "track": { "artist": "Robert Miles", "title": "Children", "year": 1995 }, "disputed_he": null
+      "bpm": "130–138",
+      "artists": [
+        "Robert Miles",
+        "DJ Dado",
+        "Zhi-Vago"
+      ],
+      "track": {
+        "artist": "Robert Miles",
+        "title": "Children",
+        "year": 1995
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Robert Miles",
+          "role_he": "איטלקי שיצר את 'Children' עם פסנתר רך מעל קצב ריקודים; הלהיט שהגדיר את הסגנון",
+          "track": {
+            "artist": "Robert Miles",
+            "title": "Children",
+            "year": 1995
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dream_trance",
+            "https://en.wikipedia.org/wiki/Robert_Miles"
+          ]
+        },
+        {
+          "name": "DJ Dado",
+          "role_he": "די.ג'יי איטלקי שהפך את נעימת 'תיקים באפלה' ללהיט ריקודים חלומי",
+          "track": {
+            "artist": "DJ Dado",
+            "title": "X-Files",
+            "year": 1996
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/DJ_Dado"
+          ]
+        },
+        {
+          "name": "Zhi-Vago",
+          "role_he": "להקה גרמנית שוויקיפדיה מגדירה כ-dream trance; הגיעה לעשירייה הפותחת בצרפת",
+          "track": {
+            "artist": "Zhi-Vago",
+            "title": "Celebrate (The Love)",
+            "year": 1996
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Zhi-Vago"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "אין היום סצנה פעילה שקוראת לעצמה דרים טראנס. הסגנון היה גל קצר של 1995 עד 1998. הפסנתר הרך והמנגינה הפשוטה שלו ממשיכים לחיות בעיבודים חדשים ל-'Children' ובגל החזרה של הטראנס בשנות ה-2020."
     },
     {
-      "id": "balearic-trance", "name_he": "בלארי טראנס", "name_en": "Balearic / Ibiza trance",
-      "era": 3, "year": 1996, "family": "club", "origin_he": "איביזה, ספרד", "parents": ["uk-rave", "progressive-trance", "ambient-house"],
+      "id": "balearic-trance",
+      "name_he": "בלארי טראנס",
+      "name_en": "Balearic / Ibiza trance",
+      "era": 3,
+      "year": 1996,
+      "family": "club",
+      "origin_he": "איביזה, ספרד",
+      "parents": [
+        "uk-rave",
+        "progressive-trance",
+        "ambient-house"
+      ],
       "story_he": "הטראנס פוגש את השקיעה של איביזה. הקטע Café del Mar של Energy 52 נקרא על שם הבר המפורסם באי, ו-Chicane הפך את הצליל הזה לסימן ההיכר שלו.",
       "sound_he": "גיטרות ומיתרים חמים, מלודיות רכות, תחושה של קיץ וים.",
-      "bpm": "125–135", "artists": ["Chicane", "Energy 52", "Solarstone"],
-      "track": { "artist": "Chicane", "title": "Offshore", "year": 1996 }, "disputed_he": null
+      "bpm": "125–135",
+      "artists": [
+        "Chicane",
+        "Energy 52",
+        "Solarstone"
+      ],
+      "track": {
+        "artist": "Chicane",
+        "title": "Offshore",
+        "year": 1996
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Energy 52",
+          "role_he": "'Café del Mar' (1993), על שם בר השקיעה באיביזה; יש הרואים בו את הטראק הראשון של הסגנון",
+          "track": {
+            "artist": "Energy 52",
+            "title": "Café del Mar",
+            "year": 1993
+          },
+          "sources": [
+            "https://djmag.com/features/search-sunrise-history-balearic-trance",
+            "https://en.wikipedia.org/wiki/Café_del_Mar_(song)"
+          ]
+        },
+        {
+          "name": "Chicane",
+          "role_he": "הבריטי ניק ברקר; 'Offshore' הוסיף תוף בס לאווירת השקיעה של איביזה",
+          "track": {
+            "artist": "Chicane",
+            "title": "Offshore",
+            "year": 1996
+          },
+          "sources": [
+            "https://djmag.com/features/search-sunrise-history-balearic-trance"
+          ]
+        },
+        {
+          "name": "Solarstone",
+          "role_he": "'Seven Cities' (1999) חיבר מנגינה חלומית עם גיטרה ספרדית בסגנון איביזה",
+          "track": {
+            "artist": "Solarstone",
+            "title": "Seven Cities",
+            "year": 1999
+          },
+          "sources": [
+            "https://djmag.com/features/search-sunrise-history-balearic-trance"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Chicane",
+          "role_he": "עדיין פעיל: ב-2025 היה בין עשרת אמני הטראנס הנמכרים ב-Beatport",
+          "track": {
+            "artist": "Claptone x Chicane feat. Moya Brennan",
+            "title": "Saltwater",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025"
+          ]
+        },
+        {
+          "name": "Solarstone",
+          "role_he": "הוציא את האלבום innermost ב-2025 וניגן ב-Dreamstate SoCal 2025",
+          "track": {
+            "artist": "Solarstone",
+            "title": "shivelight",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/888800-with-shivelight-solarstone-reveals-the-first-single-from-his-upcoming-album",
+            "https://www.youtube.com/watch?v=7YZegcz57dc"
+          ]
+        }
+      ],
+      "today_note_he": "מי שנושאים היום את הצליל הבלארי בטראנס הם בעיקר אותם חלוצים: Chicane ו-Solarstone עדיין מוציאים מוזיקה ומופיעים. לא מצאנו דור חדש שמזוהה במפורש עם הסגנון."
     },
     {
-      "id": "uplifting", "name_he": "אפליפטינג טראנס", "name_en": "Uplifting / Epic trance",
-      "era": 3, "year": 1997, "family": "club", "origin_he": "הולנד וגרמניה", "parents": ["hard-trance", "progressive-trance", "dream-trance"],
+      "id": "uplifting",
+      "name_he": "אפליפטינג טראנס",
+      "name_en": "Uplifting / Epic trance",
+      "era": 3,
+      "year": 1997,
+      "family": "club",
+      "origin_he": "הולנד וגרמניה",
+      "parents": [
+        "hard-trance",
+        "progressive-trance",
+        "dream-trance"
+      ],
       "story_he": "בסוף שנות ה-90 הטראנס המועדוני מצא את הנוסחה שלו: שבירה ארוכה, בנייה עם תופי סנר ושיא אופורי. דור של די-ג'ייז הולנדים, עם Ferry Corsten, Tiësto ו-Armin van Buuren, הפך אותו למוזיקה של אצטדיונים.",
       "sound_he": "לידים רחבים ורגשיים (Supersaw), שבירות ארוכות, שיא שמרים את הידיים.",
-      "bpm": "136–142", "artists": ["Ferry Corsten", "Paul van Dyk", "Tiësto", "Armin van Buuren"],
-      "track": { "artist": "System F", "title": "Out of the Blue", "year": 1999 }, "disputed_he": null
+      "bpm": "136–142",
+      "artists": [
+        "Ferry Corsten",
+        "Paul van Dyk",
+        "Tiësto",
+        "Armin van Buuren"
+      ],
+      "track": {
+        "artist": "System F",
+        "title": "Out of the Blue",
+        "year": 1999
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Ferry Corsten",
+          "role_he": "ההולנדי שהפיק כ-System F את 'Out of the Blue', אב-טיפוס לטראנס המרומם",
+          "track": {
+            "artist": "System F",
+            "title": "Out of the Blue",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ferry_Corsten",
+            "https://en.wikipedia.org/wiki/Trance_music"
+          ]
+        },
+        {
+          "name": "Paul van Dyk",
+          "role_he": "גרמני מברלין; 'For an Angel' הפך לאחד ההמנונים המוקדמים של הסגנון",
+          "track": {
+            "artist": "Paul van Dyk",
+            "title": "For an Angel",
+            "year": 1998
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Paul_van_Dyk",
+            "https://en.wikipedia.org/wiki/Trance_music"
+          ]
+        },
+        {
+          "name": "Rank 1",
+          "role_he": "צמד הולנדי; 'Airwave' היה ההמנון של מסיבת Innercity ב-1999",
+          "track": {
+            "artist": "Rank 1",
+            "title": "Airwave",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rank_1"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Aly & Fila",
+          "role_he": "צמד ממצרים, מנהלי הלייבל FSOE; ניגנו ב-Dreamstate SoCal 2025",
+          "track": {
+            "artist": "Aly & Fila with Ferry Tayle",
+            "title": "Take Me Higher",
+            "year": 2025
+          },
+          "sources": [
+            "https://tranceattack.net/aly-fila-with-ferry-tayle-take-me-higher",
+            "https://edmidentity.com/2025/07/15/dreamstate-socal-2025-lineup"
+          ]
+        },
+        {
+          "name": "Allen Watts",
+          "role_he": "הולנדי; רביעי ברשימת אמני הטראנס הנמכרים ב-Beatport לשנת 2025",
+          "track": {
+            "artist": "Allen Watts",
+            "title": "S.L.C",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025",
+            "https://fluxbpmonline.blogspot.com/2025/04/trance-review-allen-watts-slc-out.html"
+          ]
+        },
+        {
+          "name": "Bryan Kearney",
+          "role_he": "אירי; שמיני ברשימת הנמכרים ב-Beatport לשנת 2025 וניגן ב-Dreamstate 2025",
+          "track": {
+            "artist": "Bryan Kearney",
+            "title": "I Need Your Love",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025",
+            "https://fluxbpmonline.blogspot.com/2025/09/trance-review-bryan-kearney-i-need-your.html"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "eurotrance", "name_he": "יורוטראנס", "name_en": "Eurotrance",
-      "era": 3, "year": 1998, "family": "club", "origin_he": "גרמניה", "parents": ["uplifting", "dream-trance"],
+      "id": "eurotrance",
+      "name_he": "יורוטראנס",
+      "name_en": "Eurotrance",
+      "era": 3,
+      "year": 1998,
+      "family": "club",
+      "origin_he": "גרמניה",
+      "parents": [
+        "uplifting",
+        "dream-trance"
+      ],
       "story_he": "הגרסה הרדיופונית: מלודיה אחת קליטה, קטע של שלוש דקות, לפעמים זמרת. 9 PM (Till I Come) של ATB פתח את הדלת ללהיטים כמו Better Off Alone ו-Sandstorm.",
       "sound_he": "הוקים פשוטים וקליטים, מבנה של שיר פופ, הפקה מבריקה.",
-      "bpm": "130–142", "artists": ["ATB", "Alice Deejay", "Darude"],
-      "track": { "artist": "ATB", "title": "9 PM (Till I Come)", "year": 1998 }, "disputed_he": null
+      "bpm": "130–142",
+      "artists": [
+        "ATB",
+        "Alice Deejay",
+        "Darude"
+      ],
+      "track": {
+        "artist": "ATB",
+        "title": "9 PM (Till I Come)",
+        "year": 1998
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "ATB",
+          "role_he": "הגרמני אנדרה טאנבאוגר; '9 PM' עם הגיטרה המעובדת הפך ללהיט עולמי",
+          "track": {
+            "artist": "ATB",
+            "title": "9 PM (Till I Come)",
+            "year": 1998
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/ATB",
+            "https://en.wikipedia.org/wiki/Trance_music"
+          ]
+        },
+        {
+          "name": "Alice Deejay",
+          "role_he": "פרויקט הולנדי; 'Better Off Alone' הוא דוגמה מובהקת לטראנס פופי עם שירה",
+          "track": {
+            "artist": "Alice Deejay",
+            "title": "Better Off Alone",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Alice_Deejay"
+          ]
+        },
+        {
+          "name": "Darude",
+          "role_he": "פיני; 'Sandstorm' הוא אחד מטראקי הטראנס המוכרים בעולם",
+          "track": {
+            "artist": "Darude",
+            "title": "Sandstorm",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Darude"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "ATB",
+          "role_he": "עדיין מוציא שירים: ב-2025 יצא 'Believe in Love' לקראת אלבום אחרון",
+          "track": {
+            "artist": "ATB feat. Shaun Farrugia",
+            "title": "Believe in Love",
+            "year": 2025
+          },
+          "sources": [
+            "https://dancingastronaut.com/2024/05/atb-announces-final-studio-album-and-25th-anniversary-tour/",
+            "https://recentmusic.com/artist/7jZM5w05mGhw6wTB1okhD9"
+          ]
+        },
+        {
+          "name": "Darude",
+          "role_he": "בסיבוב הופעות STORM 25 בשנים 2025-2026, עם גרסה חדשה ל-Sandstorm",
+          "track": {
+            "artist": "Darude",
+            "title": "Sandstorm (Storm 25 Mix)",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1638796-darude-takes-sandstorm-back-to-the-future-with-its-first-official-remix-in-over-20-years",
+            "https://scenestr.com.au/music/darude-australia-2025-tour-20250314"
+          ]
+        }
+      ],
+      "today_note_he": "אין כמעט מפיקים חדשים שקוראים למוזיקה שלהם יורוטראנס. הוותיקים ATB ו-Darude עדיין פעילים, והצליל הפופי והשמח של הסגנון חוזר היום בגל החזרה של הטראנס (ראו 'טראנס ריבייבל')."
     },
     {
-      "id": "psytrance", "name_he": "פסייטראנס", "name_en": "Psychedelic trance",
-      "era": 3, "year": 1997, "family": "psy", "origin_he": "אירופה וישראל", "parents": ["goa-trance", "german-techno"],
+      "id": "psytrance",
+      "name_he": "פסייטראנס",
+      "name_en": "Psychedelic trance",
+      "era": 3,
+      "year": 1997,
+      "family": "psy",
+      "origin_he": "אירופה וישראל",
+      "parents": [
+        "goa-trance",
+        "german-techno"
+      ],
       "story_he": "בסוף שנות ה-90 הגואה טראנס הגיע לרוויה. מפיקים עברו לעבוד במחשב, הורידו מלודיות והתמקדו בגרוב, בבס ובעיצוב סאונד. האלבום Radio של X-Dream מ-1998 נחשב לאחד מסימני הדרך של המעבר.",
       "sound_he": "קו בס מתגלגל בשש-עשריות, בעיטה הדוקה, אפקטים וצלילים מעוותים במקום מלודיות ארוכות.",
-      "bpm": "140–150", "artists": ["X-Dream", "Hallucinogen", "GMS", "Infected Mushroom"],
-      "track": { "artist": "X-Dream", "title": "Radio", "year": 1998 },
-      "disputed_he": "הגבול בין גואה טראנס לפסייטראנס לא חד. יש מי שמשתמשים בשני השמות לאותו דבר, ויש מי שמתארכים את הפסייטראנס כבר לתחילת שנות ה-90."
+      "bpm": "140–150",
+      "artists": [
+        "X-Dream",
+        "Hallucinogen",
+        "GMS",
+        "Infected Mushroom"
+      ],
+      "track": {
+        "artist": "X-Dream",
+        "title": "Brain Forest",
+        "year": 1997
+      },
+      "disputed_he": "הגבול בין גואה טראנס לפסייטראנס לא חד. יש מי שמשתמשים בשני השמות לאותו דבר, ויש מי שמתארכים את הפסייטראנס כבר לתחילת שנות ה-90.",
+      "pioneers": [
+        {
+          "name": "X-Dream",
+          "role_he": "צמד מהמבורג; האלבום Radio (1998) הביא צליל כהה ותעשייתי יותר מגואה",
+          "track": {
+            "artist": "X-Dream",
+            "title": "Brain Forest",
+            "year": 1997
+          },
+          "sources": [
+            "https://trancentral.tv/?p=15237",
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://avatar-music.com/artists/artists-xdream.html"
+          ]
+        },
+        {
+          "name": "Infected Mushroom",
+          "role_he": "צמד מחיפה; The Gathering (1999) מהאלבומים הראשונים שהביאו פסייטראנס ישראלי לקהל רחב",
+          "track": {
+            "artist": "Infected Mushroom",
+            "title": "Psycho",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infected_Mushroom"
+          ]
+        },
+        {
+          "name": "GMS",
+          "role_he": "הצמד הבריטי-הולנדי Growling Mad Scientists; הוציא את The Growly Family ב-1998 ב-TIP",
+          "track": {
+            "artist": "GMS",
+            "title": "The Caterpillar",
+            "year": 1998
+          },
+          "sources": [
+            "https://worddisk.com/wiki/Growling_Mad_Scientists",
+            "https://www.wikiwand.com/en/articles/No_Rules_(GMS_album)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Avalon",
+          "role_he": "מפיק בריטי; אמן הפסייטראנס הנמכר ביותר ב-Beatport ב-2024, הופיע ב-Boom 2025",
+          "track": {
+            "artist": "Avalon & GMS",
+            "title": "The Underground",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/781002-psy-trance-the-top-selling-tracks-artists-and-labels-of-2024",
+            "https://www.edmtunes.com/2025/12/12/avalon-gms-ep-the-underground/",
+            "https://www.youtube.com/watch?v=OPQt1aPpmpw"
+          ]
+        },
+        {
+          "name": "Ritmo",
+          "role_he": "צמד הולנדי; שני ברשימת אמני הפסייטראנס הנמכרים ב-Beatport ב-2024",
+          "track": {
+            "artist": "Ritmo & Asgard",
+            "title": "Dunes",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/781002-psy-trance-the-top-selling-tracks-artists-and-labels-of-2024"
+          ]
+        },
+        {
+          "name": "Liquid Soul",
+          "role_he": "שווייצרי ותיק; בין עשרת הנמכרים ב-2024 ו'Tranceform' בין הטראקים המובילים",
+          "track": {
+            "artist": "Liquid Soul & Alchimyst",
+            "title": "Tranceform",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/781002-psy-trance-the-top-selling-tracks-artists-and-labels-of-2024"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "nitzhonot", "name_he": "ניצחונות", "name_en": "Nitzhonot",
-      "era": 3, "year": 1997, "family": "psy", "origin_he": "ישראל", "parents": ["goa-trance", "uplifting"],
+      "id": "nitzhonot",
+      "name_he": "ניצחונות",
+      "name_en": "Nitzhonot",
+      "era": 3,
+      "year": 1997,
+      "family": "psy",
+      "origin_he": "ישראל",
+      "parents": [
+        "goa-trance",
+        "uplifting"
+      ],
       "story_he": "גרסה ישראלית, מהירה ומלודית של גואה טראנס, שפרצה מהמסיבות אל המיינסטרים. האלבום Good Morning Israel של אייל ברקן מ-1998 היה אלבום הטראנס הראשון שהגיע בארץ למעמד זהב. אחרי שרוב האמנים בישראל עברו לפול-און, הסגנון המשיך ביוון.",
       "sound_he": "בעיטות חדות שמכונות לייזר-קיקס (Laserkicks), מלודיות מזרחיות המנוניות.",
-      "bpm": "145–155", "artists": ["Eyal Barkan", "Cyan", "Cherouvim"],
-      "track": { "artist": "Eyal Barkan", "title": "Good Morning Israel", "year": 1998 }, "disputed_he": null
+      "bpm": "145–155",
+      "artists": [
+        "Eyal Barkan",
+        "Cyan",
+        "Cherouvim"
+      ],
+      "track": {
+        "artist": "Eyal Barkan",
+        "title": "Good Morning Israel",
+        "year": 1998
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Eyal Barkan",
+          "role_he": "מחיפה; 'Good Morning Israel' (1998) היה טראק הטראנס הראשון בישראל שהגיע לפלטינה",
+          "track": {
+            "artist": "Eyal Barkan",
+            "title": "Good Morning Israel",
+            "year": 1998
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Eyal_Barkan",
+            "https://en.wikipedia.org/wiki/Nitzhonot"
+          ]
+        },
+        {
+          "name": "Holymen",
+          "role_he": "אבי (הולי) שוורץ; יחד עם ברקן הוציא ב-1997 את Over the Sunrise ועזר ליצור את סגנון ה'ניצחונות'",
+          "track": {
+            "artist": "Holymen",
+            "title": "Comic Strip",
+            "year": 1998
+          },
+          "sources": [
+            "https://www.last.fm/music/Holymen/+wiki",
+            "https://greekuplifting.blogspot.com/2018/04/the-ultimate-nitzhonotupliftingnitzhogo.html"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "לא מצאנו סצנה פעילה של ניצחונות ב-2024 עד 2026: אין מסיבות, לייבלים או מצעדים שמזוהים עם השם. הצליל המלודי והשמח שלו המשיך לפול-און הישראלי של שנות ה-2000, ובסוף העשור ההוא לגל קטן בשם 'ניצחוגואה' (nitzhogoa) סביב הלייבל Sita Records."
     },
     {
-      "id": "psybient", "name_he": "פסיביינט", "name_en": "Psybient / Psychill",
-      "era": 3, "year": 1998, "family": "psy", "origin_he": "אנגליה", "parents": ["goa-trance", "ambient-house"],
+      "id": "psybient",
+      "name_he": "פסיביינט",
+      "name_en": "Psybient / Psychill",
+      "era": 3,
+      "year": 1998,
+      "family": "psy",
+      "origin_he": "אנגליה",
+      "parents": [
+        "goa-trance",
+        "ambient-house"
+      ],
       "story_he": "באלבומי גואה היה נהוג לסיים בקטע איטי לצ'יל-אאוט. Simon Posford (Hallucinogen) ו-Raja Ram הפכו את הקטע הזה לעולם שלם עם Shpongle, והאלבום Are You Shpongled? מ-1998 נחשב לזה שהגדיר את הז'אנר.",
       "sound_he": "קצב איטי, צלילים פסיכדליים, כלים וקולות מכל העולם, השפעות דאב.",
-      "bpm": "מתחת ל-120", "artists": ["Shpongle", "The Infinity Project", "Ott"],
-      "track": { "artist": "Shpongle", "title": "Divine Moments of Truth", "year": 1998 }, "disputed_he": null
+      "bpm": "מתחת ל-120",
+      "artists": [
+        "Shpongle",
+        "The Infinity Project",
+        "Ott"
+      ],
+      "track": {
+        "artist": "Shpongle",
+        "title": "Divine Moments of Truth",
+        "year": 1998
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Shpongle",
+          "role_he": "סיימון פוספורד ורג'ה רם; נחשבים לממציאי הפסייביינט, אלבום ראשון ב-1998",
+          "track": {
+            "artist": "Shpongle",
+            "title": "Divine Moments of Truth",
+            "year": 1998
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Shpongle"
+          ]
+        },
+        {
+          "name": "Ott",
+          "role_he": "מפיק בריטי מ-Twisted Records; שילב דאב איטי עם צלילים פסיכדליים",
+          "track": {
+            "artist": "Ott",
+            "title": "The Queen of All Everything",
+            "year": 2008
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ott_(record_producer)"
+          ]
+        },
+        {
+          "name": "Entheogenic",
+          "role_he": "צמד שהוקם ב-1999; אלבומו השני היה אלבום הפסיי-צ'יל הראשון במקום הראשון בגרמניה",
+          "track": {
+            "artist": "Entheogenic",
+            "title": "Ground Luminosity",
+            "year": 2003
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Entheogenic_(band)"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Carbon Based Lifeforms",
+          "role_he": "צמד שוודי של אמביינט אלקטרוני; ניגן באוזורה 2024 ובסיבוב הופעות ב-2025-2026",
+          "track": {
+            "artist": "Carbon Based Lifeforms",
+            "title": "Seeker",
+            "year": 2023
+          },
+          "sources": [
+            "https://carbonbasedlifeforms.bandcamp.com/album/seeker",
+            "https://carbonbasedlifeforms.bandcamp.com/music",
+            "https://ra.co/events/2508079"
+          ]
+        },
+        {
+          "name": "Martin Nonstatic",
+          "role_he": "הולנדי מהלייבל הצרפתי Ultimae; ניגן בבמת הדום של אוזורה 2025",
+          "track": {
+            "artist": "Martin Nonstatic",
+            "title": "Opening the Sky",
+            "year": 2026
+          },
+          "sources": [
+            "https://ultimae.com/?p=35249",
+            "https://ultimae.bandcamp.com/album/laniakea"
+          ]
+        },
+        {
+          "name": "Kalya Scintilla",
+          "role_he": "אוסטרלי שמשלב מוזיקת עולם עם בס איטי; הופיע בדום של אוזורה וב-Boom ב-2025",
+          "track": {
+            "artist": "Kalya Scintilla",
+            "title": "Tales from the Path Pt. 1",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.youtube.com/watch?v=KTDJVwB_A3Y",
+            "https://www.youtube.com/watch?v=hoOCvOoAFBU",
+            "https://albumblitz.com/kalya-scintilla-tales-from-the-path-pt-1"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "suomisaundi", "name_he": "סואומיסאונדי", "name_en": "Suomisaundi",
-      "era": 3, "year": 1996, "family": "psy", "origin_he": "פינלנד", "parents": ["goa-trance"],
+      "id": "suomisaundi",
+      "name_he": "סואומיסאונדי",
+      "name_en": "Suomisaundi",
+      "era": 3,
+      "year": 1996,
+      "family": "psy",
+      "origin_he": "פינלנד",
+      "parents": [
+        "goa-trance"
+      ],
       "story_he": "השם פירושו פשוט הסאונד הפיני. מפיקים בהלסינקי לקחו את הגואה טראנס ושברו את כל החוקים שלו, עם הומור, שינויי קצב פתאומיים ומבנים לא צפויים. האלבום הראשון של Texas Faggott מ-1999 היה ההצלחה המסחרית הראשונה של הסגנון.",
       "sound_he": "פסיי חופשי ומשוגע: גרובים עקומים, סמפלים מצחיקים, בלי שום נוסחה.",
-      "bpm": null, "artists": ["Texas Faggott", "Squaremeat", "Haltya"],
-      "track": null, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Texas Faggott",
+        "Squaremeat",
+        "Haltya"
+      ],
+      "track": null,
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Texas Faggott",
+          "role_he": "טים ת'יק (חבר הלהקה) נחשב למי שהפיק ראשון טראקים בצליל הפיני המוזר והמשעשע",
+          "track": {
+            "artist": "Texas Faggott",
+            "title": "Stiff Neck",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Suomisaundi",
+            "https://fi.wikipedia.org/wiki/Texas_Faggott"
+          ]
+        },
+        {
+          "name": "Squaremeat",
+          "role_he": "צמד מהלסינקי (פפה קוסמינן ופרנסואז פאגוט); אלבום ראשון Squarebeat ב-1998",
+          "track": {
+            "artist": "Squaremeat",
+            "title": "Marble Madness",
+            "year": 1998
+          },
+          "sources": [
+            "https://fi.wikipedia.org/wiki/Squaremeat",
+            "https://musicbrainz.org/release/2de0502f-3d82-4d86-8f39-ea65a443188d"
+          ]
+        },
+        {
+          "name": "Haltya",
+          "role_he": "טומי סירקיה; 'פסייטראנס פאנקי של יער', מהמפיקים הבולטים של הלייבל Exogenic",
+          "track": {
+            "artist": "Haltya",
+            "title": "1979 Flashdance",
+            "year": 2001
+          },
+          "sources": [
+            "https://fi.wikipedia.org/wiki/Haltya",
+            "https://musicbrainz.org/release/42aabe65-c114-4740-a6fe-9492636675a3"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Suomies",
+          "role_he": "פרויקט פיני שמגדיר את עצמו 'סואומיסאונדי מפינלנד'; אלבום Aion יצא ב-2024",
+          "track": {
+            "artist": "Suomies",
+            "title": "Jäärouva",
+            "year": 2024
+          },
+          "sources": [
+            "https://suomies.bandcamp.com/album/aion",
+            "https://www.youtube.com/watch?v=eZ6Rknego18"
+          ]
+        }
+      ],
+      "today_note_he": "הסצנה קטנה ומחתרתית, בעיקר בפינלנד ובאינטרנט (מפגשים מקוונים ומסיבות 'Suomisaundi Sundays'). חלק מהחלוצים עדיין פעילים: Texas Faggott הוציאו אלבום ב-2023. לא מצאנו מצעדים או פסטיבלים גדולים שמזוהים עם הסגנון."
     },
-
     {
-      "id": "vocal-trance", "name_he": "ווקאל טראנס", "name_en": "Vocal trance",
-      "era": 4, "year": 2000, "family": "club", "origin_he": "אירופה", "parents": ["uplifting", "eurotrance"],
+      "id": "vocal-trance",
+      "name_he": "ווקאל טראנס",
+      "name_en": "Vocal trance",
+      "era": 4,
+      "year": 2000,
+      "family": "club",
+      "origin_he": "אירופה",
+      "parents": [
+        "uplifting",
+        "eurotrance"
+      ],
       "story_he": "בתחילת שנות ה-2000 נכנסה לאפליפטינג שירה בסגנון פופ, בדרך כלל קול נשי גבוה ומרחף. הרמיקס של Tiësto ל-Silence הפך להמנון, והסגנון החזיק את הטראנס ברדיו לאורך כל העשור.",
       "sound_he": "מבנה של בית ופזמון בתוך קטע טראנס, קול נשי אוורירי מעל לידים רחבים.",
-      "bpm": "130–140", "artists": ["Above & Beyond", "Armin van Buuren", "Dash Berlin"],
-      "track": { "artist": "Delerium feat. Sarah McLachlan", "title": "Silence (DJ Tiësto Remix)", "year": 2000 }, "disputed_he": null
+      "bpm": "130–140",
+      "artists": [
+        "Above & Beyond",
+        "Armin van Buuren",
+        "Dash Berlin"
+      ],
+      "track": {
+        "artist": "Delerium feat. Sarah McLachlan",
+        "title": "Silence (DJ Tiësto Remix)",
+        "year": 2000
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Chicane",
+          "role_he": "מהראשונים ששילבו שירה מלאה ומלודית בטראנס, והפכו אותו ללהיט במצעדים",
+          "track": {
+            "artist": "Chicane feat. Máire Brennan",
+            "title": "Saltwater",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Saltwater_(Chicane_song)",
+            "https://musicbrainz.org/artist/8b506e4a-c343-467b-aad6-300a9bfac355"
+          ]
+        },
+        {
+          "name": "Delerium",
+          "role_he": "שיר אווירה שהרמיקס של טייסטו הפך לאחד מסמלי הטראנס הקולי",
+          "track": {
+            "artist": "Delerium feat. Sarah McLachlan",
+            "title": "Silence (DJ Tiësto's In Search of Sunrise Remix)",
+            "year": 2000
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Silence_(Delerium_song)"
+          ]
+        },
+        {
+          "name": "Paul van Dyk",
+          "role_he": "חיבר בין שירת פופ לטראנס מועדונים ופתח את הדרך לשירים קוליים",
+          "track": {
+            "artist": "Paul van Dyk feat. Saint Etienne",
+            "title": "Tell Me Why (The Riddle)",
+            "year": 2000
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tell_Me_Why_(The_Riddle)",
+            "https://musicbrainz.org/artist/092ca127-2e07-4cbd-9cba-e412b4ddddd9"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Armin van Buuren",
+          "role_he": "מוביל את A State of Trance, התוכנית והפסטיבל הגדולים בעולם הטראנס",
+          "track": {
+            "artist": "Armin van Buuren & Ben Hemsley feat. Lucy Pullin",
+            "title": "Is It Beautiful?",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.astateoftrance.com/out-now-on-asot-armin-van-buuren-ben-hemsley-feat-lucy-pullin-is-it-beautiful/",
+            "https://en.wikipedia.org/wiki/Armin_van_Buuren"
+          ]
+        },
+        {
+          "name": "Above & Beyond",
+          "role_he": "שלישייה בריטית שממשיכה להוציא שירי טראנס עם זמרים ולמלא אולמות",
+          "track": {
+            "artist": "Above & Beyond and Zoë Johnston",
+            "title": "Quicksand (Don't Go)",
+            "year": 2025
+          },
+          "sources": [
+            "https://orangecountyedm.com/2025/04/10/above-beyond-and-zoe-johnston-quicksand-dont-go-original-mix",
+            "https://www.ravermag.com/blog/above-beyond-release-new-anjunabeats-album-bigger-than-all-of-us"
+          ]
+        },
+        {
+          "name": "Gareth Emery",
+          "role_he": "מפיק בריטי שמופיע בכותרות פסטיבלי הטראנס ומוציא שירים עם זמרות",
+          "track": {
+            "artist": "Gareth Emery, Annabel, dj try",
+            "title": "Under The Sky (Broken Tides)",
+            "year": 2026
+          },
+          "sources": [
+            "https://www.edmtunes.com/2025/07/dreamstate-socal-marks-10-year-milestone-with-massive-long-beach-celebration-featuring-tiesto-gareth-emery-and-more/amp/",
+            "https://www.edmtunes.com/2026/03/04/gareth-emery-releases-new-trance-song-broken-tides/",
+            "https://musicbrainz.org/artist/73549455-66cb-4570-b0bf-caf3d8d631fe"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "tech-trance", "name_he": "טק טראנס", "name_en": "Tech trance",
-      "era": 4, "year": 2000, "family": "club", "origin_he": "גרמניה והולנד", "parents": ["hard-trance", "german-techno", "uplifting"],
+      "id": "tech-trance",
+      "name_he": "טק טראנס",
+      "name_en": "Tech trance",
+      "era": 4,
+      "year": 2000,
+      "family": "club",
+      "origin_he": "גרמניה והולנד",
+      "parents": [
+        "hard-trance",
+        "german-techno",
+        "uplifting"
+      ],
       "story_he": "חיבור בין הכוח של הטכנו למבנה של הטראנס. השורשים באמצע שנות ה-90 בגרמניה, אצל מפיקים כמו Oliver Lieb, אבל הסגנון התגבש בשנות ה-2000 עם די-ג'ייז הולנדים כמו Marco V.",
       "sound_he": "תופים ופרקשן חזקים, קו בס קבוע, פחות מלודיה ויותר דחיפה.",
-      "bpm": "132–140", "artists": ["Oliver Lieb", "Marco V", "Sander van Doorn"],
-      "track": { "artist": "Marco V", "title": "Simulated", "year": 2001 },
-      "disputed_he": "קשה לתארך: יש מקורות שממקמים את ההתחלה כבר באמצע שנות ה-90."
+      "bpm": "132–140",
+      "artists": [
+        "Oliver Lieb",
+        "Marco V",
+        "Sander van Doorn"
+      ],
+      "track": {
+        "artist": "Marco V",
+        "title": "Simulated",
+        "year": 2001
+      },
+      "disputed_he": "קשה לתארך: יש מקורות שממקמים את ההתחלה כבר באמצע שנות ה-90.",
+      "pioneers": [
+        {
+          "name": "Oliver Lieb",
+          "role_he": "מפיק גרמני שנחשב לממציא הטראנס הטכנולוגי בסוף שנות ה-90",
+          "track": {
+            "artist": "Oliver Lieb",
+            "title": "Subraumstimulation",
+            "year": 1999
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tech_trance",
+            "https://musicbrainz.org/artist/404eb416-6766-459e-a5bd-9d88aa1f8912"
+          ]
+        },
+        {
+          "name": "Marco V",
+          "role_he": "דיג'יי הולנדי שהפך את הסגנון ללהיט מועדונים בתחילת שנות ה-2000",
+          "track": {
+            "artist": "Marco V",
+            "title": "Simulated",
+            "year": 2001
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marco_V",
+            "https://en.wikipedia.org/wiki/Tech_trance",
+            "https://musicbrainz.org/artist/95e7f9cd-d774-4200-8337-cf27cb18d836"
+          ]
+        },
+        {
+          "name": "Mark Sherry",
+          "role_he": "דיג'יי סקוטי שבנה סביב הסגנון את הלייבל והתוכנית Outburst",
+          "track": {
+            "artist": "Mark Sherry",
+            "title": "After Dark (Mark Sherry's Spun Me Out Mix)",
+            "year": 2004
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mark_Sherry",
+            "https://en.wikipedia.org/wiki/Tech_trance",
+            "https://musicbrainz.org/artist/37b25beb-ab06-4353-b51c-31cb7489970f"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Bryan Kearney",
+          "role_he": "אירי שמוביל היום את הצד הטכנולוגי והקשוח של הטראנס, עם הלייבל Kearnage",
+          "track": {
+            "artist": "Bryan Kearney feat. Plumb",
+            "title": "God Help Me",
+            "year": 2025
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Bryan_Kearney",
+            "https://musicbrainz.org/artist/428993f8-d31d-4374-afec-ccf92f971f4d"
+          ]
+        },
+        {
+          "name": "Will Atkinson",
+          "role_he": "מפיק בריטי שמוציא טראנס טכנולוגי ואסיד עם קצב גבוה בשנים האחרונות",
+          "track": {
+            "artist": "Will Atkinson",
+            "title": "Marching Powder",
+            "year": 2025
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Will_Atkinson",
+            "https://musicbrainz.org/artist/2d01ddb4-db29-4a1d-bf6e-c6c9c9dd9e04"
+          ]
+        },
+        {
+          "name": "Simon Patterson",
+          "role_he": "דיג'יי בריטי שמזוהה עם טראנס מהיר וטכנולוגי וממשיך להוציא טראקים",
+          "track": {
+            "artist": "Simon Patterson",
+            "title": "Assassin",
+            "year": 2024
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/b9c4d4af-dd2d-4374-962d-4e2dca189ca7"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "hardstyle", "name_he": "הארדסטייל", "name_en": "Hardstyle",
-      "era": 4, "year": 2000, "family": "out", "origin_he": "הולנד, איטליה ובלגיה", "parents": ["hard-trance"],
+      "id": "hardstyle",
+      "name_he": "הארדסטייל",
+      "name_en": "Hardstyle",
+      "era": 4,
+      "year": 2000,
+      "family": "out",
+      "origin_he": "הולנד, איטליה ובלגיה",
+      "parents": [
+        "hard-trance"
+      ],
       "story_he": "ענף שיצא מהמשפחה. די-ג'ייז הולנדים חיברו את הבס ההפוך (Reverse bass) של ההארד טראנס עם הקשיחות של הגאבר (Gabber). האירוע הראשון שנחשב להארדסטייל, Qlubtempo, נערך בשנת 2000, ומשם הז'אנר הלך בדרך משלו.",
       "sound_he": "בעיטה מעוותת וכבדה, בס הפוך באוף-ביט, מלודיות שנשארו מהטראנס.",
-      "bpm": "140–150", "artists": ["The Prophet", "Lady Dana", "Showtek", "Headhunterz"],
+      "bpm": "140–150",
+      "artists": [
+        "The Prophet",
+        "Lady Dana",
+        "Showtek",
+        "Headhunterz"
+      ],
       "track": null,
-      "disputed_he": "אין נקודת התחלה מוסכמת. יש מי שמצביעים על תקליטים מ-1997, והשנים 2000 ו-2001 מופיעות שתיהן כשנת הלידה."
+      "disputed_he": "אין נקודת התחלה מוסכמת. יש מי שמצביעים על תקליטים מ-1997, והשנים 2000 ו-2001 מופיעות שתיהן כשנת הלידה.",
+      "pioneers": [
+        {
+          "name": "Technoboy",
+          "role_he": "דיג'יי איטלקי שנחשב לאחד ממקימי ההארדסטייל ומהשם 'הארדסטייל איטלקי'",
+          "track": {
+            "artist": "Technoboy",
+            "title": "Ravers' Rules",
+            "year": 2001
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Technoboy",
+            "https://musicbrainz.org/artist/495b431d-c77d-462a-8018-e546106e4ac5"
+          ]
+        },
+        {
+          "name": "The Prophet",
+          "role_he": "דיג'יי הולנדי שהקים את הלייבל Scantraxx, מהבתים הראשונים של הסגנון",
+          "track": {
+            "artist": "The Prophet",
+            "title": "Follow the Leader (Qlimax Anthem 2003)",
+            "year": 2003
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hardstyle",
+            "https://en.wikipedia.org/wiki/The_Prophet_(DJ)",
+            "https://musicbrainz.org/artist/f2c23719-9fc6-43c5-8ff4-d2460381d5cc"
+          ]
+        },
+        {
+          "name": "DJ Zany",
+          "role_he": "מבעלי הלייבל Fusion Records, הבית הגדול השני של ההארדסטייל ההולנדי",
+          "track": {
+            "artist": "DJ Zany",
+            "title": "Science & Religion (Qlimax Anthem 2005)",
+            "year": 2005
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hardstyle",
+            "https://en.wikipedia.org/wiki/DJ_Zany",
+            "https://musicbrainz.org/artist/2db7f5b2-b3f8-4784-b9e7-3506be2061d3"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "D-Sturb",
+          "role_he": "הפיק את ההמנון הרשמי של Defqon.1 2026, הפסטיבל הגדול בעולם לסגנון",
+          "track": {
+            "artist": "D-Sturb ft. E-Life",
+            "title": "Sacred Oath (Defqon.1 2026 Anthem)",
+            "year": 2026
+          },
+          "sources": [
+            "https://hardnews.nl/en/d-sturb-has-the-honor-of-creating-the-defqon-1-2026-anthem",
+            "https://en.wikipedia.org/wiki/Hardstyle"
+          ]
+        },
+        {
+          "name": "Rebelion",
+          "role_he": "צמד שמוציא כמעט כל חודש ומפיק המנונים לפסטיבלים כמו Reverze",
+          "track": {
+            "artist": "Rebelion",
+            "title": "Chain Reaction (Reverze 2025 Anthem)",
+            "year": 2025
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/54de6001-656c-420e-ba90-d920965a6dfc"
+          ]
+        },
+        {
+          "name": "Sub Zero Project",
+          "role_he": "צמד הולנדי מהבולטים בסגנון, יוצרי המנון Defqon.1 2023",
+          "track": {
+            "artist": "Sub Zero Project",
+            "title": "Maze of Memories (Reverze 2024 Anthem)",
+            "year": 2024
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sub_Zero_Project",
+            "https://www.festivalinfo.nl/festival/33895/Defqon-1/2025/",
+            "https://www.scantraxx.com/news/sub-zero-project-and-d-block-and-s-te-fan-change-to-follow"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "full-on", "name_he": "פול-און", "name_en": "Full-on",
-      "era": 4, "year": 2000, "family": "psy", "origin_he": "ישראל", "parents": ["psytrance", "nitzhonot"],
+      "id": "full-on",
+      "name_he": "פול-און",
+      "name_en": "Full-on",
+      "era": 4,
+      "year": 2000,
+      "family": "psy",
+      "origin_he": "ישראל",
+      "parents": [
+        "psytrance",
+        "nitzhonot"
+      ],
       "story_he": "הצליל הישראלי שכבש את העולם. מפיקים כמו Infected Mushroom ו-Astrix לקחו את הפסייטראנס והחזירו לו מלודיות גדולות, שבירות דרמטיות והפקה מלוטשת. השנים 2004 עד 2009 נחשבות לתור הזהב של הסגנון.",
       "sound_he": "בס מתגלגל ואנרגטי, לידים מלודיים, שיאים גדולים. מוזיקה של בוקר ואור.",
-      "bpm": "142–148", "artists": ["Infected Mushroom", "Astrix", "GMS", "Skazi"],
-      "track": { "artist": "Infected Mushroom", "title": "Bust a Move", "year": 2000 }, "disputed_he": null
+      "bpm": "142–148",
+      "artists": [
+        "Infected Mushroom",
+        "Astrix",
+        "GMS",
+        "Skazi"
+      ],
+      "track": {
+        "artist": "Infected Mushroom",
+        "title": "Bust a Move",
+        "year": 2000
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Infected Mushroom",
+          "role_he": "צמד ישראלי שהגדיר את הצליל הישראלי האנרגטי בסוף שנות ה-90",
+          "track": {
+            "artist": "Infected Mushroom",
+            "title": "Bust a Move",
+            "year": 2000
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infected_Mushroom",
+            "https://en.wikipedia.org/wiki/Classical_Mushroom",
+            "https://musicbrainz.org/artist/eab76c9f-ff91-4431-b6dd-3b976c598020"
+          ]
+        },
+        {
+          "name": "Astrix",
+          "role_he": "מפיק ישראלי שהפך את הסגנון לצליל הבינלאומי של הפסטיבלים בשנות ה-2000",
+          "track": {
+            "artist": "Astrix feat. Michele Adamson",
+            "title": "Closer to Heaven",
+            "year": 2005
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Astrix",
+            "https://musicbrainz.org/artist/13875f81-5bfc-4939-a6cc-296c3f8d0fa5"
+          ]
+        },
+        {
+          "name": "Skazi",
+          "role_he": "פרויקט ישראלי מהמזוהים ביותר עם הפול-און בתחילת שנות האלפיים",
+          "track": {
+            "artist": "Skazi",
+            "title": "Animal",
+            "year": 2000
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Skazi",
+            "https://musicbrainz.org/artist/8d62a782-3c12-4067-9bce-80fd91ddd5c0"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Burn in Noise",
+          "role_he": "מפיק ברזילאי שמופיע בפסטיבלים הגדולים ומוציא אלבומים בלייבל Nano",
+          "track": {
+            "artist": "Burn in Noise & Shivatree",
+            "title": "Dream",
+            "year": 2023
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://musicbrainz.org/artist/4b867ef4-006a-4b8d-8764-8b83edd0fd6d"
+          ]
+        },
+        {
+          "name": "Tristan",
+          "role_he": "מפיק בריטי ותיק שעדיין מופיע בפסטיבלים המרכזיים של הסצנה",
+          "track": {
+            "artist": "Tristan",
+            "title": "Wormhole",
+            "year": 2024
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://www.jambase.com/festival/boom-festival-2025",
+            "https://musicbrainz.org/artist/8e3fbfcf-e072-47d0-80cb-a01700ea90c9"
+          ]
+        },
+        {
+          "name": "Avalon",
+          "role_he": "מפיק בריטי מהבולטים בצליל הפסטיבלים העוצמתי של היום",
+          "track": {
+            "artist": "Avalon & Electric Universe",
+            "title": "Plant Medicine",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.jambase.com/festival/boom-festival-2025",
+            "https://www.youtube.com/watch?v=OPQt1aPpmpw"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "progressive-psy", "name_he": "פרוגרסיב פסיי", "name_en": "Progressive psytrance",
-      "era": 4, "year": 2000, "family": "psy", "origin_he": "שוודיה, דנמרק וגרמניה", "parents": ["psytrance", "progressive-trance"],
+      "id": "progressive-psy",
+      "name_he": "פרוגרסיב פסיי",
+      "name_en": "Progressive psytrance",
+      "era": 4,
+      "year": 2000,
+      "family": "psy",
+      "origin_he": "שוודיה, דנמרק וגרמניה",
+      "parents": [
+        "psytrance",
+        "progressive-trance"
+      ],
       "story_he": "בסקנדינביה האטו את הפסייטראנס והשאירו בו רק את מה שחייב להיות שם. אמנים שוודים כמו Atmos ו-Son Kite והלייבל הדני Iboga הגדירו את הצליל, ולקראת סוף העשור גל חדש בהובלת Neelix קירב אותו לקהל רחב.",
       "sound_he": "איטי ועמוק יותר, גרוב היפנוטי, מעט אלמנטים שמתפתחים בסבלנות.",
-      "bpm": "130–140", "artists": ["Atmos", "Son Kite", "Neelix"],
-      "track": { "artist": "Son Kite", "title": "On Air", "year": 2004 }, "disputed_he": null
+      "bpm": "130–140",
+      "artists": [
+        "Atmos",
+        "Son Kite",
+        "Neelix"
+      ],
+      "track": {
+        "artist": "Son Kite",
+        "title": "On Air",
+        "year": 2004
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Atmos",
+          "role_he": "מפיק שוודי שהאט את הקצב והפך את הטראנס הפסיכדלי לנקי ומינימלי יותר",
+          "track": {
+            "artist": "Atmos",
+            "title": "Klein Aber Doktor",
+            "year": 1999
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/ed4a0895-dfc9-412c-97fc-399bce0aff91",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025"
+          ]
+        },
+        {
+          "name": "Son Kite",
+          "role_he": "צמד שוודי שקבע את הצליל העמוק והמהפנט של הסגנון באמצע שנות ה-2000",
+          "track": {
+            "artist": "Son Kite",
+            "title": "On Air",
+            "year": 2004
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Son_Kite",
+            "https://musicbrainz.org/artist/ca78e972-0349-4d99-af6d-56646376ba9b"
+          ]
+        },
+        {
+          "name": "Vibrasphere",
+          "role_he": "צמד משוודיה ומבלגיה מהראשונים שניגנו טראנס פסיכדלי מתקדם ורגוע",
+          "track": {
+            "artist": "Vibrasphere",
+            "title": "Mental Mountain",
+            "year": 2000
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Vibrasphere",
+            "https://musicbrainz.org/artist/b822008d-f2eb-46fe-8ec4-3ad7499a6062"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Ace Ventura",
+          "role_he": "מפיק ישראלי שנחשב היום לשם המוביל בסגנון ומופיע בכל הפסטיבלים הגדולים",
+          "track": {
+            "artist": "Ace Ventura & StarLab",
+            "title": "Maana",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://www.jambase.com/festival/boom-festival-2025",
+            "https://musicbrainz.org/artist/0c205acd-5003-4b0d-b603-fb91b93b6eae"
+          ]
+        },
+        {
+          "name": "Ritmo",
+          "role_he": "מפיק ישראלי שהטראקים המלודיים שלו ממלאים את רחבות הבוקר בפסטיבלים",
+          "track": {
+            "artist": "Ritmo & Asgard",
+            "title": "Dunes",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://musicbrainz.org/artist/43a2fdeb-0aa8-4083-a02a-14b2af6f7fb1"
+          ]
+        },
+        {
+          "name": "Captain Hook",
+          "role_he": "מפיק ישראלי מהבולטים בפרוגרסיב פסיי, מופיע בפסטיבלים בכל העולם",
+          "track": {
+            "artist": "Captain Hook & Skizologic",
+            "title": "The Lost Diamond",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://musicbrainz.org/artist/ca18d03b-3cd1-401d-b0d5-a09219fbc69c",
+            "https://www.youtube.com/watch?v=vMYgD8AVyTk"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "dark-psy", "name_he": "דארק פסיי", "name_en": "Dark psytrance",
-      "era": 4, "year": 2003, "family": "psy", "origin_he": "גרמניה ורוסיה", "parents": ["psytrance"],
+      "id": "dark-psy",
+      "name_he": "דארק פסיי",
+      "name_en": "Dark psytrance",
+      "era": 4,
+      "year": 2003,
+      "family": "psy",
+      "origin_he": "גרמניה ורוסיה",
+      "parents": [
+        "psytrance"
+      ],
       "story_he": "הצד הלילי של הפסייטראנס. הגרמני Xenomorph הכניס לז'אנר אסתטיקה אפלה כבר באלבום Cassandra's Nightmare מ-1998, ואחרי 2003 הדארק התגבש כסגנון נפרד, עם סצנה חזקה ברוסיה. הוא התפתח כתגובה למלודיות של הפול-און.",
       "sound_he": "מהיר, צפוף ומאיים: בלי מלודיות, עם שכבות של רעשים, סמפלים מסרטי אימה ואווירה של לילה.",
-      "bpm": "148 ומעלה", "artists": ["Xenomorph", "Parasense", "Kindzadza", "Psykovsky"],
-      "track": { "artist": "Xenomorph", "title": "Cassandra's Nightmare", "year": 1998 }, "disputed_he": null
+      "bpm": "148 ומעלה",
+      "artists": [
+        "Xenomorph",
+        "Parasense",
+        "Kindzadza",
+        "Psykovsky"
+      ],
+      "track": {
+        "artist": "Xenomorph",
+        "title": "Cassandra's Nightmare",
+        "year": 1998
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Xenomorph",
+          "role_he": "מפיק גרמני שהכניס לטראנס הפסיכדלי אווירה אפלה ומפחידה כבר ב-1998",
+          "track": {
+            "artist": "Xenomorph",
+            "title": "Cassandra's Nightmare",
+            "year": 1998
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Psychedelic_trance",
+            "https://musicbrainz.org/artist/5a1c0332-1c1f-423e-9128-1e0ba42f0855"
+          ]
+        },
+        {
+          "name": "Kindzadza",
+          "role_he": "מפיק רוסי שהאלבום הראשון שלו קבע את הצליל המוזר והמהיר של הסגנון",
+          "track": {
+            "artist": "Kindzadza",
+            "title": "Dasty Ho",
+            "year": 2004
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/bf892d4a-1ea9-4feb-bfd2-5a9cf121b123",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://www.festivalmates.com/festivals/genre/psytrance"
+          ]
+        },
+        {
+          "name": "Psykovsky",
+          "role_he": "מפיק רוסי שהביא לסגנון מבנים ארוכים, ניסיוניים ומהירים מאוד",
+          "track": {
+            "artist": "Psykovsky",
+            "title": "Pump The Spam",
+            "year": 2005
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/9ddd7582-13fc-4e85-9df1-6b40776743fc",
+            "https://www.festivalmates.com/festivals/genre/psytrance"
+          ]
+        }
+      ],
+      "today": [],
+      "today_note_he": "לא מצאנו מקור אמין שמראה מי מוביל את הדארק היום. הסצנה חיה (בפסטיבלים היא מתנגנת בלילה), אבל את הבמות האלה חולקים היום הדארק, הפורסט וההיי-טק. מהחלוצים, Kindzadza עדיין מופיע (Ozora 2025), ו-Xenomorph הוציא אלבום חדש ב-2024."
     },
     {
-      "id": "forest", "name_he": "פורסט", "name_en": "Forest psytrance",
-      "era": 4, "year": 2004, "family": "psy", "origin_he": "סקנדינביה", "parents": ["dark-psy"],
+      "id": "forest",
+      "name_he": "פורסט",
+      "name_en": "Forest psytrance",
+      "era": 4,
+      "year": 2004,
+      "family": "psy",
+      "origin_he": "סקנדינביה",
+      "parents": [
+        "dark-psy"
+      ],
       "story_he": "גרסה אורגנית של הדארק, שצמחה סביב הלייבל Parvati Records מדנמרק. במקום רובוטים ומכונות, הצלילים מזכירים יער בלילה: חרקים, טפטופים, ענפים נשברים.",
       "sound_he": "מהיר והיפנוטי, עם טקסטורות אורגניות וצלילי טבע מעוותים.",
-      "bpm": "150–160", "artists": ["Atriohm", "Derango", "Procs"],
-      "track": null, "disputed_he": null
+      "bpm": "150–160",
+      "artists": [
+        "Atriohm",
+        "Derango",
+        "Procs"
+      ],
+      "track": null,
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Derango",
+          "role_he": "צמד שוודי שהאלבום שלו Tumult נחשב לנקודת המוצא של הפורסט",
+          "track": {
+            "artist": "Derango",
+            "title": "Confusion is Next",
+            "year": 2005
+          },
+          "sources": [
+            "https://microgenremusic.com/genres/trance/what-is-forest-psytrance/",
+            "https://musicbrainz.org/artist/b37769ce-acb1-4be1-b206-77f75c4f51b0",
+            "https://www.set79.com/tracklist/soundcloud.com/mo_dem/derango-the-hive-modem-festival-2025"
+          ]
+        },
+        {
+          "name": "Procs",
+          "role_he": "מפיק שוודי שהצליל האורגני והמשונה שלו עזר להגדיר את הפורסט",
+          "track": {
+            "artist": "Procs",
+            "title": "Gluffsing the Pop",
+            "year": 2005
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/d859f69d-516e-4316-b4c4-58b90cae2662",
+            "https://ajana-records.com/artist-pages/procs.htm"
+          ]
+        },
+        {
+          "name": "Atriohm",
+          "role_he": "צמד ממקדוניה שהפך לאחד הסמלים של הלייבל Parvati ושל הצליל היערי",
+          "track": {
+            "artist": "Atriohm & Encephalopaticys",
+            "title": "Ukalen",
+            "year": 2009
+          },
+          "sources": [
+            "https://microgenremusic.com/genres/trance/what-is-forest-psytrance/",
+            "https://musicbrainz.org/artist/798e0542-214e-4e61-b4fa-aa4fcb683611",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Third Eye Of Monkey",
+          "role_he": "מפיק ממקסיקו שהוציא ב-2024 את התקליט הראשון שלו ב-Parvati והופיע בבום",
+          "track": {
+            "artist": "Third Eye Of Monkey",
+            "title": "Serpent Kaan",
+            "year": 2024
+          },
+          "sources": [
+            "https://beatspace-parvati.bandcamp.com/album/the-last-firedance",
+            "https://www.jambase.com/festival/boom-festival-2025",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025"
+          ]
+        },
+        {
+          "name": "Ectogasmics",
+          "role_he": "צמד שהוציא ב-2025 אלבום מלא ב-Parvati והופיע באוזורה",
+          "track": {
+            "artist": "Ectogasmics & Weirdos",
+            "title": "Circle Within Circle",
+            "year": 2025
+          },
+          "sources": [
+            "https://beatspace-parvati.bandcamp.com/album/circle-within-circle",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025"
+          ]
+        },
+        {
+          "name": "Arjuna",
+          "role_he": "מפיק ותיק מהלייבל Parvati, מהשמות הקבועים בבמות הלילה",
+          "track": {
+            "artist": "Arjuna, Manjy",
+            "title": "Hissing Hills",
+            "year": 2025
+          },
+          "sources": [
+            "https://microgenremusic.com/genres/trance/what-is-forest-psytrance/",
+            "https://www.jambase.com/festival/boom-festival-2025",
+            "https://www.youtube.com/watch?v=9Vtlb7AfM4U"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
     {
-      "id": "zenonesque", "name_he": "זנונסק", "name_en": "Zenonesque",
-      "era": 4, "year": 2003, "family": "psy", "origin_he": "אוסטרליה", "parents": ["progressive-psy", "dark-psy"],
+      "id": "zenonesque",
+      "name_he": "זנונסק",
+      "name_en": "Zenonesque",
+      "era": 4,
+      "year": 2003,
+      "family": "psy",
+      "origin_he": "אוסטרליה",
+      "parents": [
+        "progressive-psy",
+        "dark-psy"
+      ],
       "story_he": "ז'אנר שנקרא על שם לייבל. Sensient הקים את Zenon Records ב-2003, והצליל של הלייבל, פרוגרסיב אפל ומינימלי עם השפעות טכנו, היה ייחודי מספיק כדי לקבל שם משלו.",
       "sound_he": "גרוב עמוק ואיטי יחסית, בס עבה, עיצוב סאונד מפורט וקר.",
-      "bpm": null, "artists": ["Sensient", "Tetrameth", "Grouch"],
-      "track": { "artist": "Sensient", "title": "Pressure Optimal", "year": 2005 }, "disputed_he": null
+      "bpm": null,
+      "artists": [
+        "Sensient",
+        "Tetrameth",
+        "Grouch"
+      ],
+      "track": {
+        "artist": "Sensient",
+        "title": "Tropicana",
+        "year": 2005
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Sensient",
+          "role_he": "מפיק אוסטרלי שהקים את Zenon Records ב-2003, הלייבל שנתן לסגנון את שמו",
+          "track": {
+            "artist": "Sensient",
+            "title": "Tropicana",
+            "year": 2005
+          },
+          "sources": [
+            "https://trancentral.tv/?p=5165",
+            "https://trancentral.tv/?p=21244",
+            "https://musicbrainz.org/artist/782c0b2f-7562-41af-b3cc-6ef3d0a1722b"
+          ]
+        },
+        {
+          "name": "Tetrameth",
+          "role_he": "פרויקט אוסטרלי שהאלבום הראשון שלו ב-Zenon עזר לעצב את הצליל",
+          "track": {
+            "artist": "Tetrameth",
+            "title": "Psychological Pyrotechnics",
+            "year": 2006
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/7f430bb4-1715-4660-beeb-2e4ac4b2e324",
+            "https://themusic.com.au/artist/DLsWHQIDAAE/tetrameth"
+          ]
+        },
+        {
+          "name": "Krumelur",
+          "role_he": "מפיק שוודי שהצליל המינימלי שלו נחשב, לצד Sensient, לבסיס הסגנון",
+          "track": {
+            "artist": "Krumelur",
+            "title": "The Plan (Klick It)",
+            "year": 2006
+          },
+          "sources": [
+            "https://www.melodigging.com/genre/zenonesque",
+            "https://musicbrainz.org/artist/8a733e06-a67d-4c40-a8e1-dd2b06bff152",
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Sumiruna",
+          "role_he": "מפיק אוסטרלי שהוציא בסוף 2025 עם Ambler אלבום משותף ב-Zenon",
+          "track": {
+            "artist": "Sumiruna & Ambler",
+            "title": "Extrapolated",
+            "year": 2025
+          },
+          "sources": [
+            "https://zenonrecords.bandcamp.com/album/extrapolation",
+            "https://musicbrainz.org/artist/45d7bda9-bef9-4b75-baf4-3ac585abb92b"
+          ]
+        },
+        {
+          "name": "HypoGeo",
+          "role_he": "מפיק שמוציא ב-Zenon ומופיע בפסטיבלים כמו אוזורה",
+          "track": {
+            "artist": "Hypogeo vs Brojanowski",
+            "title": "Geilorama",
+            "year": 2023
+          },
+          "sources": [
+            "https://www.jambase.com/festival/ozora-festival-hungary-2025",
+            "https://www.youtube.com/watch?v=0wke6V5zR7A"
+          ]
+        },
+        {
+          "name": "Akudra",
+          "role_he": "מפיק שמוציא בשנים האחרונות תקליטים ב-Zenon ומלמד ברשת איך בונים טראק בסגנון",
+          "track": {
+            "artist": "Akudra",
+            "title": "Kurrawong",
+            "year": 2026
+          },
+          "sources": [
+            "https://musicbrainz.org/artist/b55d5c3e-d65d-416e-97cc-618c62ace3b3",
+            "https://zenonrecords.bandcamp.com/music"
+          ]
+        }
+      ],
+      "today_note_he": null
     },
-
     {
-      "id": "hitech", "name_he": "הייטק", "name_en": "Hi-tech psytrance",
-      "era": 5, "year": 2010, "family": "psy", "origin_he": "רוסיה", "parents": ["dark-psy"],
+      "id": "hitech",
+      "name_he": "הייטק",
+      "name_en": "Hi-tech psytrance",
+      "era": 5,
+      "year": 2010,
+      "family": "psy",
+      "origin_he": "רוסיה",
+      "parents": [
+        "dark-psy"
+      ],
       "story_he": "בשנות ה-2010 חלק מסצנת הדארק המשיך להאיץ. ההייטק מהיר, קופצני ומלא בגליצ'ים, ודוחף את הטמפו ל-170 פעימות בדקה ומעלה. מעליו נמצא רק הפסיקור (Psycore).",
       "sound_he": "מהיר מאוד, עם לידים חותכים, שינויים בלתי פוסקים ועיצוב סאונד דיגיטלי קיצוני.",
-      "bpm": "170 ומעלה", "artists": ["Kindzadza", "Psykovsky", "Osom Music"],
+      "bpm": "170 ומעלה",
+      "artists": [
+        "Kindzadza",
+        "Psykovsky",
+        "Osom Music"
+      ],
       "track": null,
-      "disputed_he": "אין נקודת לידה ברורה. ההייטק צמח בהדרגה מתוך הדארק, והמיקום ברוסיה משקף את האמנים המזוהים איתו יותר מאשר מקום מוסכם."
+      "disputed_he": "אין נקודת לידה ברורה. ההייטק צמח בהדרגה מתוך הדארק, והמיקום ברוסיה משקף את האמנים המזוהים איתו יותר מאשר מקום מוסכם.",
+      "pioneers": [
+        {
+          "name": "Kindzadza",
+          "role_he": "מפיק דארק-פסיי ממוסקבה; לפי מקור אחד הוא ו-Psykovsky (כ-Osom) טבעו את השם 'הייטק'",
+          "track": {
+            "artist": "Kindzadza",
+            "title": "Cristal Inside",
+            "year": 2010
+          },
+          "sources": [
+            "https://scrapbox.io/zatto/Hi-tech",
+            "https://minatrix.fm/en/news/id-229"
+          ]
+        },
+        {
+          "name": "Psykovsky",
+          "role_he": "מפיק רוסי, מהשמות המזוהים ביותר עם דארק-פסיי מהיר וניסיוני ועם הלייבל Osom Music",
+          "track": {
+            "artist": "Psykovsky",
+            "title": "Bekhudi",
+            "year": 2009
+          },
+          "sources": [
+            "https://scrapbox.io/zatto/Hi-tech",
+            "https://redlib.nohost.network/r/psytrance/comments/1e1enix/how_did_hitech_come_to_being/ld608e1/?context=3"
+          ]
+        },
+        {
+          "name": "Highko",
+          "role_he": "מפיק גרמני שייסד את Noise Poison, שתואר כלייבל ההייטק הראשון",
+          "track": {
+            "artist": "Highko",
+            "title": "Hoo Ruck",
+            "year": 2016
+          },
+          "sources": [
+            "https://scrapbox.io/zatto/Hi-tech",
+            "https://mb.videolan.org/artist/838d1bad-359a-4214-b499-e43febee6bee",
+            "https://www.alienchaosmusic.com/single-post/exploring-the-evolution-of-hitech-an-interview-with-paralocks"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "KiLLATK",
+          "role_he": "מהבולטים בסצנת ההייטק; מופיע בפסטיבל Hitech Revolution ב-2025 וב-2026",
+          "track": {
+            "artist": "KiLLATK & Logic UFO",
+            "title": "Thank God",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.youtube.com/watch?v=LGtp-eB1yao",
+            "https://www.melodigging.com/genre/hi-tech"
+          ]
+        },
+        {
+          "name": "Paralocks",
+          "role_he": "נחשב לדמות מובילה בהייטק ומלמד את הסגנון",
+          "track": {
+            "artist": "KiLLATK & Paralocks",
+            "title": "Nuclear Launch",
+            "year": 2024
+          },
+          "sources": [
+            "https://www.alienchaosmusic.com/single-post/what-is-hitech-psytrance",
+            "https://www.alienchaosmusic.com/single-post/exploring-the-evolution-of-hitech-an-interview-with-paralocks"
+          ]
+        }
+      ],
+      "today_note_he": "להייטק אין מצעדים או פסטיבלים מרכזיים מתועדים היטב. הסצנה מפוזרת בין ברזיל, מקסיקו, רוסיה, גרמניה ודרום אפריקה, ולכן הרשימה חלקית."
     },
     {
-      "id": "bigroom-trance", "name_he": "טראנס של במה מרכזית", "name_en": "Big room / EDM trance",
-      "era": 5, "year": 2012, "family": "club", "origin_he": "הולנד", "parents": ["uplifting", "tech-trance", "eurotrance"],
+      "id": "bigroom-trance",
+      "name_he": "טראנס של במה מרכזית",
+      "name_en": "Big room / EDM trance",
+      "era": 5,
+      "year": 2012,
+      "family": "club",
+      "origin_he": "הולנד",
+      "parents": [
+        "uplifting",
+        "tech-trance",
+        "eurotrance"
+      ],
       "story_he": "כשה-EDM כבש את הפסטיבלים, חלק מהטראנס התאים את עצמו לבמה המרכזית: טמפו איטי יותר ודרופים קצרים וחזקים בהשפעת אלקטרו האוס. הכינוי Trance 2.0 נדבק לגל הזה, והקהל הוותיק התווכח אם זה עדיין טראנס.",
       "sound_he": "שבירה מלודית של טראנס, ואחריה דרופ קצר ובומבסטי בסגנון האוס.",
-      "bpm": "128–135", "artists": ["Armin van Buuren", "W&W", "Above & Beyond"],
-      "track": { "artist": "Armin van Buuren", "title": "Ping Pong", "year": 2014 }, "disputed_he": null
+      "bpm": "128–135",
+      "artists": [
+        "Armin van Buuren",
+        "W&W",
+        "Above & Beyond"
+      ],
+      "track": {
+        "artist": "Armin van Buuren",
+        "title": "Ping Pong",
+        "year": 2014
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "W&W",
+          "role_he": "צמד הולנדי שעבר ב-2012 מטראנס לצליל 'ביג רום' הענק של במות הפסטיבלים",
+          "track": {
+            "artist": "W&W",
+            "title": "Lift Off!",
+            "year": 2012
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/W%26W",
+            "https://direct.revealedrecordings.com/releases/the-code"
+          ]
+        },
+        {
+          "name": "Armin van Buuren",
+          "role_he": "הטראנס הגדול בעולם, שנכנס עם Ping Pong לצליל הביג רום ועורר ויכוח בין המעריצים",
+          "track": {
+            "artist": "Armin van Buuren",
+            "title": "Ping Pong",
+            "year": 2014
+          },
+          "sources": [
+            "https://edmhousenetwork.com/released-10-years-ago-armin-van-buuren-ping-pong/",
+            "https://www.change.org/p/big-djs-armin-van-buuren-should-stop-labelling-themselves-as-trance-djs"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Maddix",
+          "role_he": "מפיק הולנדי שמשלב טכנו, טראנס וביג רום, ניגן ב-2025 בבמה הראשית של Tomorrowland",
+          "track": {
+            "artist": "Maddix",
+            "title": "Culture",
+            "year": 2022
+          },
+          "sources": [
+            "https://edmidentity.com/2025/12/22/maddix-2025-interview",
+            "https://edmidentity.com/2025/03/03/armin-van-buuren-maddix-a-state-of-trance/",
+            "https://Revealed.DJ/releases/maddix-culture"
+          ]
+        }
+      ],
+      "today_note_he": "'ביג רום טראנס' כשם של סגנון כמעט נעלם. הבמות הראשיות של היום מערבבות טראנס וטכנו, ו-Armin van Buuren עצמו הוא עדיין אמן הטראנס הנמכר ביותר ב-Beatport ב-2025."
     },
     {
-      "id": "psy-mainstage", "name_he": "פסיי של הבמות הגדולות", "name_en": "Mainstage psytrance",
-      "era": 5, "year": 2016, "family": "psy", "origin_he": "ישראל", "parents": ["full-on", "progressive-psy", "bigroom-trance"],
+      "id": "psy-mainstage",
+      "name_he": "פסיי של הבמות הגדולות",
+      "name_en": "Mainstage psytrance",
+      "era": 5,
+      "year": 2016,
+      "family": "psy",
+      "origin_he": "ישראל",
+      "parents": [
+        "full-on",
+        "progressive-psy",
+        "bigroom-trance"
+      ],
       "story_he": "הצמד הישראלי Vini Vici הביא את הבס של הפסייטראנס לבמות הכי גדולות בעולם. הרמיקס שלהם ל-Free Tibet היה קטע הפסייטראנס הראשון בעשירייה הראשונה של המצעד הכללי ב-Beatport, ובסוף 2016 יצא Great Spirit עם Armin van Buuren.",
       "sound_he": "בס פסיי מתגלגל, שירה שבטית, שבירות ודרופים במבנה של EDM.",
-      "bpm": "138–140", "artists": ["Vini Vici", "Blastoyz", "Hilight Tribe"],
-      "track": { "artist": "Hilight Tribe", "title": "Free Tibet (Vini Vici Remix)", "year": 2016 }, "disputed_he": null
+      "bpm": "138–140",
+      "artists": [
+        "Vini Vici",
+        "Blastoyz",
+        "Hilight Tribe"
+      ],
+      "track": {
+        "artist": "Hilight Tribe",
+        "title": "Free Tibet (Vini Vici Remix)",
+        "year": 2016
+      },
+      "disputed_he": null,
+      "pioneers": [
+        {
+          "name": "Vini Vici",
+          "role_he": "צמד ישראלי שהביא פסיי טראנס לבמות הראשיות של Tomorrowland ו-Ultra",
+          "track": {
+            "artist": "Hilight Tribe",
+            "title": "Free Tibet (Vini Vici Remix)",
+            "year": 2016
+          },
+          "sources": [
+            "https://direct.djmag.com/top100djs/2022/21/Vini-Vici",
+            "https://www.edmtunes.com/2018/08/08/interview-vini-vici/"
+          ]
+        },
+        {
+          "name": "Astrix",
+          "role_he": "מפיק ותקליטן ישראלי, מהראשונים בפסיי שנכנסו לרשימת 100 התקליטנים של DJ Mag",
+          "track": {
+            "artist": "Astrix",
+            "title": "Deep Jungle Walk",
+            "year": 2016
+          },
+          "sources": [
+            "https://en.wikipedia.org/wiki/Astrix"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "Blastoyz",
+          "role_he": "מפיק ישראלי שמופיע בפסטיבלים הגדולים, כולל במת הפסיי של Tomorrowland ברזיל ב-2025",
+          "track": {
+            "artist": "Blastoyz",
+            "title": "High On Acid",
+            "year": 2022
+          },
+          "sources": [
+            "https://www.edmtunes.com/2025/06/tomorrowland-announces-new-morpho-stage-coming-to-brasil/amp/",
+            "https://www.youtube.com/watch?v=yWDYhfWPu-U"
+          ]
+        },
+        {
+          "name": "Infected Mushroom",
+          "role_he": "הצמד הישראלי הוותיק עדיין ממלא במות גדולות וחגג 30 שנה עם אלבום חדש",
+          "track": {
+            "artist": "Infected Mushroom",
+            "title": "Lightweight",
+            "year": 2025
+          },
+          "sources": [
+            "https://billboard.com.br/david-guetta-vintage-culture-tomorrowland-brasil/",
+            "https://www.edmtunes.com/2025/06/tomorrowland-announces-new-morpho-stage-coming-to-brasil/amp/"
+          ]
+        }
+      ],
+      "today_note_he": "Vini Vici, שמופיעים כאן כחלוצים, הם גם היום מהשמות הגדולים בסגנון ומופיעים ב-Tomorrowland ב-2025."
     },
     {
-      "id": "trance-revival", "name_he": "תחיית הטראנס", "name_en": "Trance revival",
-      "era": 5, "year": 2017, "family": "club", "origin_he": "ברלין ואירופה", "parents": ["early-trance", "hard-trance", "acid-trance", "german-techno"],
+      "id": "trance-revival",
+      "name_he": "תחיית הטראנס",
+      "name_en": "Trance revival",
+      "era": 5,
+      "year": 2017,
+      "family": "club",
+      "origin_he": "ברלין ואירופה",
+      "parents": [
+        "early-trance",
+        "hard-trance",
+        "acid-trance",
+        "german-techno"
+      ],
       "story_he": "מ-2017 די-ג'ייז מעולם הטכנו, כמו Nina Kraviz, התחילו להחזיר קטעי טראנס ישנים לסטים. ב-2021 Charlotte de Witte ו-Enrico Sangiuliano עיבדו מחדש את The Age of Love, ובשנות ה-2020 דור שגדל על נוסטלגיה לניינטיז הפך את ההארד טראנס לצליל של מועדוני הטכנו.",
       "sound_he": "בעיטת טכנו קשה ומהירה, ומעליה מלודיות וארפג'ים של טראנס מהניינטיז.",
-      "bpm": "140–150", "artists": ["Nina Kraviz", "KI/KI", "Marlon Hoffstadt", "DJ Heartstring"],
-      "track": { "artist": "Age of Love", "title": "The Age of Love (Charlotte de Witte & Enrico Sangiuliano Remix)", "year": 2021 },
-      "disputed_he": "יש ויכוח אם זה טראנס שחזר או טכנו עם מלודיות של טראנס."
+      "bpm": "140–150",
+      "artists": [
+        "Nina Kraviz",
+        "KI/KI",
+        "Marlon Hoffstadt",
+        "DJ Heartstring"
+      ],
+      "track": {
+        "artist": "Age of Love",
+        "title": "The Age of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
+        "year": 2021
+      },
+      "disputed_he": "יש ויכוח אם זה טראנס שחזר או טכנו עם מלודיות של טראנס.",
+      "pioneers": [
+        {
+          "name": "Evian Christ",
+          "role_he": "מפיק בריטי שמסיבות ה-Trance Party שלו החזירו טראנס לסצנה המחתרתית לפני כולם",
+          "track": {
+            "artist": "Evian Christ feat. Bladee",
+            "title": "Yxguden",
+            "year": 2023
+          },
+          "sources": [
+            "https://mixmag.net/feature/trance-reborn-the-sound-is-back-and-big-as-ever",
+            "https://en.wikipedia.org/wiki/Revanchist_(album)"
+          ]
+        },
+        {
+          "name": "Charlotte de Witte & Enrico Sangiuliano",
+          "role_he": "שני תקליטני טכנו מובילים שהרמיקס שלהם ל-The Age of Love החזיר את הקלאסיקה מ-1990 למועדונים",
+          "track": {
+            "artist": "Age of Love",
+            "title": "The Age of Love (Charlotte de Witte & Enrico Sangiuliano Remix)",
+            "year": 2021
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025"
+          ]
+        }
+      ],
+      "today": [
+        {
+          "name": "KI/KI",
+          "role_he": "תקליטנית הולנדית, האמנית השנייה הנמכרת בטראנס ב-Beatport ב-2025",
+          "track": {
+            "artist": "KI/KI",
+            "title": "What's a Girl to Do in '25",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025"
+          ]
+        },
+        {
+          "name": "Marlon Hoffstadt",
+          "role_he": "תקליטן גרמני המכונה DJ Daddy Trance, מהפנים המובילות של הגל החדש",
+          "track": {
+            "artist": "Marlon Hoffstadt",
+            "title": "It's That Time",
+            "year": 2023
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025",
+            "https://www.pulse.bot/music/news/the-cover-mix-marlon-hoffstadt-aka-dj-daddy-trance-9fd68e3c-1118-4b31-a47a-c0bf871227e4"
+          ]
+        },
+        {
+          "name": "Funk Tribu",
+          "role_he": "משלבים טראנס קשה עם השפעות פסיי; Azul היה בין 10 הנמכרים ב-2025",
+          "track": {
+            "artist": "Funk Tribu",
+            "title": "Azul",
+            "year": 2025
+          },
+          "sources": [
+            "https://www.beatportal.com/articles/1217928-trance-the-top-selling-tracks-artists-and-labels-of-2025",
+            "https://www.youtube.com/watch?v=aWxPKNiEnu4"
+          ]
+        }
+      ],
+      "today_note_he": null
     }
   ]
 }

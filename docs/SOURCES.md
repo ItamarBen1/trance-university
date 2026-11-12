@@ -20,3 +20,8 @@ Not every fact in the dataset traces to this list. See "Known gaps" in `CLAUDE.m
 - [Zenon Records (SoundCloud)](https://soundcloud.com/Zenon-Records): founded 2003 by Sensient.
 - [Parvati Records (Bandcamp)](https://beatspace-parvati.bandcamp.com/merch): started in Denmark, summer 2000.
 - [The Story of New Beat (Red Bull Music Academy)](https://daily.redbullmusicacademy.com/2018/01/new-beat-feature)
+
+
+## Pioneers and today's leaders (added 2026-11-12)
+
+Each artist in a genre's `pioneers` and `today` lists in `data/trance-data.json` carries its own `sources` URLs (Wikipedia, Discogs, MusicBrainz, label pages, Beatport year-end charts, festival lineups such as Ozora, Boom, Dreamstate and Defqon.1 for 2024–2026). Claims the research could not source were removed from the Hebrew descriptions. The weakest areas: nitzhonot (few online sources), hi-tech's origin (Russia vs Germany, disputed) and some 'today' picks in hi-tech and hard trance.

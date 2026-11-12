@@ -18,7 +18,6 @@
 .wrap{max-width:860px;margin:0 auto;padding-block:24px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
 
 .mast{gap:12px}
-.mast-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
 .mast h1{font-size:clamp(40px,8vw,72px);line-height:1.05;text-wrap:balance}
 .lede{max-width:60ch;font-size:17px}
 
@@ -128,8 +127,15 @@ button.cell:hover{background:var(--surface)}
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-star" viewBox="0 0 64 64"><path d="M32 5l8.2 17.6 19.3 2.3-14.2 13.2 3.8 19.1L32 47.6 14.9 57.2l3.8-19.1L4.5 24.9l19.3-2.3z"/></symbol>
   </svg>
+  <nav class="topnav" aria-label="ניווט ראשי">
+    <ul>
+      <li><a href="trance-school.html" aria-current="page">בית ספר לטראנס</a></li>
+      <li><a href="trance-family-tree.html">אילן היוחסין</a></li>
+    </ul>
+    <div data-palette-picker></div>
+  </nav>
   <header class="mast card">
-    <div class="mast-top"><span class="pill">7 שלבים · מאפס</span><div data-palette-picker></div></div>
+    <span class="pill">7 שלבים · מאפס</span>
     <h1><span class="marker">בית ספר לטראנס</span></h1>
     <p class="lede">שבעה שלבים שמלמדים טראנס מאפס: מה זה BPM, איך בנוי הקצב, מה עושה הבס, ואיך מזהים סגנון לפי אוזן. בכל שלב יש מכונה קטנה שמנגנת, ואתגר שפותח את השלב הבא.</p>
   </header>

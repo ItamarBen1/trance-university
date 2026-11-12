@@ -81,7 +81,9 @@ The seven levels: tempo and BPM, four-on-the-floor, the bassline (offbeat vs rol
 
 Each genre: `id`, `name_he`, `name_en`, `era` (1 to 5), `year` (approximate), `family` (`roots`, `club`, `psy`, `out`), `origin_he`, `parents` (ids of direct sources), `story_he`, `sound_he`, `bpm` (string or null), `artists`, `track` (`{artist, title, year}` or null), `disputed_he` (string or null).
 
-`build-tree.py` checks: unique ids, every parent exists, no parent is younger than its child or in a later era, no cycles, year inside the era's range, no empty text fields.
+Since 2026-11-12 each genre also has `pioneers` and `today`: up to 3 artists each, `{name, role_he, track: {artist, title, year} | null, sources: [url]}`, plus `today_note_he` (string or null) when `today` has fewer than 3. Pioneers founded the style; `today` are artists with 2024–2026 evidence (charts, festival lineups, label releases). A pioneer without a recording (the Goa beach DJs) has `track: null`. Every artist must have a source URL. Their videos live in `assets/videos.js` like all others.
+
+`build-tree.py` checks: unique ids, every parent exists, no parent is younger than its child or in a later era, no cycles, year inside the era's range, no empty text fields, and for pioneers/today: max 3, name and role_he present, complete track or null, at least one source URL, `today_note_he` when `today` has fewer than 3.
 
 ## Content rules
 
