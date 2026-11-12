@@ -2,6 +2,8 @@
 
 Two Hebrew learning pages about trance music, packaged for Claude Code.
 
+**Live:** https://itamarben1.github.io/trance-university/ (GitHub Pages, deploys on every push to `main`).
+
 - `prototypes/trance-school.html`: seven game-like levels that teach the basics from zero.
 - `prototypes/trance-family-tree.html`: 38 genres, where each came from and what it led to.
 
